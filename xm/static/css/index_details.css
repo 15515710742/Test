@@ -1,0 +1,162 @@
+.my_border{
+    border:2px solid #0099FF;
+}
+.text{
+    color:#0099FF;
+}
+span.text{
+    font-size:1.8rem;
+}
+.p_text{
+    background: #0099FF;
+    height:1.8rem;
+    width:7rem;
+    line-height: 1.8rem;
+}
+.img{
+	height:178px;
+}
+.img1{
+    width:2rem;
+}
+.one{
+    background:#F5F5F5;
+}
+.my-small{
+    font-size: 0.9rem;
+}
+
+.map{
+    color:#FE9500;
+}
+
+.p{
+	top:8px;
+	left:8px;
+	border-bottom:15px solid  transparent;
+}
+
+.pp{
+	border-top:30px solid #E6736C;
+	border-left:15px solid #E6736C;
+	border-right:15px solid #E6736C;
+}
+
+.pp1{
+	border-top:30px solid #ADBB62;
+	border-left:15px solid #ADBB62;
+	border-right:15px solid #ADBB62;
+}
+
+.pp2{
+	border-top:30px solid #FFB301;
+	border-left:15px solid #FFB301;
+	border-right:15px solid #FFB301;
+}
+
+.pp3{
+	border-top:30px solid #3E9CF3;
+	border-left:15px solid #3E9CF3;
+	border-right:15px solid #3E9CF3;
+}
+.ss{
+	position:absolute;
+	top:14px;
+	left:16px;
+	
+}
+.location{
+	position: absolute;
+	text-align: center;
+	color: #dddddd;
+	padding-top: 20px;
+	bottom:40px;
+	left:8px;
+	margin-bottom:0;
+	width:267px;
+	height:30%;
+	background:rgba(0,0,0,.5);
+	opacity: 0;
+}
+.show:hover .location{
+	transition:all .5s linear;
+	opacity: 1;
+}
+.txt:hover{
+	color: #0099FF;
+	cursor: pointer;
+}
+.container #row1 a .display{
+	text-align: center;
+	position: absolute;
+	bottom:0;
+	left: 0;
+	width:100%;
+	height:100%;
+	line-height:252px;
+	margin-bottom:0;
+	background:rgba(255,255,255,.5)
+}
+.container #row2 a .display{
+	text-align: center;
+	position: absolute;
+	bottom:0;
+	left: 0;
+	width:100%;
+	height:100%;
+	line-height:375px;
+	margin-bottom:0;
+	background:rgba(255,255,255,.5)
+}
+.container #row3 a .display{
+	text-align: center;
+	position: absolute;
+	bottom:0;
+	left: 0;
+	width:100%;
+	height:100%;
+	line-height:178px;
+	margin-bottom:0;
+	background:rgba(255,255,255,.5)
+}
+.h_text{
+	color:#F457A2;
+}
+.a_text{
+	display:inline-block;
+	width:140px;
+	height:35px;
+	line-height:35px;
+	color:#7744CC;
+	text-align: center;
+	font-size:20px;
+	border:1px solid #7744CC;
+	border-radius:20px;
+}
+.a_text:hover{
+	text-decoration: none;
+	color:#F457A2;
+}
+.div_text{
+	background-color:#eee;
+}
+.ticket{
+	position: absolute;
+	right:5px;
+	bottom:85px;
+	color:#fff;
+	font-size: 18px;
+}
+.a{
+	display:block;
+	overflow: hidden;
+}
+.a:hover>img{
+	transform: scale(1.1);
+	transition:all .4s linear; 
+}
+
+
+
+
+
