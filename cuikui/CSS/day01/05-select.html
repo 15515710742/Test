@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+   
+    /*1.通用选择器*/
+    /*
+    *{
+      color:red;
+      font-size:32px;
+    }*/
+    /*元素选择器*/
+    /*
+    body{
+      color:red;
+      font-size:32px;
+    }
+    div{
+      background:yellow;
+    }*/
+    /*类选择器*/
+    /*
+    .my-fontsize{
+      font-size:50px;
+    }
+    /*用类选择器设置span字体的颜色为蓝色*/
+    /*
+    .myColor{
+      color:blue;
+    }*/
+    /*分类选择器*/
+    /*
+    div.my-fontsize{
+      background:gray; 
+    }*/
+    /*群组选择器*/
+    /*后代选择器*/
+    /*
+    ul.main li a{
+      color:blue;
+      font-size:20px;
+      text-decoration:none;}/*去掉a的下划线*/
+    
+    /*
+    div span{
+      color:red;
+    }
+    div>span{
+      color:blue;
+    }*/
+    #a2:link{
+      color:black;
+      text-decoration:none;
+    }
+    #a2:hover{
+      color:red;
+    }
+    #a2:active{
+      color:green;
+    }
+    #a2:visited{
+      color:orange;
+    }
+    
+     
+    input:active{
+      font-style:normal; 
+    }
+    input:focus{
+      color:red;
+    }
+    input{
+      color:gray;
+      font-style:italic;
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <div class="my-fontsize myColor">锄禾日当午</div>
+  <p class="my-fontsize">汗滴禾下土</p>
+  <span class="myColor">谁知盘中餐</span>
+  <div class="myColor">粒粒皆辛苦</div>
+  <ul class="main" type="none">
+    <li>
+      <a href="#">戴尔电脑一体机</a>
+    </li>
+    <li>
+      <a href="#">鸿星尔克 童鞋</a>
+    </li>
+    <li>
+      <a href="#">迪斯美国 足疗</a>
+    </li>
+  </ul>
+  <div>
+    <p>1111
+      <span>333333</span>
+    </p>
+    <span>222222</span>
+  </div>
+  <a href="http://" id="a1">新浪</a>
+  <a id="a2" href="http://www.baidu.com">百度</a>
+  <input type="text" value="崔奎">
+</body>
+</html>
+
+
+
+

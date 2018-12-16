@@ -1,0 +1,74 @@
+/*头部二维码的显示与隐藏*/
+#d-img1,
+#d-img2,
+#d-img3{   
+    width:100px;
+    height:100px;
+    z-index:9999;
+}
+#d-img1{
+    background-image: url(../img/header/weibo.png);
+    top:28px;   
+    right:50px;
+ }
+ 
+#d-img2{
+    background-image: url(../img/header/weixin.png);
+    top:28px;
+    right:10px;
+}
+
+#d-img3{
+    background-image: url(../img/header/AppClientQrCode.png);
+    top:28px;
+    left:265px;
+}
+
+/*�Զ���ı�����ɫ*/
+.fixed{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    margin: 0 auto;
+    z-index: 10000;
+}
+
+#top>.container>div>div>a:hover{
+    text-decoration: none;
+}
+
+ul.nav li a:hover{
+    background:limegreen;
+    border-radius:5px;
+}
+ul.dropdown-menu li a:hover{
+    background:limegreen;
+}
+
+#top{
+    background:#0099FF;
+}
+
+.my_input{
+    border-radius:1.5rem 0 0 1.5rem;
+    height:2rem;
+    color:#424242;
+}
+
+.button{
+	height:32px;
+	border-radius:0;
+    color:#000;
+    cursor: pointer;
+}
+
+.button:hover{
+    background:limegreen;
+    color:#fff;
+}
+
+
+
+
+

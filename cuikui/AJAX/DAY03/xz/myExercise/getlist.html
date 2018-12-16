@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <p>
+    <input type="submit" value="异步请求后端所有数据" onclick="getList()">
+  </p>
+  <script src="common.js"></script>
+  <script>
+    function getList(){
+      var xhr=createXhr();
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var result=xhr.responseText; 
+          console.log(result);
+        }           
+      }
+      xhr.open("get","/demo/userlist",true);
+      xhr.send(null);   
+    }
+  </script>
+</body>
+</html>

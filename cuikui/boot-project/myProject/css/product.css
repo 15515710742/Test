@@ -1,0 +1,16 @@
+/*设置渐变得灰色*/
+.my_gray{
+    background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+}
+.my_btn_gray{
+    width:1.5rem;
+    background: linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+}
+/*设置input输入框*/
+.my_input_w{
+    width:2rem;
+}
+/*分页:添加边框的设置*/
+.page-item .page-link{
+    border-color:#bbb;
+}

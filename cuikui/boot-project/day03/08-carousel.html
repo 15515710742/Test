@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<body>
+  <div class="container">
+      <h1>轮播</h1>
+      <div id="demo" class="carousel" data-ride="carousel">
+          <!-- 导航指示器-->
+          <ul class="carousel-indicators">
+              <li class="active" data-target="#demo" data-slide-to="0"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+          </ul>
+          <!--轮播图片-->
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="img/banner1.png"/>
+                  <div class="carousel-caption">
+                      <h3>第一张图片的标题</h3>
+                      <p>这是描述内容</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="img/banner2.png"/>
+                  <div class="carousel-caption">
+                      <h3>第二张图片的标题</h3>
+                      <p>这是描述内容</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="img/banner3.png"/>
+                  <div class="carousel-caption">
+                      <h3>第三张图片的标题</h3>
+                      <p>这是描述内容</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="img/banner4.png"/>
+                  <div class="carousel-caption">
+                      <h3>第四张图片的标题</h3>
+                      <p>这是描述内容</p>
+                  </div>
+              </div>
+          </div>
+          <!--左右箭头-->
+          <a href="#demo" class="carousel-control-prev" data-slide="prev">
+              <span class="carousel-control-prev-icon bg-success"></span>
+          </a>
+          <a href="#demo" class="carousel-control-next" data-slide="next">
+              <span class="carousel-control-next-icon bg-success"></span>
+          </a>
+      </div>
+  </div>
+</body>
+</html>

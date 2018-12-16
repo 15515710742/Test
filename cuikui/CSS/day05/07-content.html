@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #d1:before{
+      content:"汤姆:";
+    }
+    #d2:before{
+      content:"韩梅梅:";
+    }
+    #d2:after{
+      display:block;
+      content:"--《摘自中学英文课本》"
+    }
+    p:before{
+      content:"子曰:";
+      color:red;
+    }
+    p:after{
+      content:"---《摘自论语》";
+      color:green;
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div id="d1">how are you?</div>
+  <div id="d2">fine,thank you,and you?</div>
+  <p id="p1">学而时习之,不亦说乎</p>
+  <p id="p2">有朋自远方来,不亦乐乎</p>
+</body>
+</html>

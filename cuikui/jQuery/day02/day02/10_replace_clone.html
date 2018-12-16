@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>替换节点</h1>
+
+<div id="chosen">
+  <img src="img/1.jpg">
+</div>
+<hr/>
+<div id="list">
+  <img src="img/2.jpg">
+  <img src="img/3.jpg">
+  <img src="img/4.jpg">
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $("#list>img").dblclick(function(){
+      if($(this).parent().is("#list"))
+        $(this).clone(true).replaceAll("#chosen>img")
+      else
+        $(this).attr("src","img/1.jpg")
+    })
+</script>
+</body>
+</html>

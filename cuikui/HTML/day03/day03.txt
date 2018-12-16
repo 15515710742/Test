@@ -1,0 +1,218 @@
+﻿一.结构标记
+  1.结构标记的作用
+    用于描述整个网页的结构取代div做布局
+    提升标记的语义性
+  2.常用的结构标记
+    1.<header></header>
+      作用:定义网页或某区域的头部内容
+    2.<nav></nav>
+      作用:定义网页的导航链接部分
+    3.<section></section>
+      作用:定义网页的主体内容
+    4.<aside></aside>
+      作用:定义网页侧边栏信息
+    5.<footer></footer>
+      作用:定义页面中偏低部内容,比如:版权,解释说明,备案号等.
+    6.<article></article>
+      作用:用来定义与文字相关的内容,比如:论坛帖子,微博条目,用户评论等等
+二.表单(重难点)
+  1.表单的作用
+    1.提供可视化的输入控件
+    2.收集用户信息并提交给服务器
+  2.表单的组成部分
+    1.前段部分
+      提供控件,与用户交互的可视化控件
+    2.后端部分
+      对提交的数据进行处理
+  3.表单
+    标记:<form></form>
+    属性:
+      1.action 作用:定义表单被提交时发送的动作,通常定义的是服务器处理程序地址URL,默认提交给本页
+      2.method 作用:指定表单数据的提交方式
+        取值: 
+	1.get 默认值
+	  1.提交数据有大小限制,限制为2kb
+	  2.明文提交,待提交的内容会显示在浏览器地址栏
+	  3.向服务器要数据是使用
+	2.post
+	  1.提交数据无大小限制
+          2.隐士提交.提交的数据不会显示在地址栏中
+          3.要传递数据给服务器时,使用post提交
+	3.delete
+	4.put
+      3.enctype
+        作用:指定表单数据的编码方式,允许将什么样的数据提交给服务器
+	1.application/x-www-from-urlencoded
+	  默认值,允许将任意字符提交给服务器(文件除外)
+	2.multipart/form-data
+	  允许将文件提交给服务器
+	3.text/plain 只能将普通字符串提交给服务器
+  4.表单控件
+    能够与用户进行交互的可视化元素
+    1.分类
+      1.input 元素
+      2.textarea 多行文本域
+      3.select和option 多选框元素
+      4.其他元素
+    2.input元素
+      1.作用:
+        在页面中提供各种各样的输入控件.如:文本框,密码框,单选按钮,复选框等
+      2.语法
+        标记<input>或<input/>
+	属性:
+	  1.text  指定创建输入框的类型
+	    ex:type="text"
+	    type="password"
+	    type="radio"
+	    type="checkbox"
+	  2.name  为控件定义名称,提供给服务器端使用(必须值)
+	  3.value 控件的值,提交给服务器使用.
+	  4.disable 禁用控件,不能操作并且不能提交,该属性无值
+      3.input讲解
+        1.文本框与密码框
+	  文本框:type="text"
+	  密码框:type="password"
+	  属性:
+	  1.maxlength 指定限制输入的最大字符串
+	  1.readonly 只读,只能看不能写,但允许被提交
+	    该属性无值.
+	  3.placeholder 占位符,即默认显示在控件上的文本
+	2.按钮
+	  1.提交按钮
+	    type="submit"
+	    功能:将表单中的数据,提交给服务器
+	  2.重置按钮
+	    type="reset"
+	    功能:将表单中的内容恢复到初始化的状态
+	  3.普通按钮
+	    type="button"
+	    功能:没有功能
+	    属性:
+	      value:定义按钮上的文字
+	3.单选按钮和复选按钮
+	  1.单选按钮
+	    type="radio"
+	  2.复选框
+	    type="checkbox"
+	  属性
+	    name:除了定义控件名称外,还能起到分组的作用
+	    checked:设置默认被选中,无属性值
+        4.隐藏域 和 文件选择框
+	  1.隐藏域
+	    type="hidden"
+	    想提交给服务器,但不想展示给用户看的数据可以放在隐藏域中.
+	  2.文件选择框
+	    type="file"
+	    注意:
+	    1.method  属性值必须为post
+	    2.enctype 属性值必须是multipart/form-data
+    3.textarea
+      1.作用
+        允许录入多行数据的文本框
+      2.语法
+        标记:<textarea></textarea>
+	属性:
+	  1.name  定义控件名称,提供给该服务器使用
+	  2.readonly 只读
+	  3.cols 指定文本域的列数,级一行能显示多少个英文字符(中文减半)
+	  4.rows 值文本域的行数,即默认显示多少行.超出rows出现滚动行
+    4.select和option
+      1.标记
+        <select> 表示一个选项框
+	  <option></option> 表示选项框中的选项
+	</select>
+      2.属性
+        1.select属性
+	  1.name 定义选项框的名称
+	  2.size 定义显示选项的数量,默认值为1,如果取值大于1的数字,元素则表现为滚动列表,否则为下拉列表
+	  3.multiple 设置多选,无属性
+	    只有滚动列表支持多选
+        2.option属性
+	  1.value 定义选项的值
+	  2.selected 设置默认选中,无值属性
+    5.其他元素
+      1.label元素
+        作用:关联文本与表单控件
+	语法:<label></label>
+	属性:  for 用于绑定要与label元素关联的表单控件的id值.
+      2.为控件分组
+        <fieldset></fieldset>为控件分组
+	<legend></legend> 为分组指定标题
+      3.浮动框架
+        1.作用
+	  允许在一个网页中,再引入另外一个网页进来.
+	2.语法:
+	标记<iframe></iframe>
+	属性:
+	  1.src 要引入的网页的路径
+	  2.width:宽度
+	  3.height: 高度
+	  4.frameborder 浮动框架的边框
+  5.新表单元素
+    1.什么是新表单元素
+      爱HTML5中新提出来的表单控件
+    2.详解
+      1.电子邮件
+        作用:表单提交时,会验证数据是否符合email规范(@)
+        <input type="email">
+      2.搜索类型
+        作用: 提供了快速清除内容
+	<input type="search">
+      3.URL类型
+        作用:提交时,验证数据是否符合URL规范(绝对路径)
+	<input type="数字的url">
+      4.电话号码类型
+        作用:在移动设备中,显示拨号键盘的效果
+	<input type="tel"> 
+      5.数字类型
+        作用:只能接受数字,并且可以灵活调整数字
+	<input type="number">
+	属性:
+	  value 控制的值
+	  min:能接受的最小值
+	  max能接受的最大值
+	  step:每次调整数字时,数字的变化范围
+      6.范围类型
+        作用:提供一个滑块组件,允许用户指定选取范围的值
+	<input type="range"> 
+	属性:
+	  min:最小值
+	  max:最大值
+	  value:初始值
+	  step:步长
+      7.颜色类型
+        作用:提供一个颜色拾取器
+	<input type="color">
+      8.日期类型
+        作用:提供一个日期控件
+	<input type="date">
+      9.月份类型
+        <input type="month">
+      10.周类型
+        <input type="week">
+三.http协议
+  1.URL
+    结构:协议+主机名称+文件的目录结构+文件名称
+         http://www.jd.com/index/logo.png
+    完整构成:
+    <schema>://<user>:<pwd>@<host>:<port>/<path>;<params>?<query>#<frag>
+    <schema>:方案,协议,以哪种方式获取服务器资源,不区分大小写,常见的协议: http/https/ftp
+    user:用户名
+    pwd:密码
+    host:主机名称或localhost(127.0.0.1)
+    post:端口号
+    path:路径,资源在服务器上具体存放的位置
+    params:参数,服务端使用
+    query:查询字符串
+    frag:锚点 http://127.0.0.1/index/a.html#no1
+  2.http协议
+    1.什么是http
+      HTTP:Hyper Text Transfer Protocol 超文本传输协议,规范了数据是如何打包以及传递的
+    2.http历史
+      正在使用的版本http/1.1
+    3.详解
+      1.请求消息(请求的起始行,请求头,请求主体)
+        
+      2.响应消息(响应的起始行,响应头,响应主体)
+
+

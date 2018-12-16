@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仪表盘</title>  
+    <style>
+        #main{
+            margin: 0 auto;
+        }
+    </style>
+     <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        var main = document.getElementById('main');
+        var myChart = echarts.init(main);
+        $.ajax({
+            url:"http://127.0.0.1:3000/sales1",
+            type:"get",
+            data:"json",
+            success:function(data){
+                var labels = [];
+                var values = [];
+                for(var key in data){
+                    labels.push(key);
+                    var v = data[key];
+                    values.push(v);
+                }
+                var option = {
+                    title:{
+                        text:"商品销售量",                      
+                    },
+                    tooltip:{
+                        show:true,
+                        feature:{
+                            saveAsImage:{//保存图片
+                                show:true
+                            }
+                        }
+                    },
+                    legend:{data:"销售"},
+                    xAxis:{data:labels},
+                    yAxis:{},
+                    series:[{
+                        name:"销量",
+                        type:"bar",  //图像类型
+                        data:values
+                    }]                         
+                }
+                myChart.setOption(option);
+            }
+        })
+    </script>
+</body>
+</html>

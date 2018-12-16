@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+     /*按值传递*/
+     //两个变量赋值时,总是将原来的变量中的值复制一个副本给对方
+    var a=5;//原始类型
+    var b=a;//复制a中的值给b
+    //  5 5
+    a--;
+    console.log(b);//5
+    
+    var arr=[1,2,3,4,5];//引用类型
+    var brr=arr;//复制a中的地址给b
+    //ox12345   ox12345
+    arr.length--;
+    console.log(brr.length);//4
+</script>   
+</body>
+</html>

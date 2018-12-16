@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    function calc(base,bonus1,bonus2){
+        console.log(`${this.ename}的总工资:${base+bonus1+bonus2}`);
+    }
+    var lilei={ename:"lilei"}
+    var hmm={ename:"Han Meimei"}
+    calc.call(lilei,1000,2000,5000);//临时绑定
+    calc.call(hmm,1000,2000,2000);//临时绑定
+    
+    var lcalc=calc.bind(lilei,10000);//永久绑定this为指定的对象无法改变
+   // console.log(lcalc);
+    lcalc(2000,5000);
+    lcalc.call(hmm,3000,5000,3000);
+
+
+
+</script>               
+</body>
+</html>

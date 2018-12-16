@@ -1,0 +1,47 @@
+今天的学习内容
+
+3.2:html5新特性--canvas绘图--矩形
+  --矩形的定位点在自己的左上角
+  --方法和属性严格区分大小写
+  ctx.lineWidth = 1       描边的宽度
+  ctx.fillStyle = "#000"  填充样式或颜色
+  ctx.strokeStyle = "#000"描边样式或颜色
+  ctx.fillRect(x,y,w,h)   填充矩形
+
+3.2:html5新特性--canvas--文本
+  ctx.textBaseline="top"      //文本基线
+  ctx.font="18px sans-serif"  //文本大小和字体
+  ctx.fillText("abc123",x,y); //填充一段文字
+  ctx.strokeText(str,x,y);    //描边一段文本
+3.3html5新特性--渐变对象
+
+线性渐变:linearGradient
+径向渐变:radialGradient
+--创建渐变对象 var g = ctx.createLinearGradient(x1,y1,x2,y2);
+--添加颜色点       g.addColorStop(0,"red");
+--赋值填充或者描边样式  ctx.fillStyle=g;
+--依据样式绘制矩形      ctx.fillRect(x,y,w,h)
+
+3.4:html5新特性--canvas--路径(复杂图)
+
+  path:有多个坐标组成任意形状,路不可见,可用"描边"或者"填充"
+  ctx.beginPath();开一条新路径
+  ctx.moveTo(x,y);移动到指定点
+  ctx.lineTo(x,y);从当前点到指定点画直线
+  ctx.closePath(x,y);闭合当前路径
+
+  ctx.stroke();  描边
+  ctx.arc(cx,cy,r,start,end) 绘制圆拱形
+  cx,cy 圆点  r 半径  start 开始  end 结束
+
+作业:
+六味地黄丸 五味地黄丸 999感冒灵  阿莫西林
+3.15          4.15     5.5          6.3
+3.25          4.35     5.15         6.15
+3000          2000     2000         1002
+依据数据创建表
+依据数据创建销售统计图;库存量图
+
+
+
+

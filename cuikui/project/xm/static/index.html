@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/glyphicon.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>爱驴友</title>
+</head>
+<body>
+<!-- 头部导航栏动态添加 -->
+<nav id="head"></nav>                          
+  <div class="container">
+      <!--主体-->
+      <!--轮播广告图-->
+      <div id="parent" class="carousel slide" data-ride="carousel">
+        <!--四个指示器-->
+        <ul class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#parent"></li>
+            <li data-slide-to="1" data-target="#parent"></li>
+            <li data-slide-to="2" data-target="#parent"></li>
+            <li data-slide-to="3" data-target="#parent"></li>
+        </ul>
+        <!--四张轮播的大广告图-->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#">
+                    <img src="img/index/slider-1.png" class="w-100"/>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img src="img/index/slider-2.jpg" class="w-100"/>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img src="img/index/slider-3.png" class="w-100"/>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img src="img/index/slider-4.jpg" class="w-100"/>
+                </a>
+            </div>
+        </div>
+        <!--左右箭头-->
+        <a href="#parent" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon d-inline-block"></span>
+        </a>
+        <a href="#parent" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon d-inline-block"></span>
+        </a>
+      </div>
+      <!--楼层布局-->
+      <!--第一层标题-->
+      <div class="mt-1">
+          <a href="#"><img src="img/index/f2018.jpg" class="w-100"/></a>
+      </div>
+      <div id="demo1" class="mt-1">
+          <div class="d-flex justify-content-between">
+              <h5 class="h5 pt-2 pb-2 text-center my_bg1"><a href="#demo1">特惠境外游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo2" class="text-white">周边游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo3" class="text-white">特色美食</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo4" class="text-white">主题酒店</a></h5>
+          </div>
+          <!--内容区域-->
+          <!--一层-->
+          <div class="row mt-1">
+              <!-- <div class="col-3 border border-right-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f200.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[马尔代夫希尔顿依露岛7日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥14600.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div> -->
+              <!-- <div class="col-3 border border-right-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f201.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[文莱-沙巴5日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥12500.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div> -->
+              <!-- <div class="col-3 border border-right-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f202.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[毛里求斯7日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥12500.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div> -->
+              <!-- <div class="col-3 border pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f203.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[普吉岛5日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥11000.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div> -->
+              <!--二层-->
+              <!-- <div class="col-3 border border-top-0 border-right-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f204.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[美国东海岸夏威夷14日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥21000.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div>
+              <div class="col-3 border border-top-0 border-right-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f205.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[济州岛5日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥10000.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div>
+              <div class="col-3 border border-top-0 border-right-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f206.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[澳大利亚-凯恩斯7日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥15000.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div>
+              <div class="col-3 border border-top-0 pt-3 pb-3">
+                  <a href="#">
+                      <img src="img/index/f207.jpg" class="my_img img-shadow"/>
+                  </a>
+                  <p class="mb-2 mt-2"><a href="#" class="text-dark">[法瑞意11日游]</a></p>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                          <span class="font-weight-bold my_color">￥15000.00</span><span>起</span>
+                      </div>
+                      <a href="#" class="d-inline-block text-white my_color my_size pl-1">立即预定</a>
+                  </div>
+              </div>-->
+          </div>
+      </div> 
+      <!--第二层标题-->
+      <div class="mt-1">
+          <a href="#"><img src="img/index/f2010.jpg" class="w-100"/></a>
+      </div>
+	  <!--二层内容-->
+      <div id="demo2" class="mt-1">
+          <div class="d-flex justify-content-between">
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo1" class="text-white">特惠境外游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center my_bg1"><a href="#demo2">周边游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo3" class="text-white">特色美食</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo4" class="text-white">主题酒店</a></h5>
+          </div>      
+          <div class="row ml-0 position-relative">
+              <div class="col-1 text-cnenter pl-0 pr-0">                  
+                  <h4 class="text-center text mb-0 pt-3 my_bg">目<br>的<br>地</h4>
+                  <h4 class="text-center text mb-0  my_bg my_bg1">品<br>牌<br>推<br>荐</h4>
+                  <h4 class="text-center text mb-0  my_bg">热<br>门<br>景<br>区</h4>
+              </div>
+              <div class=son>
+                <!--目的地-->
+                <div class="col-11 d-flex flex-wrap justify-content-between pl-1 active1 none">
+                    <!-- <div class="second">
+                        <a href="#" title="丽水"><img src="img/index/1.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>丽水</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="婺源"><img src="img/index/2.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>婺源</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="北京"><img src="img/index/3.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>北京</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="商丘"><img src="img/index/4.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>商丘</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="大理"><img src="img/index/5.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>大理</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="拉萨"><img src="img/index/6.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>拉萨</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="呼尔浩特"><img src="img/index/7.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>呼和浩特</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="成都"><img src="img/index/8.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>成都</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="丽江"><img src="img/index/9.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>丽江</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="三亚"><img src="img/index/10.jpg" class="my_img2 img4"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>三亚</a>
+                        </p>
+                    </div> -->
+                </div>
+                <!--品牌推荐-->
+                <div class="col-11 d-flex flex-wrap justify-content-between pl-1 active1">
+                    <!-- <div class="second">
+                        <a href="#" title="活力广东"><img src="img/index/gn01.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>活力广东</a>
+                        </p>
+                    </div>
+                    <div class="second"> 
+                        <a href="#" title="阳光海南"><img src="img/index/gn02.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>阳光海南</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="乐享河北"><img src="img/index/gn03.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>乐享河北</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="清新福建"><img src="img/index/gn04.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>清新福建</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="江西风景独好"><img src="img/index/gn05.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>江西风景独好</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="天府四川"><img src="img/index/gn06.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>天府四川</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="晋善晋美"><img src="img/index/gn07.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>晋善晋美</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="七彩云南"><img src="img/index/gn08.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>七彩云南</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="好客山东"><img src="img/index/gn09.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>好客山东</a>
+                        </p>
+                    </div>
+                    <div class="second">
+                        <a href="#" title="灵秀湖北"><img src="img/index/gn10.jpg" class="my_img1 img-shadow1"/></a>
+                        <p class="pl-3 mb-2 mt-2">
+                            <a href="#" class="text-dark"><i class="glyphicon glyphicon-map-marker"></i>灵秀湖北</a>
+                        </p>
+                    </div> -->
+                </div>                
+                <!--热门景区-->
+                <div class="col-11 d-flex justify-content-between pl-1 active1 none">
+                    <!-- <div class="second move">
+                        <a href="#" title="森林公馆"><img src="img/index/a.jpg" class="my_img3"/></a>
+                        <p class="pl-3 mb-0 mt-0">
+                            <a href="#" class="text-white">北京森林公馆</a>
+                        </p>
+                    </div>
+                    <div class="second move">
+                        <a href="#" title="庐山老景,天沐温泉"><img src="img/index/b.jpg" class="my_img3"/></a>
+                        <p class="pl-3 mb-0 mt-0">
+                            <a href="#" class="text-white">庐山老景+天沐温泉</a>
+                        </p>
+                    </div>
+                    <div class="second move">
+                        <a href="#" title="厦门"><img src="img/index/c.jpg" class="my_img3"/></a>
+                        <p class="pl-3 mb-0 mt-0">
+                            <a href="#" class="text-white">厦门市</a>
+                        </p>
+                    </div>
+                    <div class="second move">
+                        <a href="#" title="婺源-江岭-瑶里-景德镇"><img src="img/index/d.jpg" class="my_img3"/></a>
+                        <p class="pl-3 mb-0 mt-0">
+                            <a href="#" class="text-white">婺源-江岭-瑶里-景德镇</a>
+                        </p>
+                    </div>
+                    <div class="second move">
+                        <a href="#" title="雪山"><img src="img/index/e.jpg" class="my_img3"/></a>
+                        <p class="pl-3 mb-0 mt-0">
+                            <a href="#" class="text-white">西北雪山景色</a>
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+          </div>
+      </div>
+	  <!--轮播图-->
+      <div class="mt-1 dd">          
+          <ul class="slider list-unstyled mb-0">
+              <li><a href="#"><img src="img/index/f2011.jpg" class="w-100"></a></li>
+              <li><a href="#"><img src="img/index/f2013.jpg" class="w-100"></a></li>
+              <li><a href="#"><img src="img/index/f2014.jpg" class="w-100"></a></li>
+              <li><a href="#"><img src="img/index/f2015.jpg" class="w-100"></a></li>
+              <li><a href="#"><img src="img/index/f2017.jpg" class="w-100"></a></li>
+              <li><a href="#"><img src="img/index/f2019.jpg" class="w-100"></a></li>
+          </ul>
+          <ul class="num list-unstyled mb-0">
+              <li class="on"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+      </div>
+      <!--三层内容-->
+      <div id="demo3" class="mt-1">
+          <div class="d-flex justify-content-between">
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo1" class="text-white">特惠境外游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo2" class="text-white">周边游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center my_bg1"><a href="#demo3">特色美食</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center"><a href="#demo4" class="text-white">主题酒店</a></h5>
+          </div>     
+          <div class="row p-3 border-color">
+              <div class="col-6 d-flex pl-0">
+                  <a href="#" class="hover_border" title="烤全鱼"><img src="img/index/food-1.jpg"/></a>
+                  <div class="ml-3">
+                      <a href="#" class="my_a">巫山烤全鱼</a>
+                      <p>产品类别：烧烤 火锅</p>
+                  </div>
+              </div>
+              <div class="col-6 text-right pr-0">
+                      <h3 class="d-inline-block"><i>￥59</i></h3>
+                      <span>起</span>
+                  <p><i>100%</i>满意度</p>
+                  <p><i>120</i>条游客点评</p>
+              </div>
+          </div>
+          <div class="row p-3 border-color border-top-0">
+              <div class="col-6 d-flex pl-0">
+                  <a href="#" class="hover_border" title="焖锅"><img src="img/index/food-2.jpg"/></a>
+                  <div class="ml-3">
+                      <a href="#" class="my_a">皇记煌三汁焖锅</a>
+                      <p>产品类别：养生美食</p>
+                  </div>
+              </div>
+              <div class="col-6 text-right pr-0">
+                  <h3 class="d-inline-block"><i>￥198</i></h3>
+                  <span>起</span>
+                  <p><i>100%</i>满意度</p>
+                  <p><i>78</i>条游客点评</p>
+              </div>
+          </div>
+          <div class="row p-3 border-color border-top-0">
+              <div class="col-6 d-flex pl-0">
+                  <a href="#" class="hover_border" title="烧烤"><img src="img/index/food-3.jpg"/></a>
+                  <div class="ml-3">
+                      <a href="#" class="my_a">原野人家特色餐馆</a>
+                      <p>产品类别：烧烤 火锅</p>
+                  </div>
+              </div>
+              <div class="col-6 text-right pr-0">
+                  <h3 class="d-inline-block"><i>￥79</i></h3>
+                  <span>起</span>
+                  <p><i>100%</i>满意度</p>
+                  <p><i>50</i>条游客点评</p>
+              </div>
+          </div>
+          <div class="row p-3 border-color border-top-0">
+              <div class="col-6 d-flex pl-0">
+                  <a href="#" class="hover_border" title="烤肉"><img src="img/index/food-4.jpg"/></a>
+                  <div class="ml-3">
+                      <a href="#" class="my_a">金釜山烤肉</a>
+                      <p>产品类别：自助餐</p>
+                  </div>
+              </div>
+              <div class="col-6 text-right pr-0">
+                  <h3 class="d-inline-block"><i>￥50</i></h3>
+                  <span>起</span>
+                  <p><i>100%</i>满意度</p>
+                  <p><i>120</i>条游客点评</p>
+              </div>
+          </div>
+      </div>
+	  <!--四层标题-->
+      <div class="mt-1">
+          <a href="#"><img src="img/index/f2012.jpg" class="w-100"/></a>
+      </div>
+      <!-- 四层内容 -->
+      <div id="demo4" class="mt-1">
+          <div class="d-flex justify-content-between">
+              <h5 class="h5 pt-2 pb-2 text-center mb-1"><a href="#demo1" class="text-white">特惠境外游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center mb-1"><a href="#demo2" class="text-white">周边游</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center mb-1"><a href="#demo3" class="text-white">特色美食</a></h5>
+              <h5 class="h5 pt-2 pb-2 text-center mb-1 my_bg1"><a href="#demo4">主题酒店</a></h5>
+          </div>
+          <div class="pb-3 pt-3">
+              <span class="d-inline-block border-bottom my_width"></span>
+              <span class="line_size text-primary ml-1 mr-1">特价酒店 Hotel special</span>
+              <span class="d-inline-block border-bottom my_width"></span>
+          </div>
+          <div class="d-flex justify-content-between mt-1">
+              <div class="position-relative hotel">
+                  <a href="#">
+                      <img src="img/index/room1.jpg" class="room"/>
+                  </a>
+                  <span class="position-absolute my_po text-white">特价</span>
+                  <div class="position-absolute w-100 my_pos1 text-center pt-4">
+                        <a href="#" class="text-white"><h4>立即预定</h4></a>
+                  </div>
+                  <div class="position-absolute ml-0 my_pos w-100 pb-3 pt-3 pl-5">
+                      <p class="mb-0"><a href="#" class="text-white">北京森林公馆概念酒店</a></p>
+                      <span class="text-white">预订价:</span>
+                      <h3 class="d-inline-block"><i>￥188</i></h3><span class="text-white">起</span>
+                  </div>
+              </div>
+              <div class="position-relative hotel">
+                  <a href="#">
+                      <img src="img/index/room2.jpg" class="room"/>
+                  </a>
+                  <span class="position-absolute my_po text-white">特价</span>
+                  <div class="position-absolute w-100 my_pos1 text-center pt-4">
+                    <a href="#" class="text-white"><h4>立即预定</h4></a>
+                  </div>
+                  <div class="position-absolute ml-0 my_pos w-100 pb-3 pt-3 pl-5">
+                      <p class="mb-0"><a href="#" class="text-white">格林童话酒店</a></p>
+                      <span class="text-white">预订价:</span>
+                      <h3 class="d-inline-block"><i>￥199</i></h3><span class="text-white">起</span>
+                  </div>
+              </div>
+              <div class="position-relative hotel">
+                  <a href="#">
+                      <img src="img/index/room3.jpg" class="room"/>
+                  </a>
+                  <span class="position-absolute my_po text-white">特价</span>
+                  <div class="position-absolute w-100 my_pos1 text-center pt-4">
+                    <a href="#" class="text-white"><h4>立即预定</h4></a>
+                  </div>
+                  <div class="position-absolute ml-0 my_pos w-100 pb-3 pt-3 pl-5">
+                      <p class="mb-0"><a href="#" class="text-white">香格里拉大酒店</a></p>
+                      <span class="text-white">预订价:</span>
+                      <h3 class="d-inline-block"><i>￥298</i></h3><span class="text-white">起</span>
+                  </div>
+              </div>
+              <div class="position-relative hotel">
+                  <a href="#">
+                      <img src="img/index/room4.jpg" class="room"/>
+                  </a>
+                  <span class="position-absolute my_po text-white">特价</span>
+                  <div class="position-absolute w-100 my_pos1 text-center pt-4">
+                    <a href="#" class="text-white"><h4>立即预定</h4></a>
+                  </div>
+                  <div class="position-absolute ml-0 my_pos w-100 pb-3 pt-3 pl-5">
+                      <p class="mb-0"><a href="#" class="text-white">天伦王朝酒店</a></p>
+                      <span class="text-white">预订价:</span>
+                      <h3 class="d-inline-block"><i>￥198</i></h3><span class="text-white">起</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="d-flex justify-content-around mt-5 mb-5">
+          <div class="text-center">
+              <h5><a href="#" class="text-dark">住宿攻略</a></h5>
+              <p>区域攻略到特色主题,应有尽有</p>
+          </div>
+          <div class="text-center">
+              <h5><a href="#" class="text-dark">专享价格</a></h5>
+              <p>多平台价格对比,天天专享特惠</p>
+          </div>
+          <div class="text-center">
+              <h5><a href="#" class="text-dark">大众点评</a></h5>
+              <p>超过1000万真实用户点评和游记</p>
+          </div>
+      </div>
+      <div id="demo5" class="row mr-0 mb-2">
+          <div class="col-lg-3 col-md-3 col-sm-3 position-relative">
+              <div class="d-1">
+                  <ul class="list-unstyled mb-0">
+                      <li class="justify-content-around"><h5 class="mb-0">全部旅游产品分类</h5></li>
+                      <li>
+                          <span class="span1 s1"></span><span class="span2">国内游</span><b class="glyphicon glyphicon-play mr-2"></b>
+                          <div class="li1 pl-3">
+                              <div class="row">
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                      <div class="class">国内游</div>
+                                      <div><a href="#" class="class">海南</a><span>|</span></div>
+                                      <div><a href="#" class="class">北京</a><span>|</span>
+                                           <a href="#" class="class">北京</a>
+                                      </div>
+                                      <div>
+                                            <a href="#" class="class">广西</a><span>|</span>
+                                            <a href="#" class="class">桂林</a>
+                                            <a href="#" class="class">龙脊梯田</a>
+                                            <a href="#" class="class">北海</a>
+                                            <a href="#" class="class">南宁</a>
+                                            <a href="#" class="class">阳朔</a>
+                                      </div>
+                                      <div>
+                                          <a href="#" class="class">湖南</a><span>|</span>
+                                          <a href="#" class="class">张家界</a>
+                                          <a href="#" class="class">凤凰古城</a>
+                                          <a href="#" class="class">黄石镇</a>
+                                          <a href="#" class="class">芙蓉镇</a>
+                                          <a href="#" class="class">长沙</a>
+                                          <a href="#" class="class">天山门</a>
+                                      </div>
+                                      <div>
+                                            <a href="#" class="class">河南</a><span>|</span>
+                                            <a href="#" class="class">云台山</a>
+                                            <a href="#" class="class">龙门石窟</a>
+                                            <a href="#" class="class">开封</a>
+                                            <a href="#" class="class">登封市</a>
+                                            <a href="#" class="class">洛阳</a>
+                                      </div>
+                                      <div>
+                                            <a href="#" class="class">西藏</a><span>|</span>
+                                            <a href="#" class="class">日喀则</a>
+                                            <a href="#" class="class">布达拉宫</a>
+                                            <a href="#" class="class">羊卓雍措</a>
+                                            <a href="#" class="class">拉萨</a>
+                                      </div>
+                                      <div>
+                                          <a href="#" class="class">福建</a><span>|</span>
+                                          <a href="#" class="class">厦门</a>
+                                          <a href="#" class="class">武夷山</a>
+                                          <a href="#" class="class">永定土楼</a>
+                                          <a href="#" class="class">南靖土楼</a>
+                                      </div>
+                                      <div>
+                                          <a href="#" class="class">陕西</a><span>|</span>
+                                          <a href="#" class="class">西安</a>
+                                          <a href="#" class="class">兵马俑</a>
+                                          <a href="#" class="class">华清池</a>
+                                          <a href="#" class="class">华山</a>
+                                          <a href="#" class="class">法门寺</a>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                      <h6 class="mt-2">国内游线路推荐</h6>                                     
+                                        <img src="img/index/11.jpg" class="my_img4 mr-2 mb-1"><img src="img/index/12.jpg" class="my_img4 mb-1">                                      
+                                        <img src="img/index/13.jpg" class="my_img4 mr-2 mb-1"><img src="img/index/14.jpg" class="my_img4 mb-1">                                                                            
+                                        <img src="img/index/15.jpg" class="my_img4 mr-2 mb-1"><img src="img/index/16.jpg" class="my_img4 mb-1">                              
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                      <li>
+                          <span class="span1 s2"></span><span class="span2">出境游</span><b class="glyphicon glyphicon-play mr-2"></b>
+                          <div class="li2 pl-3">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <div class="class">出境游</div>
+                                    <div><a href="#" class="class">东南亚</a><span>|</span>
+                                         <a href="#" class="class">普吉岛</a>
+                                         <a href="#" class="class">新加坡</a>
+                                         <a href="#" class="class">泰国</a>
+                                         <a href="#" class="class">柬埔寨</a>
+                                         <a href="#" class="class">马来西亚</a>
+                                         <a href="#" class="class">菲律宾</a>
+                                    </div>
+                                    <div>
+                                          <a href="#" class="class">南亚</a><span>|</span>
+                                          <a href="#" class="class">尼泊尔</a>                               
+                                    </div>
+                                    <div>
+                                        <a href="#" class="class">日本</a><span>|</span>
+                                        <a href="#" class="class">北海道</a>
+                                        <a href="#" class="class">东京</a>
+                                        <a href="#" class="class">大阪</a>
+                                    </div>
+                                    <div>
+                                          <a href="#" class="class">韩国</a><span>|</span>
+                                          <a href="#" class="class">济州岛</a>
+                                          <a href="#" class="class">首尔</a>                                    
+                                    </div>
+                                    <div>
+                                          <a href="#" class="class">港澳台</a><span>|</span>
+                                          <a href="#" class="class">香港</a>
+                                          <a href="#" class="class">台湾</a>
+                                          <a href="#" class="class">澳门</a>                                   
+                                    </div>
+                                    <div>
+                                        <a href="#" class="class">澳洲</a><span>|</span>
+                                        <a href="#" class="class">澳大利亚</a>
+                                        <a href="#" class="class">新西兰</a>
+                                        <a href="#" class="class">斐济</a>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="class">欧洲</a><span>|</span>
+                                        <a href="#" class="class">法国</a>
+                                        <a href="#" class="class">意大利</a>
+                                        <a href="#" class="class">英国</a>
+                                        <a href="#" class="class">德国</a>
+                                        <a href="#" class="class">瑞士</a>
+                                        <a href="#" class="class">奥地利</a>
+                                        <a href="#" class="class">西班牙</a>
+                                        <a href="#" class="class">俄罗斯</a>
+
+                                    </div>
+                                </div>                          
+                                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                    <h6 class="mt-2">出境线路推荐</h6>                                     
+                                        <img src="img/index/17.jpg" class="my_img4 mr-2 mb-1"><img src="img/index/18.jpg" class="my_img4 mb-1">                                      
+                                        <img src="img/index/19.jpg" class="my_img4 mr-2 mb-1"><img src="img/index/20.jpg" class="my_img4 mb-1">                                                                            
+                                        <img src="img/index/21.jpg" class="my_img4 mr-2 mb-1"><img src="img/index/22.jpg" class="my_img4 mb-1">                              
+                                </div>                    
+                            </div>
+                          </div>
+                      </li>
+                      <li><span class="span1 s3"></span><span class="span2">周边游</span><b class="glyphicon glyphicon-play mr-2"></b></li>
+                      <li><span class="span1 s4"></span><span class="span2">团队游</span><b class="glyphicon glyphicon-play mr-2"></b></li>
+                      <li><span class="span1 s5"></span><span class="span2">主题游</span><b class="glyphicon glyphicon-play mr-2"></b></li>
+                      <li><span class="span1 s6"></span><span class="span2">自由行</span><b class="glyphicon glyphicon-play mr-2"></b></li>
+                      <li><span class="span1 s7"></span><span class="span2">旅游主题</span><b class="glyphicon glyphicon-play mr-2"></b></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-9 pl-0">
+                <div class="row div1 ml-0">
+                    <div class="col-3 pr-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><b class="glyphicon glyphicon-play mt-2"></b>新手上路</li>
+                            <li><a href="#" class="text-dark mysmall">新手上路测试</a></li>
+                            <li><a href="#" class="text-dark mysmall">奖金返现相关问题</a></li>
+                            <li><a href="#" class="text-dark mysmall">奖金体现流程</a></li>
+                            <li><a href="#" class="text-dark mysmall">什么是点评奖金</a></li>
+                            <li><b class="glyphicon glyphicon-play mt-2"></b>付款和发票</li>
+                            <li><a href="#" class="text-dark mysmall">门店支付或银行汇款</a></li>
+                            <li><a href="#" class="text-dark mysmall">付款方式有哪些?</a></li>
+                            <li><a href="#" class="text-dark mysmall">怎么网上支付?</a></li>
+                            <li><a href="#" class="text-dark mysmall">如何获取发票</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 pr-0 pl-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><b class="glyphicon glyphicon-play mt-2"></b>订购流程说明</li>
+                            <li><a href="#" class="text-dark mysmall">旅游产品名词解释</a></li>
+                            <li><a href="#" class="text-dark mysmall">查询</a></li>
+                            <li><a href="#" class="text-dark mysmall">提交订单</a></li>
+                            <li><a href="#" class="text-dark mysmall">签署旅游合同</a></li>
+                            <li><b class="glyphicon glyphicon-play mt-2"></b>签署旅游合同</li>
+                            <li><a href="#" class="text-dark mysmall">传真/邮件签署合同</a></li>
+                            <li><a href="#" class="text-dark mysmall">门市地址在哪里?</a></li>
+                            <li><a href="#" class="text-dark mysmall">能传真签合同吗?</a></li>
+                            <li><a href="#" class="text-dark mysmall">可以不签合同吗?</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 pr-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><b class="glyphicon glyphicon-play mt-2"></b>付款问题</li>
+                            <li><a href="#" class="text-dark mysmall">付款方式</a></li>
+                            <li><a href="#" class="text-dark mysmall">打开支付页面,提示"该页面无法显示"</a></li>
+                            <li><a href="#" class="text-dark mysmall">开通网上支付需要收费吗?</a></li>
+                            <li><a href="#" class="text-dark mysmall">什么是网上支付</a></li>
+                            <li><b class="glyphicon glyphicon-play mt-2"></b>关注我们</li>
+                            <li><a href="#" class="text-dark mysmall">中国旅游网官网微博</a></li>
+                            <li><a href="#" class="text-dark mysmall">中国旅游网公众微信</a></li>
+                            <li><a href="#" class="text-dark mysmall">中国旅游网客户端</a></li>
+                            <li><a href="#" class="text-dark mysmall">中国旅游网企业邮箱</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2 pl-0 pr-0 text-center">
+                        <div class="mt-2">
+                            <img src="img/index/MobileQrCode.png">
+                            <p class="mb-0 p_text">公众微信号:cn-tour</p>
+                        </div>
+                        <div class="mt-1">
+                            <img src="img/index/MobilePaperQrCode.png">
+                            <p class="mb-0 p_text">手机版cntour.com.cn</p>
+                        </div>
+                        <div class="phone">
+                            <p class="font-weight-bold mb-0 pl-4"><i>服务热线</i></p>
+                            <p class="font-weight-bold mb-0 mt-2"><i>4008-123-123</i></p>
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+  <!-- 联系客服 -->
+  <div class="service p-2">
+    <div class="box1 d-flex justify-content-around mb-2">
+        <a href="#" class="text-white font-weight-bold">在线客服</a>
+        <span title="关闭客服"><i class="glyphicon glyphicon-remove-sign"></i></span>
+    </div>
+    <div class="box2 p-3">
+        <div class="d-flex justify-content-around p-1">
+            <a href="#" title="与我联系"><img src="img/index/qq.jpg" alt=""></a>
+            <a href="#" class="text-dark font-weight-bold">QQ交谈</a>
+        </div>
+        <div class="mt-3 mb-2 text-center p-1"><a href="#" class="text-white font-weight-bold">意见反馈</a></div>
+    </div>
+    <div class="box3 text-center pt-2">
+        <a href="#" class="font-weight-bold text-white" title="欢迎致电">4008-123-123</a>
+    </div>
+  </div>
+  <!--返回顶部-->
+  <div class="toTop">
+        <a href="#" title="返回顶部"></a>
+  </div>
+  <div class="message">
+       <a href="#" title="反馈"></a>
+  </div>
+  <!-- 底部动态加载进来 -->
+  <footer class="bottom"></footer>
+  <!-- 外部的js文件 -->
+  <script src="js/jquery-1.11.3.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/index.js"></script>  
+  <script src="js/main.js"></script>
+</body>
+</html>

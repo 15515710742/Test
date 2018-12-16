@@ -1,0 +1,15 @@
+/* pages/profile/profile.wxss */
+.avatar{
+    height:400rpx;
+    background-color:#f40;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.avatar image{
+    width: 200rpx;/*头像高度和宽度*/
+    height:200rpx;
+    border:10rpx solid rgba(0,0,0,.3);
+    border-radius:50%;
+
+}

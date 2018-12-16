@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    @keyframes change{
+      0%{
+        background:blue;
+        border-radius:0%;
+      }
+      25%{
+        background:red;
+        border-radius:50%; 
+      }
+      50%{
+        background:pink;
+        border-radius:0%;
+      }
+      75%{
+        background:green;
+        border-radius:50%;
+      }
+      100%{
+        background:orange;
+        border-radius:0%;
+      }
+    }
+    div{
+      height:200px;
+      width:200px;
+      border:2px solid red;
+
+    }
+    div:hover{
+      /*animation-name:change;
+      animation-duration:5s;
+      animation-timing-function:linear;
+      animation-delay:2s;
+      animation-iteration-count:10;
+      animation-direction:reverse;*/
+      animation:change 5s linear 2s 10 reverse;
+      animation-play-state:paused;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

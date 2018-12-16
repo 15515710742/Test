@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计图</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background:#ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>html5新特性--路径</h1>
+    <canvas width="500" height="400" id="c3"></canvas>
+    <script>
+        var c3 = document.getElementById("c3");
+        var ctx = c3.getContext("2d");
+        //开始一条新路径
+        ctx.beginPath();
+        ctx.strokeStyle="red";
+        ctx.arc(250,200,100,0,2*Math.PI);
+        ctx.lineWidth=15;
+        ctx.stroke();             
+        var start=-90;
+        var end=-90;
+        var num=0;
+        var t=setInterval(function(){
+            ctx.clearRect(0,0,500,400);
+            num+=1;
+            if(num>100){num=100}
+            ctx.font="20px sans-serif";
+            ctx.fillText(num+"%",230,200);
+            ctx.beginPath();
+            end+=3.6;
+            ctx.arc(250,200,100,start*Math.PI/180,end*Math.PI/180);
+            ctx.strokeStyle="green";
+            ctx.stroke(); //描边          
+        },100)
+        
+    </script>
+
+</body>
+</html>

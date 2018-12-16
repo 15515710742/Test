@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+	<h1>操作元素的内容和值</h1>
+	<form action="">
+		用户名:<input name="uname">
+					<span id="uname-msg"></span><br>
+		密码:<input type="password" name="upwd">
+					<span id="upwd-msg"></span><br>
+		<input type="submit" value="提交注册信息">
+	</form>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+    //正确时，使用图片:"<img src='img/ok.png'>"
+    //姓名错误时: "<img src='img/err.png'>用户名必须介于3~9位之间!"
+    //密码错误时: "<img src='img/err.png'>密码必须介于6~8位之间!"
+    //阻止默认行为: e.preventDefault();
+    //表单提交: $(form).submit();
+    function vali(selector,reg,msg,e){
+		//验证姓名文本框
+		var $txt=$(selector)                                                             
+		if(reg.test($txt.val())){
+			$txt.next().html("<img src='img/ok.png'>");
+		}else{
+			$txt.next().html(`<img src='img/err.png'>${msg}`);
+			e.preventDefault();
+		}
+	}
+	$("form").submit(function(e){
+		 vali("[name=uname]",/^\w{3,9}$/,"用户名必须介于3~9之间!",e);
+		 vali("[name=upwd]",/^\w{6,8}$/,"密码必须介于6~8之间!",e);
+	})
+	</script>
+ </body>
+</html>

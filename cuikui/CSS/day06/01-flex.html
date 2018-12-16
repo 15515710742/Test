@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #container{
+      border:1px solid red;
+      display:flex;
+      height:300px;
+      align-items:baseline;
+    }
+    div.c1{
+      height:200px;
+      width:200px;
+      background:yellow;
+      order:2;
+      flex-grow:3;
+      align-self:center;
+    }
+    div.c2{
+      height:200px;
+      width:200px;
+      background:green;
+      order:3;
+      flex-grow:2;
+      flex-shrink:2;
+    }
+    div.c3{
+      height:200px;
+      width:200px;
+      background:blue;
+      order:1;
+      flex-shrink:3;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+  </div>
+</body>
+</html>

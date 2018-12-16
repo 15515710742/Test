@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<span id="s1">Hello</span>
+<h1>标题1</h1>
+ <script>
+    window.onload=function(){
+        var body=document.body;
+        //查找body的所有直接子元素
+        console.log(body);
+        var children=body.children;
+        console.log(children);//3个
+        //查找body中的第一个直接子元素
+        var span=body.firstElementChild;
+        console.log(span);
+        var script=body.lastElementChild;
+        //查找body中的最后一个直接子元素
+        console.log(script);
+        var h1=span.nextElementSibling;
+                //script.previousSibling;
+                //childNodes[1];
+        console.log(h1);
+    }
+ 
+ </script>   
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    <style>
+        #main{
+            margin: 0 auto;
+        }
+    </style>
+     <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        //1.基于dom元素初始化 echarts对象
+        var main = document.getElementById('main');
+        var myChart = echarts.init(main);
+        //2.指定图表类型的配置项和数据
+        var option = {
+            title:{text:"echarts 入门示例"},
+            toolbox:{//工具箱
+                show:true,
+                feature:{
+                    saveAsImage:{//保存图片
+                        show:true
+                    }
+                }
+
+            },
+            legend:{data:"商品销售量"},//标题
+            xAxis:{data:["衬衫","羊毛衫","雪纺衫","裤子","袜子"]},//x轴显示数据
+            yAxis:{},
+            series:[{
+                name:"销量",
+                type:"bar",  //图像类型
+                data:[5,12,3,10,1]
+            }] //显示数据
+        };
+        //3.使用刚指定配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

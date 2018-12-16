@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+"use strict";
+var eric={eid:1001,ename:"埃里克",_age:20};
+Object.defineProperties(eric,{
+    _age:{enumerable:false,configurable:false},
+    age:{
+        get:function(){
+            console.log("自动调用age的get方法");
+            return this._age;
+        },
+        set:function(val){
+            console.log("自动调用age的set方法");
+            if(val>=18 && val<=65){
+                this._age=val;
+            }else{
+                throw new Error("年龄必须介于18-65之间");
+            }
+        },
+        enumerable:true,
+        configurable:false
+    }
+});
+console.log(eric);
+console.log(eric.age);
+eric.age=22;
+console.log(eric);
+eric.age=-2;
+
+</script>    
+</body>
+</html>

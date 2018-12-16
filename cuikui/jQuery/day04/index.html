@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">获取天气</button>
+<script src="jquery-3.2.1.js"></script>
+<script>
+    // $.ajax({
+    //     url:"http://localhost:8000",
+    //     type:"get",
+    //     success:function(res){
+    //         document.write(res);
+    //     }
+    // })
+
+    function show(weather){
+        alert(weather);
+        document.body.removeChild(document.body.lastElementChild);
+    }    
+    btn.onclick=function(){
+        var script=document.createElement("script");
+        script.src="http://localhost:8000?callback=show";
+        document.body.appendChild(script);
+    }
+
+
+</script> 
+<!-- <script src="http://176.20.13.79:8000?fun=show"></script>   -->
+</body>
+</html>
+
+
+
+
+
+
+

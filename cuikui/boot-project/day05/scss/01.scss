@@ -1,0 +1,145 @@
+@mixin my-font-style($size,$color,$style,$weight){
+  font-size: $size;
+  color: $color;
+  font-style: $style;
+  font-weight: $weight;
+}
+div{
+  @include my-font-style(24px,blue,italic,bold);
+}
+p{
+  @include my-font-style(30px,blue,normal,bold)
+}
+h1{
+  @include my-font-style(45px,yellow,italic,bold)
+}
+.my-rounded{
+  border: 1px solid red;
+  border-radius: 5px;
+}
+.rounded-shadow{
+  @extend .my-rounded;
+  box-shadow: 0 0 10px;
+}
+.my-border{
+  border: 1px solid transparent;
+  width: 400px;
+  margin-left: 20px;
+}
+.my-bottom-border{
+  @extend .my-border;
+  border-bottom-color: red;
+  &:hover{
+    border-bottom-color: blue;
+  }
+}
+
+$my-width:5%;
+$my-max-width:$my-width*2;
+$other-size:$my-width+$my-max-width;
+#d1{
+  width:$other-size;
+}
+p{
+  width:1in+8pt;
+}
+
+p:before{
+  content:"Microsoft"+yahei;
+  font-family:A+"rial";
+}
+p{
+  font:10px/5px;
+  $width:1000px;
+  width:$width/2;
+  height:(500px/2);
+  margin-left:5px+8px/2px;
+}
+
+div:after{
+  content:"I ate #{5+3} pies";
+}
+p{
+  color:#010203+#040506;
+}
+
+$width:10px;
+$height:20px;
+p{
+  width:($width+$height)*2;
+  color:hsl(240,100%,50%);
+}
+
+$width:max(10,30,50,64,21);
+$width-1:ceil(25.6);
+div{
+  width:$width-1+px;
+}
+//@function get-width($n){
+//  $max_width:40px;
+//  $min_width:10px;
+//  @return $max_width - $min_width;
+//}
+
+//header{
+//  width:get-width();
+//}
+
+@function get_mywidth($n){
+  $max_width:60px;
+  $min_width:10px;
+  @return $n*$max_width+($n - 1)*$min_width;
+}
+div{
+  width:get_mywidth(10);
+}
+
+
+p{
+  @if 1+1==2{
+    border-radius:5px;
+  }
+  @if 5<3{
+    border-radius:10px;
+  }
+  @if null{
+    border-radius:15px;
+  }
+}
+$type:sun;
+
+h2{
+  @if $type==sun{
+    color:yellow;
+  }@else if $type==mars{
+    color:red;
+  }@else if $type==moon{
+    color:blue;
+  }@else{
+    color:black;
+  }
+}
+
+@function getwidth($sum){
+  @if $sum>1{
+    @return 200px;
+  }@else if $sum==1{
+    @return 100px;
+  }@else{
+    @return 0;
+  }
+}
+
+p{
+  width:getwidth(10);
+}
+
+
+
+
+
+
+
+
+
+

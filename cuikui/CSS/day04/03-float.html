@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+     .d1,.d2,.d3{
+      width:200px;
+      height:200px;
+    }
+    .d1{
+      background:blue;
+    }
+    .d2{
+      background:yellow;
+    }
+    .d3{
+      background:green;
+    }
+    #parent{
+      border:1px solid red;
+      background:gray;
+     /* float:left;*/
+     /*overflow:hidden;*/
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="width:200px;height:200px;background:pink;"></div>
+</body>
+</html>

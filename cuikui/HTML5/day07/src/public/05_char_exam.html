@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仪表盘</title>  
+    <style>
+        #main{
+            margin: 0 auto;
+        }
+    </style>
+     <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script>
+        //1.创建echarts对象
+        var main = document.getElementById('main');
+        var myChart = echarts.init(main);       
+        //2.创建配置对象
+        var option = {
+           tooltip:{
+               formatter:"{a}<br>{b}<br>{c}"
+           },
+           series:{
+               name:"业务指标",
+               type:"gauge",
+               detail:{formatter:"{value}%"},
+               data:[{value:0,name:"完成率"}]
+           }
+        };      
+        //3.将配置对象应用到echarts
+        myChart.setOption(option); 
+        var v=0;
+        var t=setInterval(function(){
+            v++;
+            option.series.data[0].value = v;
+            myChart.setOption(option);
+            if(v==100){
+                clearInterval(t);
+            } 
+        },1000)
+    </script>
+</body>
+</html>

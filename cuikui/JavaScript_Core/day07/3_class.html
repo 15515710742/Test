@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //封装class
+class Student{
+    constructor(sname,sage){
+        this.sname=sname;
+        this.sage=sage;
+    }
+    //Student的原型对象中,添加共有的方法intr
+    intr(){
+        console.log(`I'm ${this.sname},I'm ${this.sage}`);
+    }
+    test(){
+        console.log("考试了");
+    }
+}
+var lilei = new Student("li lei",11);
+var hmm=new Student("Han Meimei",10);
+console.log(lilei);
+console.log(hmm);
+lilei.intr();
+hmm.intr();
+lilei.test();//
+console.log(lilei.__proto__==Student.prototype);//判断他俩是否为同一个
+console.log(hmm.__proto__==Student.prototype);
+</script>   
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>navigator对象常用属性</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+	<script>
+    if(navigator.cookieEnabled)
+      document.write(`<h1>已启用cookie,请妥善保管个人信息!<h1>`)
+    else
+      document.write(`<h1>cookie已禁用,无法记住密码!<h1>`);
+    if(navigator.plugins["Chrome PDF Viewer"]!==undefined){
+      document.write("<h1>已安装PDF插件</h1>");
+    }else{
+      document.write("<h1>未安装PDF插件</h1>")
+    }
+
+
+    if(navigator.plugins["Shockwave Flash"]!==undefined){
+      document.write("<h1>已安装Flash插件</h1>");
+    }else{
+      document.write("<h1>未安装Flash插件,<a href='#'>点此下载</a></h1>")
+    }
+    
+
+  document.write(`<h1>${navigator.userAgent}</h1>`)
+ 
+ 
+  var browser,version,ua=navigator.userAgent;
+
+  if(ua.indexOf("IE")!=-1){
+    browser="IE";
+  }else if(ua.indexOf("Edge")!=-1){
+    browser="Edge";
+  }else if(ua.indexOf("FireFox")!=-1){
+    browser="FireFox";
+  }else if(ua.indexOf("OPR")!=-1){
+    browser="OPR";
+  }else if(ua.indexOf("Chrome")!=-1){
+    browser="Chrome";
+  }else if(ua.indexOf("Safari")!=-1){
+    browser="Safari";
+  }else if(ua.indexOf("Trident")!=-1){
+    browser="IE";
+    version=11;
+  }
+  document.write(`<h1>${browser}</h1>`);
+
+if(version==undefined){
+  var i=ua.indexOf(browser);
+  i+=browser.length+1;
+  version=parseFloat(ua.slice(i,i+3));
+}
+document.write(`<h1>${version}</h1>`); 
+  </script>
+  
+
+
+</body>
+</html>

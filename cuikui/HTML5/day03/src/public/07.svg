@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- xmlns 名称空间 -->
+<!-- xmlns:svg 标准名称 -->
+<!-- 浏览器读取文件就会知道,如何解析 -->
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="80"></rect>
+</svg>
+
+

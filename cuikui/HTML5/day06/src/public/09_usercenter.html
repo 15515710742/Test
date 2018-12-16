@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户中心 </title>
+    <style>        
+        .blue{background:#ddf;color:#00f;}
+        .pink{background:#fdf;color:#a3a;}
+        .dark{background:#333;color:#eee;}
+    </style>
+</head>
+<body>
+    <h1>html5新特性--用户中心</h1>
+    <script>
+        var v =localStorage.getItem("myStyle");
+        document.body.className=v;
+        //usercenter.html 监听 localStorage 数据是否发生变化
+        //如果index.html保存localStorage发生变化,立即重新获取数据
+        //window事件onstorage监听localStorage数据是否发生变化
+        window.onstorage = function(){
+            var v=localStorage.getItem("myStyle");
+            document.body.className = v;
+        }  
+    </script>
+</body>
+</html>

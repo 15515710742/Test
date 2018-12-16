@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试结果</title>
+</head>
+<body>
+    <h1>测试成绩单</h1>
+    <p>总的词汇量: <span id="total"></span></p>
+    <p>正确词汇量: <span id="correct"></span></p>
+    <p>错误词汇量: <span id="score"></span></p>
+    <a href="01_save.html">继续录入</a>
+    <a href="02_test.html">重新测试</a>
+    <script>
+        var t=sessionStorage.getItem("total");
+        var c=sessionStorage.getItem("correct");
+        var e = t-c;
+        document.getElementById("total").innerHTML=t;
+        document.getElementById("correct").innerHTML=c;
+        document.getElementById("score").innerHTML=e;
+    </script>
+</body>
+</html>

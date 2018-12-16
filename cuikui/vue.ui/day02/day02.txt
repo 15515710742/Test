@@ -1,0 +1,85 @@
+day02笔记
+
+1.复习昨天的重点
+2.作业
+常见错误
+(1)拒绝了我们的连接请求
+	原因:服务器端程序已经停止工作(崩溃)
+3.今天的目标
+  3.1学子商城新闻分页[node.js 非阻塞的IO/事件驱动]
+    [阻塞IO]:程序工作方式,程序中部分按顺序依次执行.
+		优点:(有序)抑郁理解;弱点:效率差一些
+	[非阻塞IO]:程序工作方式,程序中部分并发交替执行
+		优点:效率高;弱点:不易控制
+    1.参数 pno页码 pageSize也大小(一页几行)
+	2.sql当前页的内容
+	3.json {code:1,msg:[],pno:3,pageCount:3,pageSize:10}
+注意:用户参数前端验证依次后端再次验证
+	(1)后端验证:拦截危险字符串入到数据库
+	(2)前端验证:拦截(无效)输入
+3.2:vue ui移动组件 muit-ui/mui(首页)-九宫格
+(1)安装与配置方式(脚手架/单页程序完成)
+(2)测试安装与配置
+	dist/css/mui.css
+	dist/js/mui.js
+	dist/fonts/mui.ttf
+	注意:使用mui组件图标字体
+	(1)声明字体
+	(2)使用字体
+(1)使用字体
+练习六宫格
+(1)添加购物车图标
+	<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+	--添加css文件 link icon-extra.css
+	--添加字体图标文件 mui-icon-extra.ttf
+3.3 vue ui 移动端组件 muit-ui/mui(首页)底部导航条
+4:vue cli(脚手架)开发移动端项目(重点)
+  为什么需要脚手架开发项目
+  --如果简单程序(不需要脚手架)
+  --前端项目越来越复杂(css;js;less;sass;vue;ej;...禁用严格模式;热部署)
+  --完成一个项目几千上万js库
+  --脚手架:
+  --统一管理前端程序所需要的所有文件;它负责加载
+  --将所有资源(webpage),打包在一个js文件中(项目结果一个html;一个js文件)
+
+注意:单独创建一个文件
+
+创建脚手架项目
+(1)默认安装node.js 要求版本大于8.11
+(2)全局安装脚手架工具vue-cli
+	npm i -g vue-cli  ----(-g全局安装)
+(3)初始化一个项目并且指定打包工具webpage
+	vue init webpage app					--app的名称
+	?Project name							--项目名称
+	?Project description(A vue.js project)  --项目描述
+(4)进入项目指定目录下初始项目(安装依赖库)
+(5)启动项目
+	npm run dev
+	修改启动项目端口 (package.json)
+    "dev": "vue-cli-service serve --port3001 --host 127.0.0.1",
+(6)停止项目
+
+4.1:如何使用vue cli(脚手架)开发移动端项目
+(1)工作流程
+(2)首页
+	1.功能一:创建一个组件显示顶部导航条
+		--查找哪个组件可以完成任务 mint ui 组件
+		--mint-ui顶部导航栏
+		--在项目中引入组件(main.js)
+		import{header} from "mint-ui";  //组件对象 库名
+		Vue.component(Header.name,Header);//注册将Header注册项目
+		#Header.name --mt-header
+	    --在组件中使用组件所对应的标签
+		<mt-header fixed title="学子商城"></mt-header>
+	2.功能二:创建组件显示顶部tabbar[mui]
+		--引入mui.css文件,字体文件
+	
+
+
+
+
+
+
+
+
+

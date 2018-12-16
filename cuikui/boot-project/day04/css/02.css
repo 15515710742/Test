@@ -1,0 +1,59 @@
+.my_btn {
+  display: block;
+  background: #0aa1ed;
+  color: #fff;
+  text-decoration: none;
+  width: 8rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.8rem; }
+  .my_btn:hover {
+    color: #f10215; }
+
+#main {
+  width: 200px;
+  height: 200px;
+  background: #f10215;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: linear; }
+  #main:hover {
+    background: yellow;
+    border-radius: 50%; }
+
+div {
+  -moz-box-shadow: 0 0 50px 10px gray;
+  -webkit-box-shadow: 0 0 50px 10px gray;
+  -ms-box-shadow: 0 0 50px 10px gray;
+  -o-box-shadow: 0 0 50px 10px gray; }
+
+p {
+  -moz-box-shadow: 0 0 50px 10px gray;
+  -webkit-box-shadow: 0 0 50px 10px gray;
+  -ms-box-shadow: 0 0 50px 10px gray;
+  -o-box-shadow: 0 0 50px 10px gray; }
+
+ul {
+  list-style: none; }
+  ul li {
+    padding: 15px;
+    border: 1px solid #f10215;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+    ul li a {
+      color: #d0d0c7;
+      text-decoration: none; }
+      ul li a:hover {
+        color: #f10215; }
+
+ul li a {
+  color: #000; }
+  ul li a:hover {
+    color: yellow; }
+  ul li a:visited {
+    color: green; }

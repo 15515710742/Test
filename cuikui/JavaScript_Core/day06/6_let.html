@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+     //console.log(a);//报错,a未定义
+     let a=10;//let的本质就是匿名函数的自调用.学ES6,必须会替换方法
+     console.log(a);//10;
+     /*(function(){//相当于使用了let声明变量
+         var a=10;
+         console.log(a);
+     })();*/
+//解决块级作用域的问题
+var t=0;//累计时间
+function conn(){
+    console.log("连接服务器,耗时0.3s");
+    t += 0.3;
+}
+function query(){
+    console.log("查询数据,耗时0.8s");
+    t +=0.8;
+    var err=true;
+    if(err){//js中块不是作用域
+        /*1.可以用匿名函数的自调用代替let
+        (function(){//用匿名函数自调用让块变成临时作用域
+            var t=new Date();
+            console.log(`出错了,at:${t.toLocaleString()}`);
+        })();*/
+        //2
+        let t=new Date();
+        console.log(`出错了,at:${t.toLocaleString()}`);
+    }
+}
+conn();
+query();
+console.log(`共耗时${t}s`);
+
+ </script>   
+</body>
+</html>

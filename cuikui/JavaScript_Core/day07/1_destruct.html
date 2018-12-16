@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var data={y:2018,m:9,d:3};
+    var {y,m,d}=data;
+    console.log(y,m,d);
+//解构对象中的方法
+var users={
+    signin:function(){
+        console.log("登录");
+    },
+    signout:function(){
+        console.log("注销");
+    },
+    signup:function(){
+        console.log("注册");
+    },
+    isLogin:function(){
+        console.log("判断是否登录");
+    }
+}
+var {signin,signup}=users;
+signin();
+signup();
+
+
+</script>    
+</body>
+</html>

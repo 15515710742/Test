@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style> 
+    .c1,.c2,.c3{
+      width:200px;
+      height:200px;
+    }
+   .c1{   
+      background:blue;   
+    }
+   .c2{
+     background:green;
+   }
+   .c3{
+     background:yellow;
+   }
+   #parent{
+     border:1px solid red;
+     display:flex;
+     /*项目的排列方向*/
+     flex-direction:row-reverse;
+     /*是否换行*/
+     flex-wrap:wrap-reverse;
+     justify-content:space-around;
+   }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <span class="c1"></span>
+    <span class="c2"></span>
+    <span class="c3"></span>
+  </div>
+</body>
+</html>

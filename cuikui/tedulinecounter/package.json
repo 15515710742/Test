@@ -1,0 +1,28 @@
+{
+  "name": "linecounter",
+  "version": "3.3.1",
+  "description": "A CLI for summing lines of code in specified directory.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://tmooc.cn/linecounter.git"
+  },
+  "bin": {
+    "tedulinecounter": "./index"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lines",
+    "counter",
+    "linecounter"
+  ],
+  "author": "Li Wenhua <liwenhua@tedu.cn> ",
+  "license": "MIT",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "commander": "^2.11.0",
+    "express": "^4.16.3"
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /*
+    p+span{
+      color:red;
+      font-size:32px;
+    }
+    #p1~.c{
+      color:blue;
+    }
+    */
+    [class]{
+      font-size:50px;
+      background:gray;
+    }
+    [id="one"]{
+      background:red;
+    }
+    [id^=o]{
+      background:blue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p id="p1">老大</p>
+	  <p class="c" title="这是一个段落元素" style="cursor:pointer;">老二</p>
+	  <span class="c">老三</span>
+    <b class="c">老四</b>
+    <p class="c">老五</p>
+    <div id="d1">老六</div>
+    <h1 id="one">老七</h1>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

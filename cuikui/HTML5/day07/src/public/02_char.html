@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    <style>
+        #main{
+            margin: 0 auto;
+        }
+    </style>
+     <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script>
+        //1.创建echarts对象
+        var main = document.getElementById('main');
+        var myChart = echarts.init(main);
+        //2.创建配置对象
+        var option = {
+            title:{
+                text:"折线图柱状图",
+                subtext:"服装图像展示",
+                left:"left",
+                borderColor:"#e4393c",
+                borderWidth:1
+            },
+            toolbox:{
+                show:true,
+                feature:{
+                    saveAsImage:{show:true},
+                    dataView:{show:true},
+                    restore:{show:true},
+                    dataZoom:{show:true},
+                    magicType:{type:["line","bar"]}
+                }
+            },
+            tooltip:{trigger:"axis"},          
+            legend:{data:["销量"]},
+            xAxis:{data:["衬衫","裤子","鞋","袜子"]},
+            yAxis:{},
+            series:[{
+                name:"销量1",
+                type:"line",
+                data:[7,13,10,40]
+            },{
+                name:"销量2",
+                type:"bar",
+                data:[7,13,10,40]
+            }]           
+        };
+        //3.将配置对象应用到echarts
+        myChart.setOption(option); 
+    </script>
+</body>
+</html>

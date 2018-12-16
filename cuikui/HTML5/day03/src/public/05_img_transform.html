@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>画笔旋转</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>绘制图片--旋转--以自己为中心</h1>
+    <canvas id="c3" width="500" height="400"></canvas>
+    <script>
+        var c3 = document.getElementById("c3");
+        var ctx = c3.getContext("2d");
+        var p3 = new Image();
+        p3.src = "../res/p3.png";
+        p3.onload = function(){
+            var w=p3.width;
+            var h=p3.height;
+            ctx.translate(250,200);
+            var deg=5*Math.PI/180;
+            setInterval(function(){
+                ctx.clearRect(0-w/2,0-h/2,500,400);                
+                ctx.rotate(deg);
+                ctx.drawImage(p3,0-w/2,0-h/2); 
+            },200)
+
+        }
+
+    </script>
+</body>
+</html>

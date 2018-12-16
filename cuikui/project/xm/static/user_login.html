@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/login.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+  <link rel="stylesheet" href="css/header.css"/>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <title></title>
+</head>
+<body>
+<!--头部导航栏-->
+<header id="top">
+  <div class="container">
+    <div class="row pt-3 pb-3">
+      <!--头部的logo-->
+      <div class="col-2">
+        <a href="#"><h1 class="text-white">Traveling</h1></a>
+      </div>
+      <!--导航栏-->
+      <div class="col-8">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link text-white">首页</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">目的地</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <a href="#" class="dropdown-toggle nav-link text-white" data-toggle="dropdown">游玩攻略</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">菜单1</a></li>
+                <li><a href="#" class="dropdown-item">菜单2</a></li>
+                <li><a href="#" class="dropdown-item">菜单3</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">自由行</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">酒店</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">社区</a>
+          </li>
+          <li class="nav-item">
+            <div id="d1" class="dropdown">
+              <a href="#" class="dropdown-toggle nav-link text-white" data-toggle="dropdown">特色美食</a>
+              <ul id="d2" class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">本地美食</a></li>
+                <li><a href="#" class="dropdown-item">麻辣火锅</a></li>
+                <li><a href="#" class="dropdown-item">特色烧烤</a></li>
+                <li><a href="#" class="dropdown-item">麻辣香锅</a></li>
+                <li><a href="#" class="dropdown-item">各种小吃</a></li>
+              </ul>
+            </div>
+          </li>
+         <!--  <li class="nav-item">
+            <a href="#" class="nav-link text-white">APP</a>
+          </li> -->
+        </ul>
+      </div>
+      <!--登录/注册-->
+      <div class="col-2">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="user_login.html" target="_blank" class="nav-link text-white">登录</a>
+          </li>
+          <li class="nav-item text-white pt-2">|</li>
+          <li class="nav-item">
+            <a href="user_register.html" target="_blank" class="nav-link text-white">注册</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<!--登录界面-->
+<div class="container">
+  <h2 class="text-center mt-10 text-color">Hollo! Welcome Back!</h2>
+  <div class="table-responsive w-30 m-auto pt-3">
+    <table class="table mb-0">
+      <tr>
+        <td class="border-0">
+          <h3 class="text-color">欢迎登陆</h3>
+        </td>
+        <td class="border-0 pb-0">
+          <a href="user_register.html" class="text-color hover" target="_blank">立即注册</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="border-0">
+          <input type="text" id="uname" name="uname" placeholder="请输入用户名" class="w-100 form-control"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="border-0">
+          <input type="password" id="upwd" name="upwd" placeholder="请输入密码" class="w-100 form-control"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-color border-0">
+          <input type="checkbox"/>记住密码
+        </td>
+        <td class="border-0">
+          <a href="#" class="text-color hover">忘记密码?</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="border-0">
+          <input type="submit" value="登录" class="btn btn-primary w-100 form-control" onclick="postData()"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="text-color border-0 pb-0">
+          <div>
+            <span class="d-inline-block border-bottom line"></span>
+            <span class="text-color">使用社交账号登录</span>
+            <span class="d-inline-block border-bottom line"></span>
+          </div>
+          <ul id="login" class="w-100 mt-4 mb-0 list-unstyled d-flex justify-content-around">
+            <li>
+              <a href="#" id="qq">
+                <div id="qq-icon"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="weChat">
+                <div id="weChat-icon"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="zfb">
+                <div id="zfb-icon"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="weibo">
+                <div id="weibo-icon"></div>
+              </a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<footer class="bottom" id="ddd">
+  <div class="container">
+    <ul class="list-unstyled d-flex justify-content-around pt-5">
+      <li><a href="#" class="text-white">关于我们</a></li>
+      <li><a href="#" class="text-white">广告服务</a></li>
+      <li><a href="#" class="text-white">现金合作</a></li>
+      <li><a href="#" class="text-white">招贤纳士</a></li>
+      <li><a href="#" class="text-white">免费条款</a></li>
+      <li><a href="#" class="text-white">法律声明</a></li>
+      <li><a href="#" class="text-white">帮助中心</a></li>
+      <li><a href="#" class="text-white">友情链接</a></li>
+      <li><a href="#" class="text-white">联系我们</a></li>
+      <li><a href="#" class="text-white">网站地图</a></li>
+    </ul>
+    <div class="pb-5">
+      <div class="d-flex justify-content-center mt-5">
+        <p class="text-white my_fontsize mr-4">服务电话：4008-123-123</p>
+        <p class="text-white my_fontsize">邮箱地址：info@traveling.cn</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="text-white my_fontsize mr-4">苏ICP备14053765号-11</p>
+        <p class="text-white my_fontsize mr-4">经营许可证110105017960088</p>
+        <p class="text-white my_fontsize">苏公网安备11010502025983</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="text-white mr-4 my_fontsize">中国旅游网股份有限公司</p>
+        <p class="text-white my_fontsize">China Traveling Network Limited by Share World</p>
+      </div>
+      <div>
+        <p class="text-white text-center my_fontsize">Copyright&nbsp;&copy;&nbsp;2018&nbsp;www.traveling.com All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="js/common.js"></script>
+  <script>
+    function postData(){
+      //1.创建异步对象
+      var xhr=createXhr();
+      //1.绑定监听异步对象
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var res = xhr.responseText;
+          alert(res);
+        }
+      }
+      //打开链接
+      xhr.open("post","/user/login",true);
+      xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+      var uname=$("uname").value;
+      var upwd=$("upwd").value;
+      var formdata="uname="+uname+"&upwd="+upwd;
+      //发送请求
+      xhr.send(formdata);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

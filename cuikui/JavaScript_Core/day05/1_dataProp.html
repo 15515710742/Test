@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    "use strict";
+    var eric={
+        eid:1001,
+        ename:"埃里克",
+        salary:12000
+    }
+    //eid只读
+   /* Object.defineProperty(eric,"eid",{
+        writable:false,
+        enumerable:true,
+        configurable:false
+    });
+    var attrsEid=Object.getOwnPropertyDescriptor(eric,"eid");
+    console.log(attrsEid);
+    //ename禁止删除
+    Object.defineProperty(eric,"ename",{
+        writable:true,
+        enumerable:true,
+        configurable:false
+    });
+    var attrsEid=Object.getOwnPropertyDescriptor(eric,"ename");
+    console.log(attrsEid);
+    //salary禁止遍历
+    Object.defineProperty(eric,"salary",{
+        writable:true,
+        enumerable:false,
+        configurable:false
+    });
+    var attrsEid=Object.getOwnPropertyDescriptor(eric,"salary");
+    console.log(attrsEid);
+    */
+   //综上所述,综合写法
+    Object.defineProperties(eric,{
+        eid:{writable:false,configurable:false},
+        ename:{configurable:false},
+        salary:{enumerable:false,configurable:false}
+    });
+       
+    /*eric.eid=1002;
+    delete eric.eid;*/
+    for(var key in eric){
+        console.log(`${key}:${eric[key]}`);
+    }
+    console.log(eric);
+    console.log(eric.salary);
+</script>   
+</body>
+</html>

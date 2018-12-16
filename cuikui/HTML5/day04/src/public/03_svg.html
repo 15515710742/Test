@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+        text-align: center;
+    }
+    svg{
+        background: #ddd;
+    }
+    </style>
+</head>
+<body>
+    <h1>svg创建椭圆--直线</h1>
+    <svg width="500" height="400" id="s3">
+        <ellipse cx="50" cy="50" rx="50" ry="5" fill="green"></ellipse>
+        <ellipse cx="50" cy="50" rx="5" ry="50" fill="red"></ellipse>
+        <line x1="450" y1="50" x2="500" y2="50" stroke="red" stroke-width="3"></line>
+
+        <ellipse cx="200" cy="210" rx="50" ry="20" fill="orange"></ellipse>
+        <ellipse cx="200" cy="200" rx="50" ry="20" fill="green"></ellipse>
+        <ellipse cx="200" cy="190" rx="50" ry="20" fill="orange"></ellipse>
+        <!-- 汉堡包图标 -->
+        <!-- <g stroke="#000" stroke-width="5" stroke-linecap="round">
+            <line x1="200" y1="200" x2="202" y2="200"></line>
+            <line x1="210" y1="200" x2="240" y2="200"></line>
+        </g> -->
+
+    </svg>
+    <script>
+        var s3 = document.getElementById("s3");
+      
+    </script>
+</body>
+</html>

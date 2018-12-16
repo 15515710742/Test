@@ -1,0 +1,46 @@
+/* 1:网页背景颜色 */
+page{
+    background-color: #f1f1f1;
+}
+/*2:卡片区域块中布局,使弹性布局方向,按列方式*/
+.card{
+    /*背景 边框 布丁 方式*/
+    background-color:#fff;
+    border:1rpx solid #ddd; 
+    border-radius:10rpx;/*圆角*/
+    margin: 60rpx 20rpx;/*布丁*/
+    padding: 30rpx;
+    display: flex;
+    flex-direction: column;/*列布局*/
+}
+/*3:标题*/
+.card-title{
+    font-size: 25px;/*字体用px*/
+    margin-bottom:20rpx; 
+}
+
+/*4:日期 下划线*/
+.card-data{
+    font-size: 14px;
+    color:#ccc;
+    border-bottom:1rpx solid #ccc;
+    padding-bottom: 20rpx;
+}
+/*5:图片*/
+.card-img{
+    width:100%;
+    height:300rpx;
+}
+.card-desc{
+    font-size:16px;
+    color:#333;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #ddd;
+    margin: 20rpx 0;
+}
+.card-read{
+    font-size: 14px;
+    color:#666;
+}
+
+

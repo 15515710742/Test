@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仪表盘</title>  
+    <style>
+        #main{
+            margin: 0 auto;
+        }
+    </style>
+     <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        //1.创建echarts对象
+        var main = document.getElementById("main");
+        var myChart = echarts.init(main);
+        //2.发送ajax请求
+        $.ajax({
+            url:"http://127.0.0.1:3000/sales1",
+            type:"get",
+            data:"json",
+            success:function(data){
+                var rows = [];         
+                for(var key in data){
+                    var v = data[key];
+                    rows.push({value:v,name:key});
+                }
+                var option = {
+                    title:{text:"商品销售量"},
+                    series:[{name:"统计图",type:"pie",radius:"55%",center:["50%","60%"],data:rows}]
+                }               
+                //2.1转换数据
+                //2.2创建option
+                //2.3设置option
+                myChart.setOption(option);
+            }
+        })
+    </script>
+</body>
+</html>

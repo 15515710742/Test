@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Student(sname,sage){
+    this.sname=sname;
+    this.sage=sage;
+}
+//Student的原型对象中,添加共有的方法intr
+Student.prototype.intr=function(){
+    console.log(`I'm ${this.sname},I'm ${this.sage}`);
+}
+var lilei = new Student("li lei",11);
+//李雷重写intr();
+lilei.intr=function(){
+    console.log(`我是${this.sname},今年${this.sage}岁了`);
+}
+var hmm=new Student("Han Meimei",10);
+console.log(lilei);
+console.log(hmm);
+lilei.intr();
+hmm.intr();
+</script>   
+</body>
+</html>

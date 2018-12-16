@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <p>
+    <input type="submit" value="获取用户列表" onclick="getlist()">
+  </p>
+  <div id="d1"></div>
+  <script src="common.js"></script>
+  <script>
+    function getlist(){
+      //1.创建异步对象
+      var xhr=createXhr();
+      //2.监听异步对象
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var res=xhr.responseText; 
+          // console.log(typeof(res));
+          //将接收回来的json数据转换为js数组
+          var arr = JSON.parse(res);
+          //$("d1").innerHTML=arr[0].uname;
+          for(var i=0;i<arr.length;i++){
+            var user=arr[i];
+            var uname=user.uname;
+            //console.log(uname);
+            $("d1").innerHTML += "<h1>"+uname+"</h1>";
+          }
+        }           
+      }
+      //3.打开连接
+      xhr.open("get","/demo/userlist",true);
+      //4.发送请求
+      xhr.send(null);   
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+

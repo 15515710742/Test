@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mint ui学习</title>
+     <!-- 加载mint ui的依赖组件 -->
+     <!--mintui css;js依赖vue.js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button>点击显示提示消息</button>
+    </div>
+    <script>
+        // 1:创建vue对象选择挂载点
+        //2.添加数据与方法
+        new Vue({
+            el:"#app",
+            data:function(){
+                return {
+                    //创建共享数据,提示框对象保存
+                    toastInstance:null
+                } 
+            },
+            created:function(){
+                //VUE对象创建成功之后调用业务方法
+                this.getList();
+            },
+            methods:{
+                show:function(){
+                    this.toastInstance=this.$toast({
+                        message:"数据正在加载中...",
+                        duration:-1,
+                        position:"top",                       
+                    })
+                },
+                getList:function(){
+                    //模拟数据加载...当对象创建完成调用方法
+                    //1显示提示框
+                    this.show();
+                    //2创建定时器 5000 关闭提示框
+                    setTimeout(()=>{
+                        this.toastInstance.close();//关闭提示框
+                    },5000)
+                }
+            }
+        })
+    
+    
+    </script>
+     
+</body>
+</html>

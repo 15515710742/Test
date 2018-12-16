@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+        text-align: center;
+    }
+    svg{
+        background: #ddd;
+    }
+    </style>
+</head>
+<body>
+    <h1>svg创建-滤镜</h1>
+    <svg width="500" height="400">       
+        <defs>
+            <filter id="f2">
+                <feGaussianBlur stdDeviation="3"></feGauseianBlur>
+            </filter>
+            <filter id="f3">
+                <feGaussianBlur stdDeviation="5"></feGauseianBlur>    
+            </filter>
+        </defs>
+        <text font-size="70" y="100" filter="url(#f2)">东东有辆小汽车</text>
+        <text font-size="70" y="200" filter="url(#f2)">文华有辆小汽车</text>
+        <text font-size="70" y="300" filter="url(#f3)">汽车</text>
+
+    </svg>
+</body>
+</html>

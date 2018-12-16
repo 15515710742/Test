@@ -1,0 +1,623 @@
+一.CSS3 Core
+  1.动画的兼容性
+    如果要兼容低版本的浏览器需要在动画声明时加前缀
+    @keyfranes 动画名称{
+      /*定义关键帧*/
+    }
+    @-webkit-keyframes 动画名称{...}
+    @-ms-keyframes 动画名称{...}
+    @-o-keyframes 动画名称{...}
+    @-moz-keyframes 动画名称{...}
+  2.CSS优化
+    1.CSS优化原则
+      ①尽量减少HTTP请求的个数
+      ②页面顶部引入CSS文件
+      ③将css和js文件放在外部独立的文件中
+    2.css代码优化
+      ①合并样式
+      ②缩小样式文件
+      ③减少样式重写
+      ④避免出现空的src和href
+      ⑤选择更优的样式属性值
+      ⑥代码压缩
+二.Bootstrap
+  1.响应式布局(重点)
+    提示:难点-单词量比较大,必须要熟练
+    2010年提出响应式布局
+    1.什么是响应式布局
+      Responsive web page:响应式/自适应网页,可以根据浏览器设备的不同(pc,pad,phone),
+      而自动更改布局,图片,文字效果,不会影响用户的浏览体验
+    2.响应式网页必须做到
+      1.布局:不能固定宽度,必须是流式布局
+      2.文字和图片的大小随着容器的大小而改变
+      3.媒体查询技术
+        响应式的网页存在的问题:代码的复杂度极大的增加,适合用于内容不太多的页面(企业官网,门户介绍)
+    3.如何测试响应式网页
+      1.方法1: 使用真实设备测试
+        好处:真实可靠
+	缺点:测试任务量较大
+      2.使用第三方的模拟测试软件
+        好处:无需添置太多的真实设备,测试方便
+        缺点:测试效果有限,有待进一步验证
+      3.使用Chrome等浏览器自带的模拟器
+        好处:简单方便
+	缺点:测试效果有限,需要进一步验证
+    4.如何编写响应式网页(重点) 
+      1.声明viewport原标签(手机适配)
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	viewport原标签:
+	  早起3G手机为了浏览大尺寸的网页,只能强行把网页缩小,导致文字,图片变小,
+	  ios提出了"视口",视口用于盛放网页的内容,超过部分,滑动显示,Android也借鉴此概念
+	  width=device-width表示视口的宽度就是设备宽度
+	  initial-scale=1.0 表示视口的宽度是否缩放,1.0不缩放
+	  maximum-scale=1.0 允许缩放的最大倍率
+	  user-scalable=0   是否允许用户手动缩放,取值可为:yes/no/1/0
+	  minimal-ui        iOS ui设置
+	  一般设置原标签为:<meta name="viewport" content="width=device-width">
+      2.所有的内容/文字/图片/使用相对尺寸,不要使用绝对值
+        .container{
+	  /*width:1000px;*/
+	  width:100%;
+	  /*font-size:16px;*/
+	  font-size:1rem;
+	}
+      3.流式布局+弹性布局,在搭配媒体查询技术使用
+        实现方式:float/flex
+      4.使用css3 Media	Query技术-做响应式网页的必备条件
+       Media:媒体,浏览网页的设备,如:screen(pc/pad/phone),tv(电视机),print(打印机)等
+       Media Query :媒体查询,可以自动根据当前浏览器设备的不同,或者尺寸,方向,解析度不同,
+                    有选择性执行部分css样式,忽略其他部分的css样式
+       1.媒体查询的两种使用方法:
+         1.根据媒体查询的结果使用不同的外部css文件
+	 <link rel="stylesheet" href="pc.css" media="screen and (min-width:992px)">
+         <link rel="stylesheet" href="pad.css" media="screen and (min-width:768px) and (max-width:991px)">
+         <link rel="stylesheet" href="phone.css" media="screen and (max-width:767px)">
+	 注意:此方法较少用,所有的css都会被加载,每个css文件可能存在很多重复的代码
+       2.根据媒体查询的结果执行同一个css文件中不同的代码块
+         @media screen and (min-width:768px) and (max-width:991px){
+	   选择器{样式声明}
+	 }
+  2.Bootstrap框架
+    中文镜像网站:http://www.bootcss.com
+            官网:http://www.getbootstrap.com
+    Bootstrap内容分五个部分
+      1.如何使用bootstrap
+      2.全局css样式
+      3.组件
+      4.js插件
+      5.定制(scss)
+  3.起步-如何使用Bootstrap
+    1.下载boot包---官网下载
+    2.设置基本模板
+      <meta name="">
+  4.全局css样式
+    1.按钮相关class
+      不同样式按钮
+      .btn基本按钮
+      .btn-danger危险
+      .btn-success成功
+      .btn-warning警告
+      .btn-info信息
+      .btn-primary  主要按钮
+      .btn-secondary次要按钮
+      .btn-dark 黑色
+      .btn-light 浅色
+      .btn-link 链接
+      不同边框按钮
+      .btn-outline-danger 红色边框
+      .btn-outline-warning黄色边框
+      .btn-outline-primary蓝色边框
+      不同大小按钮
+      .btn-lg 大
+      .btn-sm 小
+      .btn-block 块级按钮
+    2.图片相关class
+      .round 圆角图片
+      .round-circle 椭圆图片
+      .img-thumbnail 缩略图
+      .img-fluid 响应式布局(图片会缩放,但不会超过原始大小)
+    3.文字相关class
+      .h1~.h6不同大小字体
+      .text-danger/success/info/primary/warning...文字颜色
+      .text-left/right/center/justify文字对齐方式
+      .text-uppercase/lowercase/capitalize大写/小写/首字母大写
+    4.列表相关的类
+      .list-unstyled 去除标识符
+      .list-group/list-group-item 创建列表组
+      .active 激活状态列
+      .disabled 禁用列表项
+      列表项目的颜色
+      .list-group-item-success 成功
+      .list-group-item-danger  危险
+      .list-group-item-info    信息
+      ......
+二.全局样式类
+  1.table相关样式类
+    .table 基本表格样式
+    .table-bordered带边框的表格
+    .table-striped隔行变色的表格
+    .table-hover带鼠标悬停效果的表格
+    .table-primary/danger/success/info/warning/dark/light...表格颜色
+    .table-responsive响应式表格 用于table的父元素上
+  2.辅助类
+      浮动:
+      .float-*-left/.float-*-right 左浮动/右浮动
+      .clearfix清除浮动
+      显示:
+      .visible/.invisible 显示和隐
+      背景:
+      .bg-success/info/danger/warning...
+      边框:
+      .border/border-0/border-top/border-bottom/border-left/border-right
+      边框颜色:
+      .border-success/info/danger/warning...
+      边框倒角:
+      .rounded/rounded-0圆角
+      .rounded-top/bottom/left/right
+      居中对齐:
+      m-auto块级元素居中对齐
+      边距:
+      .m/ml/mr/mt/mb-*(*:0/1/2/3/4/5...) 设置外边距
+      .p/pl/pr/pt/pb-*(*:0/1/2/3/4/5...) 设置内边距
+      宽度:
+      .w-*(25/50/75/100)
+      高度:
+      .h-*(25/50/75/100)
+  3.栅格布局样式(重点)
+   1.web页面布局的方法有三种
+      1.table布局
+        优点:简单,容易控制
+        缺点:语义错误渲染效率低
+      2.div+css布局
+        优点:语义正确,渲染效率高
+        不足:控制起来比较麻烦
+      3.Bootstrap中的栅格布局
+        优点:简单,容易控制,语义正确,渲染效率高,支持响应式
+        缺点:如果页面非常复杂不太适合
+   2.使用栅格布局
+      1.最外层需要使用容器
+        .container定宽容器
+        .container-fluid 可变容器100%
+      2.容器中声明: .row(一行分为12等分-12个单元格)
+      3.行中声明列: .col(每个列都需要指定宽度的占比n/12)
+      4.针对不同屏幕需要使用不同的列,如
+        大屏幕:4/12  三列 左中右
+        中屏幕:6/12  两列 左右
+        小屏幕:12/12 一列
+        .col-xl-1/2/3/4/.../12
+        .col-lg-1/2/3/4/.../12
+        .col-md-1/2/3/4/.../12
+        .col-sm-1/2/3/4/.../12
+        xl:Extra large 超大屏幕
+          w>=1200px
+        lg:large 大pc屏幕
+          1200px>w>=992px
+        md:medium 中等的pc屏幕
+	 768px=<w<992px
+        sm:small 小屏幕
+	  576px=<w<767px
+        xs:Extra small 超小屏幕
+	  w<576px
+	.col不添加数字时,自动处理布局,同一行的每个列宽度相等,
+	  两个col,每个占50%,三个占33.33%,四个占25%,以此类推
+      5.注意不同屏幕下列的适应性问题
+        col-xl-* 只能在xl屏幕下有效
+	col-lg-* 在xl/lg屏幕下有效
+	col-md-*在md/lg/xl屏幕下有效
+	col-sm-*在sm/md/lg/xl屏幕下有效
+	总结:列可以在当前屏幕下以及更大的屏幕下有效
+	  小尺寸可以适配大尺寸不要代码冗余
+	  <div class="col-sm-4 col-md-4"></div>
+      6.可以使用列偏移的实现指定列以及其后的列向右偏移
+        偏移列通过offset-*-*类来设置
+        第一个*号:可以是:sm/md/lg/xl表示屏幕的大小
+        第二个*号:可以是1-11的数字,这些类会把一个列的做外边距增加为*列
+      7.响应式:一个div可以指定在不同的屏幕下的不同宽度的占比
+      8.栅格的嵌套
+        在列里面嵌套其他的内容
+        ex:
+	<div class="row">
+	  <div class="col-md-6">
+	    <div class="row">
+	      <div class="col-md-6"></div>
+	    </div>
+	  </div>
+	</div>
+  4.弹性布局
+    使用:d-flex/d-inline-flex类创建一个弹性布局容器
+    .flex-row 设置弹性子元素左对齐水平显示,默认效果
+    .flex-row-reverse 设置右对齐显示
+    .flex-column设置弹性子元素垂直方向显示
+    .flex-column-reverse 用于反转子元素
+    .justify-content-*用于修改子元素的排列方式 *的取值(end/center/between/around)
+    响应式的flex类:
+      根据不同的设备,设置flex类,从而实现页面的响应式布局
+      .sm/md/lg/xl
+      .d-sm/md/lg/xl-flex
+      .flex-*-row
+      .flex-*-column
+  5.表单
+    .form-group 堆叠表单(垂直方向,全屏宽度)
+    .form-inline 内联表单(水平方向)一般放在form里面
+    .form-control/form-check/from-check-inline/form-check-input/form-check-label/form-text
+三.组件1
+  1.下拉菜单
+    下拉菜单必须的三级结构
+    <div class="dropdown">
+      <button data-toggle="dropdown">触发元素</button>
+      <ul class="dropdown-menu">隐藏元素
+        <a href="#" class="dropdown-item></a>
+      </ul>
+    </div>
+    提示:上述的data-toggle="dropdown"会被bootstrap.就是选中,添加事件监听
+    标题: .dropdown-header
+    分割线: .dropdown-divider
+    禁用: .disabled
+  2.按钮组件
+    在div元素上添加.btn-group类创建按钮组
+    <div class="btn-group">
+      <a class="btn btn-success">按钮1</a>
+      <a class="btn btn-danger">按钮2</a>
+      ...
+    </div>
+    使用: .btn-group-lg/md/sm/xl来设置按钮组的大小
+    使用: .btn-group-vertical 来创建垂直按钮组
+  3.信息提示框
+    提示框可以使用 .alert类,后面加上
+    .alert-success/info/danger/primary
+    <div class="alert alert-danger alert-dismissible">
+      <span data-dismiss="alert" class="close">x</span>
+    </div>
+  4.导航
+    Bootstrap提供了三种形式的导航:水平导航,选项卡,胶囊
+    (1)水平导航
+      创建一个简单的水平导航,可以在<ul>元素上添加.nav类,在每个<li>选项上添加.nav-item类在每个链接上面添加.nav-link类
+      <ul class="nav">
+        <li class="nav-item">
+	  <a href="#" class="nav-link">...</a>
+	</li>
+      </ul>
+      注意:
+        1.通过设置ul的justify-content-*设置导航的对齐方式
+	2..nav-justified类可以设置导航项的等宽显示
+	3.用.flex-column类可以设置导航项垂直排列
+    (2)选项卡导航
+      使用nav-tobs类可以将导航转换为选卡的效果
+      如果要设置选项卡动态可切换,可以在每个链接上添加data-toggle="tab"属性,然后造每个选项对应的内容上添加.tab-pane类
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+	  <a href="#" class="nav-link" data-toggle="tab">...</a>
+	<li/>
+      </ul>
+    (3)胶囊导航
+      .nav-pills类可以将导航设置成胶囊形状
+      胶囊装动态导航至于要将tabs选项卡中的data-toggle="tab"属性改为data-toggle="pill"
+  5.导航栏
+    使用: .navbar类创建导航栏,然后紧跟着.navbar-expand-xl/lg/md/sm类创建响应式导航栏(大屏幕展开,小屏幕垂直堆叠)
+    导航栏上的选项可以使用<ul>元素并添加.navbar-nav类,然后<li>元素添加.nav-item类,<a>元素上添加.nav-link类
+    注意:设置导航栏时可以用bg-*设置不同的背景颜色
+  6.折叠
+    控制内容的显示和隐藏,在<a>或<button>元素上添加data-toggle="collapse"属性 data-target="#id"属性对应折叠内容
+    <button class="btn" data-toggle="collapse" data-target="#id">折叠</button>
+    <div id="demo" class="collapse">...</div>
+  7.折叠导航栏
+    要创建折叠导航栏,需要在按钮上添加.navbar-toggle类
+    data-toggle="collapse"与data-target="#id",
+    然后在设置class="collapse navbar-collapse"类的div上包裹导航的内容,
+    div元素上的id匹配按钮data-target上的id
+  8.卡片
+    通过.card与.card-body类创建一个卡片, .card-header用于设置卡片的头部, .card-footer类创建卡片的底部
+    <div class="card">
+      <div class="card-header">头部</div>
+      <div class="card-body">内容</div>
+      <div class="card-footer"><底部/div>
+    </div>
+    手风琴:折叠+卡片 实现
+    注意:使用:data-parent属性来确保所有的折叠在指定的父元素下,这样就能实现一个折叠选项卡显示时其他的选项隐藏的
+  9.媒体对象
+    Bootstrap提供了很多类来处理媒体对象(图片或视频)和内容的布局,应用场景博客评论,贴子和商品列表
+    在容器元素上添加.media类,然后将多媒体内容放到容器上,子容器需要添加.media-body类.可以使用align-self-*
+    相关的类设置多媒体图片的显示位置(上中下)
+    <div class="media">
+      <img src="x.jpg">
+      <div class="media-body">...</div>
+    </div>
+  10.轮播
+    创建轮播: .carousel
+    为轮播添加指示符:  .carousel-indicators
+    添加要切换的图片:  .carousel-inner
+    指定每个图片的内容:.carousel-item
+    <div class="carousel" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#id" data-slide-to="0"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item">...</div>
+      </div>   
+    </div>
+四.组件2
+  1.模态框
+    模态框是覆盖在父窗体的子窗体,模态框可以在不离开父窗体的情况下有一些互动,提供一些交互信息等
+    <button data-toggle="modal" data-target="#id"></button>
+    <div id="demo" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+	  <div class="modal-header"></div>
+	  <div class="modal-body"></div>
+	  <div class="modal-footer"></div>
+	</div>
+      </div>
+    </div>
+  2.其他组件
+    1.徽章
+      使用.badge类设置徽章效果
+    2.巨幕: .jumbotron
+    3.分页
+      要创建基本的分页可以在ul元素上添加.pagination类,然后再li元素上添加.page-item类
+    4.面包屑导航
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">...</li>
+      </ul>
+    5.进度条
+      <div class="progress">
+        <div class="progress-bar w-50"></div>
+      </div>
+      使用:.progress-bar-striped 类设置条纹的进度条
+      使用:.progress-bar-animated类为进度条设置动画
+      在一个进度条上设置多种颜色,在同一个progress中写多个progress-bar,加bg-*
+Bootstrap重点: 媒体布局+栅格布局+SCSS
+五.SCSS
+  EX:
+  $jd_red:#f10215;
+  .register{
+    color:$jd_red;
+  }
+  .search{
+    background:$jd_red;
+  }
+  ul li a{
+    color:$jd_red;
+  }
+  div{
+    border:1px solid $jd_red;
+  }
+  1.css有以下几个缺点
+    语法不够强大,没有变量和合理的样式复用机制,使得逻辑上相关的属性值必须以子面的形式重复输出,导致难以维护
+    动态样式语法为css赋予了动态语言的特性,极大的提高了样式语言的可维护性
+    常见的动态样式语言:
+      1.Scss/Sass
+      2.stylus
+      3.Less
+      都属于CSS的预处理器
+      什么是预处理器?
+        用一种专门的编程语言,进行web页面样式设计,在通过编译器转化为正常的CSS文件,以供项目使用
+  2.什么是SCSS
+    SCSS是一种强化的CSS辅助工具,它CSS语法的基础上增加了变量,嵌套,混合,导入函数等高级功能,这些拓展的功能令CSS更强大与优雅
+  3.SCSS的作用:
+    有助于更好的管理样式文件,以及更高效的开发项目
+  4.SCSS的使用
+    1.在服务器端使用
+      (1)安装NodeJS解释器
+      (2)安装SCSS编译程序
+         npm install -g node-sass
+	 在webstorm中打开命令行界面快捷键:alt+f12
+	 刷新项目文件:ctrl+alt+y
+	 测试scss安装的版本:node-sass  -v
+      (3)在命令行编译scss文件,转换为css文件
+         单文件转换命令
+	 node-sass  scss文件夹/01.scss  css文件夹/01.css
+	 多文件的转换命令:
+	 node-sass  scss文件夹  -o  css文件夹
+	 单文件的监听命令
+	 node-sass  -w  scss文件夹/01.scss  css文件夹/01.css
+	 多文件监听命令:
+	 node-sass -w scss文件夹 -o css文件
+    2.SCSS的基础语法
+      (1)使用$符号标识变量
+        变量的命名规范遵循css中选择器的命名规范,可以包含"-","_"尽量见名知意
+        $jd_red:#f10215;//颜色变量
+        $normal-width:100px;//数值变量
+        $before-content:"子曰";//字符串变量
+        $border-style:solid;//样式变量
+        $my_border:1px solid $jd_red;//声明变量时,变量的值也可以引用其他变量
+        div{
+          border:$my_border;
+	  $width:200px;//只能在当前大括号中使用
+	  width:$width;
+        }
+        注意:
+        1.声明变量时,变量值可以引用其他变量
+        2.变量定义在{}规则块外边,整个样式文件中都可以使用;定义在{}规则块内,它只能在当前规则块中使用
+        3.声明重复变量,后声明的变量会覆盖前面的变量,尽量不要重复
+        !default规则:
+          如果变量已经声明赋值了,那就用它声明的值,否则就用这个默认值
+	  $jd_red:#f102315;
+	  $jd_red:blue !default;
+      (2)嵌套规则
+         ex:
+	 #content div.top h1{color:#333;}
+	 #content div.top p{padding-bottom:15px;}
+	 #content div.middle{background:#ddd;}
+	 在选择器中嵌套其他的选择器
+	 改写上面的代码:
+	 #content{
+	   div.top{
+	     h1{color:#333;}
+	     p{padding-bottom:15px}
+	   }
+	   div.middle{background:#ddd;}
+	 }
+        问题-用嵌套改写下面代码:
+	a{color:block;}
+	a:hover{color:red;}
+	在嵌套规则中,有时候需要使用嵌套外层的父选择器,可以用&代表嵌套的规则外层的父选择器
+	a{color:block;
+	  :hover{color:red;}
+	}
+      (3)群组选择器嵌套
+        ex css群组选择器:
+	nav a,aside a,footer a{color:block;}
+	scss中群组的嵌套
+	nav,aside,footer{
+	  a{color:block;}
+	}
+      (4)属性嵌套
+        在scss中,出了选择器可以嵌套,属性也可以嵌套
+	css:
+	div{
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:#ccc;
+	}
+        scss:
+	div{
+	  border:{style:solid;color:#ccc;width:1px;}
+	}
+      (5)导入scss文件
+        在scss中,局部文件名已下划线开头
+	这样,sass在编译时就不会去编译以下划线开头的文件,而只是把这个文件用作导入,引入局部文件时,
+	还可以写文件的全名,即省略文件开头的下划线和.scss后缀,并且局部文件可以被多个文件同时引用
+	在主scss文件中以@import引用其他的局部文件
+	ex:
+	_color.scss  局部scss文件
+	在myMain.scss中引用_color.scss文件
+	@import "color";
+      (6)混合器
+        ex:
+	box-shadow:0 0 50px 20px red;
+	-ms-boxshadow:0 0 50px 20px red;
+	-webkit-box-shadow:0 0 50px 20px red;
+	使用 @mixin标识符定义
+	语法:
+	@mixin  混合器名称{样式声明}
+	通过 @mixin来使用混合器
+	语法:
+        选择器 {@include 混合器名称}
+      (7)带参混合器
+        定义带参的混合器
+	@mixin  混合器名称(参数1,参数2,参数3...){
+	  属性1:参数1;
+	  属性2:参数2;
+	  属性3:参数3;
+	}
+	使用带参的混合器:
+	  选择器{@include 混合器名称(实参1,实参2,实参3)}
+六.继承
+  继承是说一个选择器可以继承另外一个选择器定义的所有样式
+  通过 @extend实现继承
+七.运算
+  1.数字:加减乘除,取整等运算(+ - * / %),如果必要会在不同单位之间转换值(前提是scss能转)
+    ex:
+    $my-width:5%;
+    $my-max-width:$my-width*2;
+    $other-size:$my-width+$my-max-width;
+    (1)注意:加法
+        + 也可以用于连接字符串
+        p:before{
+        content:"Microsoft"+yahei;//有引号
+        font-family:A+"rial";//无引号
+      }
+     如果用有引号的字符串去连接无引号的字符串,运算结果有引号,相反,无引号的字符串去连接有引号的字符串,运算结果则无引号
+    (2)注意:除法
+      p{
+        font:10px/5px;
+        $width:1000px;
+        width:$width/2;
+        height:(500px/2);
+        margin-left:5px+8px/2px;
+      }
+      在css中通常"/"起到分割数字的用途,同时也赋予除法的运算功能,在以下情况视为除法运算:
+      1.如果值,或者值得一部分,是变量或者函数的返回值
+      2.如果值被圆括号包裹
+      3.如果值是算术表达式的一部分
+    (3)运算表达式与其他值连用时,用空格做连接
+      ex:
+      p{
+        margin:5px+9px auto;
+      }
+    (4)在有引号的字符串中使用#{}插值语句可以添加动态的值
+      ex:
+      div:after{
+        content:"I ate #{5+3} pies";
+      }
+  2.颜色:颜色的运算是分段计算的,也就是分别计算红色,绿色,以及蓝色的值
+    p{
+      color:#010203+#040506;
+    }
+    计算: 01+04+05,02+05+07,03+06+09
+    div{
+      color:rgba(255,0,0,0.5)+rgba(0,255,0,0.5);
+    }
+    如果颜色值包含alpha,必须有相等的alpha值才能进行运算,因为算数运算不会作用于alpha值的
+八.函数
+  1.scss定义了多种函数,有些甚至可以直接用css语句调用
+    1.颜色函数
+      rgba(red,green,blue,alpha)
+      hsl(hue,saturation,lightness)
+        hue:色调  取值0-360
+	saturation:饱和度 取值:0.0%-100.0%
+	lightness: 亮度   取值0.0%-100.0%
+    2.数字函数
+      round($value):将数值四舍五入,转换成一个最接近的整数
+      ceil($value):向上取整
+      floor($value):向下取整
+      min($value):找出几个数值之间的最小值
+      max($value):找出几个数值之间的最大值
+      random($value):获取随机数
+    3.字符串函数
+      unquote($string):删除字符串的引号
+      quote($string):给字符串添加引号
+      To-upper-case:将字符串小写字母转换为大写字母
+      To-lowerr-case:将字符串大写字母转换为小写字母
+  2.自定义函数
+    scss支持自定义函数使用关键词 @function定义,并能在任何属性值或scss中使用,需要调用 @return输出结果
+    语法:
+      @function 函数名称($n){
+        @return 运算表达式/结果
+      }
+九.控制指令
+  当 @if的表达式返回值不是false或者 null,表示成立,执行{}内的代码
+  ex:
+    @if 1+1==2{
+      border-radius:5px;
+    }
+    @if 5<3{
+      border-radius:10px;
+    }
+    @if null{
+      border-radius:15px;
+    }
+    @if声明后面可以跟多个 @else if声明,或者一个#else声明
+    @if $type==sun{
+      color:yellow;
+    }@else if $type==mars{
+      color:red;
+    }@else if $type==moon{
+      color:blue;
+    }@else{
+      color:black;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

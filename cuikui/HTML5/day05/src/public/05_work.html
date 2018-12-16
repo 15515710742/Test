@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖动图片删除</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>计算用户输入值得累加和</h1>
+    请输入数值:<input type="number" id="num1">
+    <button id="btn1">开始计算累加和</button>
+    <div id="msg">正在计算中...</div>
+    <script>
+        //1.获取input button msg
+        var num1 = document.getElementById("num1");
+        var btn1 = document.getElementById("btn1");
+        var msg = document.getElementById("msg");
+        //2.获取button为其绑定点击事件
+        btn1.onclick = function(){
+            //2.1获取用户输入值
+            var n = num1.value;
+            //2.2创建worker线程将数值发送
+            var w = new Worker("js/08.js");
+            w.postMessage(n);
+            //2.3接受返回结果
+            w.onmessage = function(e){
+                //2.4在msg中显示            
+                var rs = e.data;
+                msg.innerHTML = rs;
+            }
+        }        
+        //练习:在HTML中创建input(用户输入数值),创建button按钮"开始计算累加和",
+        //点击此按钮,创建worker线程来计算用户输入数值累加和,
+        //worker计算完成后在button下方,创建div显示计算结果
+
+    </script> 
+             
+</body>
+</html>

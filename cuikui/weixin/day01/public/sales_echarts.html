@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <script src="jq.js"></script>
+</head>
+<body>
+    <h1>echarts 销售统计图</h1>
+    <div id="main" style="width:600px;height: 500px;"></div>
+    <script>
+        //1.创建echarts对象
+        var main = document.getElementById('main');
+        var mycharts = echarts.init(main);
+        //2.发送ajax请求
+        $.ajax({
+            url:"/salesyear",
+            type:"GET",
+            success:function(data){
+                //2.1整理数据
+                var xrows = [];
+                var yrows = [];
+                for(var item of data){
+                    xrows.push(item.year);
+                    yrows.push(item.c);                   
+                }
+                //2.2创建option对象
+                var option = {
+                    title:{text:"药品销售统计(年份)"},
+                    legend:{data:["销量"]},
+                    xAxis:{data:xrows},
+                    yAxis:{},
+                    series:[{name:"销量(年)",type:"bar",data:yrows}]                                                            
+                }
+                //2.3将option设置为echarts对象中
+                mycharts.setOption(option);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:160px;
+            height:160px;
+            margin:10px 0 20px;
+            background: #beceeb;
+            overflow: hidden;
+            resize: both;
+            border: 1px solid red;
+        }
+        .box>img{
+            width:100%;
+            height:100%;
+        }
+        .fill{object-fit: fill;}
+        .contain{object-fit: contain;}
+        .conver{object-fit: cover;}
+        .none{object-fit: none;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img/mm1.png" class="fill">
+    </div>
+    <div class="box">
+        <img src="img/mm1.png" class="contain">
+    </div>
+    <div class="box">
+        <img src="img/mm1.png" class="conver">
+    </div>
+    <div class="box">
+        <img src="img/mm1.png" class="none">
+    </div>
+</body>
+</html>

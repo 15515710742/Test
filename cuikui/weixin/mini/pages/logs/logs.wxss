@@ -1,0 +1,62 @@
+.slider,
+.slider image,
+.slider swiper{
+  width: 100%;
+  height:390rpx;/*图片测量出结果*/
+}
+/*第2部分 弹性布局*/
+.index-nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+.index-nav .nav-item{
+    height: 200rpx;   /*测量图片高度*/
+    width: 33.33333%; /*宽度*/
+    display: flex;
+    flex-direction: column; /*子元素按列排序*/
+    justify-content: center;/*水平居中*/
+    align-items: center;  /*垂直居中*/
+    /* border-right: 1rpx solid #dedede; */
+    border-bottom: 1rpx solid #dedede;
+    font-size: 14px;  /*小程序中的文字大小以 px为单位*/
+    box-sizing: border-box;
+    /* position: relative; */
+}
+/*设置第3,6,9的有边框宽度为0*/
+.index-nav .nav-item:nth-child(3n){
+    border-right:0;
+}
+.index-nav .nav-item image{
+    width: 80rpx;
+    height: 80rpx;    
+}
+/*解决方案二:伪类 右边细线*/
+/* 
+.index-nav .nav-item::after{
+    content: "";
+    width:1rpx;
+    height:100%;
+    position:absolute;
+    right: 0;
+    top:0;
+    background-color: #ccc;
+}
+.index-nav .nav-item:nth-child(3n)::after{
+    width:0;
+} 
+*/
+/*入口的样式*/
+
+.index-enter{
+    display: flex;
+    /* margin-top: 20rpx; */
+}
+.index-enter .enter-item{
+    width:50%;
+    display: flex;
+    justify-content: center;
+}
+.index-enter .enter-item image{
+    width:360rpx;
+    height:178rpx;
+}

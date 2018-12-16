@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+        text-align: center;
+    }
+    svg{
+        background: #ddd;
+    }
+    </style>
+</head>
+<body>
+    <h1>svg创建-图像--渐变对象</h1>
+    <svg width="500" height="400">
+        <defs>
+            <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="red"></stop>               
+                <stop offset="10%" stop-color="orange"></stop>
+                <stop offset="25%" stop-color="yellow"></stop>
+                <stop offset="30%" stop-color="green"></stop>
+                <stop offset="50%" stop-color="green"></stop>
+                <stop offset="75%" stop-color="blue"></stop>
+                <stop offset="100%" stop-color="purple"></stop>
+            </linearGradient>
+        </defs>
+        <rect x="100" y="100" heigth="80" width="100" fill="url(#g3)" stroke="url(#g3)"></rect>
+    </svg>
+</body>
+</html>

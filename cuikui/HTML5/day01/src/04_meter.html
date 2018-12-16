@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML5的新特性--meter(刻度尺)</h1>
+    当月的薪水:
+    <meter id="meter" min="0" max="15000" low="5000" high="12000" optimum="14000" value="0"></meter>
+    <script>
+        var el=document.getElementById("meter");
+        settimer= setInterval(function(){
+            el.value += 1000;
+            if(el.value>=15000){
+                clearInterval(settimer)
+            }
+        },1000)
+    
+    </script>
+</body>
+</html>

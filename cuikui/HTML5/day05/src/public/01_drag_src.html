@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+            margin: 0;
+        }
+        body::before{
+            content:"";
+            display: table;
+        }
+        #p3{
+            position: absolute;           
+        }
+        img{
+            width:300px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>拖动原对象</h3>
+    <img src="../res/ad.png" id="p3">
+    <script>
+        var startX =0;
+        var startY=0;
+        var p3 = document.getElementById("p3");
+        //拖动的原对象
+        //拖动事件相对于图片左上角偏移
+        p3.ondragstart = function(e){
+            startX = e.offsetX;
+            startY = e.offsetY;
+        }
+        //原对象拖动中
+        p3.ondrag = function(e){
+            //获取事件对象相对于页面的坐标
+            var ex = e.clientX;
+            var ey = e.clientY;
+            if(ex ==0 && ey == 0){return}
+            p3.style.left=(ex-startX) + "px";
+            p3.style.top=(ey-startY) + "px";
+        }
+        //对象拖动结束
+        p3.ondragend = function(){}
+    </script>
+</body>
+</html>

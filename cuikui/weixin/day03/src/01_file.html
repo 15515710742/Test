@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h1>声明周期</h1>
+    <h3>当程序运行处理某个阶段时自动触发的事件,绑定函数</h3>
+    <script>
+        //生命周期
+        window.onload =function(){
+            console.log("A:资源全部加载成功");
+        }
+        $(document).ready(()=>{
+            console.log("B:元素加载结束");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+一.AJAX
+  1.什么是AJAX
+    Asynchronous JavaScript And Xml
+    异步的           js     和  xml
+    本质:使用js提供的异步对象(XMLHttpRequest),异步的向服务器发送请求,并接受响应回来的数据
+    AJAX中,可以无刷新的效果更改页面的局部内容
+  2.异步请求的步骤
+    1.创建异步对象
+    2.绑定监听事件
+    3.打开链接(创建请求)
+    4.发送请求
+  3.创建异步对象
+    标准创建:var xhr=new XMLHttpRequest();
+    IE8以下的创建 var xhr=new ActiveXObject("Microsoft.XMLHttp");
+    通过window.XMLHttpRequest来判断浏览器是否支持标准创建,如果浏览器不支持标准创建,
+    那么window.XMLHttpRequest的值为null.
+    if(window.XMLHttpRequest){
+      var xhr= new XMLHttpRequest();
+    }else{
+      var xhr= new ActiveXObject("Microsoft.XMLHttp");
+    }
+  4.异步对象的常用属性和方法
+    1.readyState属性
+      作用:用于表示xhr异步对象请求状态
+      值:0~4表示5个状态
+        0:请求尚未初始化
+	1:已经打开到服务器的连接正在发送请求中
+	2:接受响应的消息头
+	3:接受响应的主体
+	4:接受响应数据成功
+	注意:只有当readyState的值为4的时候,才表示所有的数据接收完毕
+    2.status属性
+      作用:表示服务器的响应状态码
+      值:200
+      当status的是为200时,表示服务器已经正确处理了请求并给出了响应
+    3.onreadystatechange-事件
+      作用:当xhr的readyStatus属性发生改变时,自动激发的操作
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          //接受回来的结果
+	  var result=xhr.responseText;
+	}
+      }
+  5.打开连接(创建请求)
+    xhr.open(method,url,isAsyn);
+      作用:打来连接
+	method:请求的方法,
+	  string类型(get/post)
+        URL:请求地址
+	  string类型
+	isAsyn:boolean类型
+          指定采用同步(false)还是异步(true)请求
+  6.发送请求
+     xhr.send(body)
+     body:请求主体
+     如果没有请求主体的话,body位置放null
+     如果有请求主体的话,就将主体内容放在body位置处(post方法)
+  7.使用get提交方式,发送请求参数
+    传参:demo/login?uname=vaule1&upwd=value2
+  课后作业:
+    1.在demo.js中创建一个接口userlist,在接口查询出用户表所有数据,并响应给前端
+    2.创建一个网页getlist.html,在页面中添加一个按钮,点击按钮时发送异步请求获取
+    后端userlist接口响应回来的数据
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

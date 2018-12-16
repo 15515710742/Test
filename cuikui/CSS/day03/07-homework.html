@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    table{
+      width:900px;
+      border-bottom:1px solid #ddd;
+      color:#9c9a9c;
+      font-size:12px;
+    }
+    table td a{
+      text-decoration:none;
+      color:#005AA0;
+    }
+    /*优先级高*/
+    .one{
+      width:600px;
+      text-align:left;
+    }
+    /*优先级低*/
+    table td{
+      text-align:center;
+      border-bottom:1px dashed #ddd;
+      padding:5px 0;
+    }
+    table th{
+      color:#666;
+      border-bottom:1px solid #666;
+    }
+    #demo>a{
+      text-decoration:none;
+      color:#005AA0;
+      /*float:left;*/
+      display:inline-block;
+      width:100px;
+      height:30px;
+      text-align:center;
+      font-size:12px;
+      line-height:30px;
+    }
+    #demo{
+      background:#EEE;
+      width:900px;
+      height:30px;
+    }
+    #demo a.active{
+      background:#fff;
+      color:red;
+      border-top:2px solid red;
+      margin-top:-4px;
+      height:32px;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo">
+    <a href="#">网友讨论圈</a>
+    <a href="#" class="active">晒单贴</a>
+    <a href="#">讨论帖</a>
+    <a href="#">问答贴</a>
+    <a href="#">圈子贴</a>
+  </div>
+  <table>
+    <tr>
+      <th class="one">主题</th>
+      <th>回复/浏览</th>
+      <th>作者</th>
+      <th>时间</th>
+    </tr>
+    <tr>
+      <td class="one"><a href="#">银灰色的.很酷</a></td>
+      <td>0/0</td>
+      <td><a href="#">2001年冬天</a></td>
+      <td>2014-11-19 13:56:40</td>
+    </tr>
+    <tr>
+      <td class="one"><a href="#">银灰色的.很酷</a></td>
+      <td>0/0</td>
+      <td><a href="#">2001年冬天</a></td>
+      <td>2014-11-19 13:56:40</td>
+    </tr>
+    <tr>
+      <td class="one"><a href="#">银灰色的.很酷</a></td>
+      <td>0/0</td>
+      <td><a href="#">2001年冬天</a></td>
+      <td>2014-11-19 13:56:40</td>
+    </tr>
+    <tr>
+      <td class="one"><a href="#">银灰色的.很酷</a></td>
+      <td>0/0</td>
+      <td><a href="#">2001年冬天</a></td>
+      <td>2014-11-19 13:56:40</td>
+    </tr>
+  </table>
+  
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计图</title>
+    <style>
+        canvas{
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>销售统计图--(jQuery+ajax)</h1>
+    <canvas width="500" height="400" id="c3">您的浏览器版本太低,请升级!!!</canvas>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+    //1.发送ajax请求 3000/list
+    var c3 = document.getElementById("c3");
+    var ctx = c3.getContext("2d");
+    $.ajax({
+        type:"get",
+        url:"http://127.0.0.1:3000/list",
+        success:function(result){
+            //2.依据返回数据绘制销售统计图
+            for(var i=0;i<result.length;i++){
+                var item = result[i];
+                var w=50;
+                var h=item.value;
+                var y=400-h;
+                var x=i*100+50;
+                ctx.fillStyle=rc();
+                ctx.fillRect(x,y,w,h);
+
+                var name=item.label;
+                var txty=280;
+                var txtx=x;
+                ctx.fillStyle="#000";
+                ctx.font="18px sans-serif";
+                ctx.fillText(name,txtx,txty);
+            }  
+        }
+    })
+    //获取随机颜色
+    function rc(){
+        var r = Math.floor(Math.random()*255);
+        var g = Math.floor(Math.random()*255);
+        var b = Math.floor(Math.random()*255);
+        return `rgb(${r},${g},${b})`         
+    }
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #d1{
+      border:1px solid #000;
+      padding:20px;
+      float:left;
+      margin-left:200px;
+      /*设置d1为已定位元素:目的让子元素的绝对定位*/
+      position:relative;
+    }
+    #d2{
+      height:400px;
+      width:300px;
+      border:1px solid blue;
+      background:#ddd;
+      display:none;
+      position:absolute;
+      top:60px;
+      left:-50px;
+    }
+    #d1:hover #d2{
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div id="d1">
+    北京市海淀区万寿路2号
+    <span id="d2"></span>
+
+  </div>
+  
+</body>
+</html>

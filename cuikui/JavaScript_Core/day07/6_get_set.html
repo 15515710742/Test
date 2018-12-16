@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    "use strict";
+    class Emp{
+        constructor(eid,ename,salary,age){   
+            Object.defineProperties(this,{
+                eid:{
+                value:eid,
+                writable:false,
+                enumerable:true
+                // configurable:false 
+                },
+                ename:{
+                    value:ename,
+                    writable:true,
+                    enumerable:true
+                    //configurable:false
+                },
+                salary:{
+                    value:salary,
+                    writable:true,
+                    enumerable:false
+                    //configurable:false
+                },
+                //1.在构造函数中先定义实际存储年龄的隐藏数据属性
+                _age:{
+                    writable:true,
+                    enumerable:false
+                    //configurable:false
+                }                     
+            });
+            this.age=age;
+            Object.seal(this);
+        }    
+        get age(){return this._age}
+        set age(val){
+            if(val>=18 && val<=65){
+                this._age=val;
+            }else{
+                throw new  Error("年龄必须介于18~65之间!");
+            }
+        }
+  }  
+    var eric=new Emp(1001,"埃里克",12000,20);
+    eric.age=22;
+    console.log(eric);   
+</script>   
+</body>
+</html>

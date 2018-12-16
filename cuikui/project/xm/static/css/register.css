@@ -1,0 +1,36 @@
+/*ע�������ʽ����*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+#top{
+    background:rgba(0,0,0,.2) !important;
+}
+body{
+    background-image:url(../img/register/register.jpg);
+}
+.container:before{
+    content:"";
+    display:table;
+}
+.container .my_bg{
+    background:rgba(0,0,0,.3);
+}
+.container .parent .my_small{
+    font-size:0.9rem;
+}
+.container .parent{
+    width:32%;
+    margin:0 auto;
+    margin-top:110px;
+}
+.container .parent #showUname{
+    color:red;
+}
+.container .parent #show{
+    color:green;
+}
+.container .parent .text-color{
+    color:#ddd;
+}

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+.share a{
+    background-image: url("../img/details/comments-img.png");
+    width:30px;
+    height:30px;
+    margin:5px 5px 0 0;
+    float: left;
+    opacity: 0.7;
+}
+.share a:hover{    
+    opacity:1;
+}
+
+.cs-icon2{
+    background-position: 0 -216px ;
+    margin-top:7px !important;
+}
+.cs-icon3{
+    background-position: 0 -156px
+}
+.cs-icon4{
+    background-position: 0 -186px;
+    margin-top:7px !important;
+}
+.cs-icon5{
+    background-position: 0 -246px;
+}
+
+#small div ul li img:hover{
+    cursor:pointer;
+    box-shadow: 0 0 20px #0099ff;
+}
+
+.font{
+    text-indent:32px; 
+}
+.hr1{
+    width:98%;
+}
+.hr2{
+    width:100%;
+    size:5px;
+}
+.bg{
+    border-bottom:2px solid gray;
+    border-top:2px solid gray;
+    box-shadow: 0 0 5px #abafb3;
+    background: #ddd;
+}
+.comment{
+    display: inline-block;
+    background: #0099ff;
+    color:#fff;
+    width:100px;
+    height:35px;
+    text-align: center;
+    line-height:35px;
+}
+.p_text{
+    font-size:14px;
+    text-indent:32px;
+}
+.gradient{
+    height:60px;
+    background: #abafb3;
+}
+.p_bg{
+    background: #FAEBD7;
+    height:50px;
+    line-height:50px;
+    padding-left:10px;
+    border-radius:5px;
+}
+.radius{
+    border-radius:50%;
+}
+.icon1,
+.icon2{
+    display: inline-block;
+    vertical-align: bottom;
+    height:20px;
+    width:20px;
+    background-image: url("../img/details/comments-img.png");
+}
+.icon1{
+    background-position:0 -24px;
+}
+.icon2{
+    background-position:0 -41px;
+}
+
+i:hover{
+    cursor: pointer;
+}
+

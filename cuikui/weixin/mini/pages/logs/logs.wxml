@@ -1,0 +1,63 @@
+<!--logs.wxml-->
+<!-- 图片轮播 自检精良使用原生效率好一些 -->
+<!-- 图片的轮播 -->
+<view class='slider'>
+    <swiper autoplay interval="2000" indicator-dots>
+        <swiper-item wx:for="{{picture}}" wx:key="{{id}}">
+        <!-- mode="aspectFill" 图片等比例缩放 -->
+            <image src="{{item.img_url}}" mode="aspectFill" lazy-load width="375" height="150"></image>
+        </swiper-item>
+    </swiper>  
+</view>
+<!-- 首页的导航分区 -->
+<view class="index-nav">
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-01.png"></image>
+        <text>美食</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-02.png"></image>
+        <text>洗浴</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-03.png"></image>
+        <text>结婚啦</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-04.png"></image>
+        <text>卡拉ok</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-05.png"></image>
+        <text>找工作</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-06.png"></image>
+        <text>辅导班</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-07.png"></image>
+        <text>汽车保养</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-08.png"></image>
+        <text>租房</text>
+    </navigator>
+    <navigator class="nav-item bdr">
+        <image src="/assets/icons/grid-09.png"></image>
+        <text>装修</text>
+    </navigator>
+</view>
+<!-- 入口区域 -->
+<!-- 灰色背景 -->
+<view class="divider"></view>
+<view class="index-enter">
+    <navigator class="enter-item">
+        <image src="/assets/images/link-01.png"></image>
+    </navigator>
+    <navigator class="enter-item">
+        <image src="/assets/images/link-02.png"></image>
+    </navigator>
+</view>
+
+

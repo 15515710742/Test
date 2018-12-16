@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){//划分临时作用域,避免还用全局变量
+            var start=new Date();//局部变量--不会造成污染
+            alert("页面开始加载,at:"+start.toLocaleString());
+        })();   //立刻将start释放 
+        //今后所有的代码都要放在匿名函数中       
+    </script>
+    <h1>欢迎张东</h1>
+    <h3>欢迎来到德莱联盟</h3>
+    <script>
+        (function(){
+          var end=new Date();//
+          alert("页面加载完成!at:"+end.toLocaleString());
+       })();
+    </script>
+</body>
+</html>

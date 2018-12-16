@@ -1,0 +1,28 @@
+/*外部样式表*/
+h1{
+  color:red;
+  background:blue;
+}
+span{
+  color:red;
+  font-size:40px;
+}
+
+h3{
+  color:blue;
+  background:orange;
+}
+
+p{
+  font-size:40px;
+  color:red !important;
+}
+
+
+
+
+
+
+
+
+

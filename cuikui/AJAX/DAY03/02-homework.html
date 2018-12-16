@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <p>
+    用户名称: <input type="text" id="uname" onfocus="uname_focus()" onblur="uname_blur()">
+    <span id="s_uname"></span>
+  </p>
+  <p>
+    用户密码: <input type="password" id="upwd" onfocus="upwd_focus()" onblur="upwd_blur()">
+    <span id="s_upwd"></span>
+  </p>
+  <p>
+    重复密码: <input type="password" id="cpwd" onfocus="cpwd_focus()" onblur="cpwd_blur()">
+    <span id="s_cpwd"></span>
+  </p>
+  <p>
+    <input type="submit" onclick="checkpwd()">
+  </p>
+  <script src="common.js"></script>
+  <script>
+    //用户名称获取焦点
+    function uname_focus(){
+      $("s_uname").innerHTML="请输入6-12位的用户名称"; 
+    }
+    //用户名称失去焦点
+    function uname_blur(){
+      //获取用户名称输入框的值
+      if($("uname").value==""){
+        $("s_uname").innerHTML="用户名称不能为空";
+      }else{
+        $("s_uname").innerHTML="通过";
+      }    
+    }
+    function upwd_focus(){
+      $("s_upwd").innerHTML="请输入6-18的数字";
+    }
+    function upwd_blur(){
+      if($("upwd").value==""){
+        $("s_upwd").innerHTML="用户密码不能为空";     
+      }else{
+        $("s_upwd").innerHTML="通过";
+      }
+    }
+    function cpwd_focus(){
+      $("s_cpwd").innerHTML="请重复输入密码";  
+    }
+    function cpwd_blur(){
+      if($("cpwd").value==""){
+        $("s_cpwd").innerHTML="密码不能为空";
+      }
+    }
+    function checkpwd(){ 
+      var upwd=$("upwd").value;
+      var cpwd=$("cpwd").value;
+      if(upwd==cpwd){
+        $("s_cpwd").innerHTML="密码一致";
+      }else{
+        $("s_cpwd").innerHTML="两次密码不一致";
+      }
+    }
+
+  </script>
+
+  
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,70 @@
+day03 笔记
+
+3.1:vue ui
+学子商城--底部导航条
+--mui 组件
+--安装和使用
+  copy css js fonts    src/lib
+--main.js(公共入口)
+3.2:vue-ui学子商城--HomeContainer.vue[主页]
+该组件有两个部分组件
+  图片轮播 mint-ui
+  六宫格 mui 
+(1)创建目录 src/components/tabbar/
+(2)创建组件 HomeContainer.vue
+(3)添加基础的元素(标签;js;css)
+(4)配置路由:如何访问此组件 src/router.js
+(5)发送ajax请求,获取node.js服务器中数据请求[图片轮播]
+	-axios(官方推荐)
+    -vue-resource(项目-现在大多使用)
+(6)vue-resource
+	安装 npm i vue-resource 
+(7)跨域
+	跨域:网络中常见的访问(资源)手段
+	跨域:
+	--二个程序分别属于不同的域名 a.com
+	--二个程序端口号不同
+	--二个程序协议不同
+	--二个程序地址不同
+解决方法:不用jsonp用node.js第三方模块 cors
+	修改node.js app.js
+	(1)安装第三方模块(服务器node.js)
+	  npm i cors
+	(2)加载跨域模块
+	  const cors=require("cors)
+	(3)配置哪些程序可以跨域访问
+	  app.use(cors({
+		origin:["http://127.0.0.1:3001"],
+		credentials:true
+	  }))
+常见错误
+①严格区分大小写,不允许添加元素以外的字符
+②
+
+3.5:vue ui 学子商城--HomeContainer.vue图片大小问题
+
+移动端开发二种分辨率
+物理分辨率(像素)设计师设计图片大小(设计稿)
+逻辑分辨率(像素)--前端依据设计稿实现网页
+2物理像素=1逻辑像素
+
+3.6:vue ui 学子商城--NewsContainer.vue图片大小问题
+	-src/components/news/NewsContainer.vue
+	-为组件添加基础数据
+
+3.7 如何调试错误
+	-语法错误
+	F12-->console 控制台
+	F12-->network 网络控制面板
+	[*]Disbaled cache禁用缓存
+	[Headers] 请求头和 响应头消息
+	[Response] 响应主体
+作业1:学子商城新闻列表,加载更多(按钮 mt-button 00)
+
+
+
+
+
+
+
+

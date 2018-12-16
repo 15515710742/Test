@@ -1,0 +1,8 @@
+/*设置小字体*/
+.my_gray{
+    color:#9f9f9f;
+}
+header>ul.nav .nav-link.active,header>ul.nav .nav-link:hover{
+    background: none;
+    color:#333 !important;
+}

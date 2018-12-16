@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function Emp(eid,ename,salary,age){
+        //1.先保护所有属性
+        Object.defineProperties(this,{
+            eid:{
+               value:eid,
+               writable:false,
+               enumerable:true,
+              // configurable:false 
+            },
+            ename:{
+                value:ename,
+                writable:true,
+                enumerable:true,
+                //configurable:false
+            },
+            salary:{
+                value:salary,
+                writable:true,
+                enumerable:false,
+                //configurable:false
+            },
+            //1.在构造函数中先定义实际存储年龄的隐藏数据属性
+            _age:{
+                writable:true,
+                enumerable:false,
+                //configurable:false
+            }                     
+        });
+        this.age=age;//先定义,后构造函数
+        //2.再开始保护结构,防止篡改
+        //Object.preventExtensions(this);//①防扩展
+        //②密封
+        Object.seal(this);//替换掉以上所有configurable:false同时兼具Object.preventExtensions(this)的功能
+    }
+    // 2.在原型对象中添加所有子对象公用的保镖-age访问器属性
+    Object.defineProperty(Emp.prototype,"age",{      
+        get:function(){return this._age;},
+        set:function(val){
+            if(val>=18 && val<=65){
+                this._age=val;
+            }else{
+                throw new  Error("年龄必须介于18~65之间!");
+            }
+        },
+        enumerable:true,
+        configurable:false
+    });
+    var eric=new Emp(1001,"埃里克",12000,20);
+
+    for(var key in eric){
+        console.log(`${key}:${eric[key]}`);
+    }
+    //eric.eid=1;//经过验证不能更改
+    eric.Age=10;
+    console.log(eric);   
+</script>   
+</body>
+</html>

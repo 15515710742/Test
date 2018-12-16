@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        svg{
+            background: #ddd;
+        }
+        #c3{
+            fill:#faa;
+            fill-opacity:0.6; 
+            stroke:#800;
+            stroke-opacity:0.3;
+        }
+    </style>
+</head>
+<body>
+    <h3>html5标准之前 svg</h3>
+    <svg width="500" height="400" id="c3"></svg> 
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        var c3 = document.getElementById("c3");
+       $.ajax({
+           url:"http://127.0.0.1:3000/sales",
+           type:"get",
+           success:function(result){
+               for(var i=0;i<result.length;i++){
+                   var rect = document.createElementNS("http://www.w3.org/2000/svg","rect");
+                    var item=result[i];
+                    var w=50;
+                    var h=item.sales/30;
+                    var y=400-h;
+                    var x=i*100+50;                                    
+                    rect.setAttribute("height",h);
+                    rect.setAttribute("width",w);
+                    rect.setAttribute("x",x);
+                    rect.setAttribute("y",y);
+                    c3.appendChild(rect);  
+               }
+           }
+       })
+    </script>
+</body>
+</html>
+
+

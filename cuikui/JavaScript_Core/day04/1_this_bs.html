@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a=10;
+    var obj={
+        a:20,
+        fun:function(){
+            var a=30;
+            console.log(this.a);
+        }
+    }
+    obj.fun();//this-->obj-->20
+    var fun=obj.fun;
+    fun();//this-->window-->10
+    new fun();//this-->new -->undefined
+</script>   
+</body>
+</html>

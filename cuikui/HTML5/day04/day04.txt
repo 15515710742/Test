@@ -1,0 +1,35 @@
+
+
+ 今天的学习内容
+ 1.复习昨天的内容
+
+html5新特性--svg--直线
+	<line x1="" y1="" x2="" y2=""></line>
+html5新特性--svg--折线
+	一条折线上可以有任意多个连续点
+html5新特性--svg--文本
+	svg画布上不允许使用普通HTML元素绘制文本(不行)
+html5新特性--svg--图像
+	<image xlink:href="x.jpg" x y width height></image>
+html5新特性--svg--渐变对象
+定义特对象:效渐变对象属于一种特效对象
+	<defs>
+		<linearGradient id="g3">
+			<stop offset="" stop-color=""></stop>
+		</linearGradient>
+	<defs>
+	<any fill="url(#g3)">
+html5新特性--svg--滤镜
+html5新特性--svg--地里定位
+
+
+
+
+
+
+
+
+
+
+
+

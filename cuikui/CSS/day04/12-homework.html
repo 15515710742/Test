@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style> 
+    #d1{
+      height:400px;
+      width:1000px;
+      margin:0 auto;
+      overflow:hidden;
+      /*让子元素(左右箭头)绝对定位*/
+      position:relative; 
+    }
+    ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+     #d1 ul.d2 li{
+      float:left;  
+    }
+    /*左右箭头*/
+    #d1 a.bg-c{
+      position:absolute;
+      height:70px;
+      width:40px;
+      border-radius:5px;
+      top:165px;    
+    }
+    #d1 a.arrow-right{
+      background:#ddd url(index/arrow-right.png) no-repeat center center;
+      right:5px;
+    }
+    #d1 a.arrow-left{
+      background:#ddd url(index/arrow-left.png) no-repeat center center;
+      left:5px;
+    }
+    /*导航指示器*/
+    #d1 ul.d3{
+      position:absolute;
+      left:470px;
+      bottom:30px;
+    }
+    #d1 ul.d3 li{   
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#fff;
+      float:left;
+      margin-right:8px; 
+    }
+    li.li3{
+      background:#0aa1ed !important;
+    } 
+  </style>
+</head>
+<body>
+  <div id="d1">
+    <ul class="d2">
+      <li>
+        <a href="#">
+          <img src="index/banner3.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="index/banner2.png" alt="">
+        </a>  
+      </li>
+      <li>
+        <a href="#">
+          <img src="index/banner1.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="index/banner4.png" alt="">
+        </a>
+      </li>
+    </ul>
+    <a href="#" class="arrow-left bg-c"></a>
+    <a href="#" class="arrow-right bg-c"></a>
+    <ul class="d3">
+      <li></li>
+      <li></li>
+      <li class="li3"></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>

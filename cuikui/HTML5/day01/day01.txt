@@ -1,0 +1,127 @@
+今天的学习内容
+1.复习 vue ui重点知识(vuex明天项目)
+2.html5新特性
+  2.1:作用:提供丰富的多媒体功能(视频音频);让程序更加酷炫;绘图;开发网页游戏.
+  2.2:html5新特性(10个)
+    1.新的语义标签--(footer;header)
+	2.增强型的表单(表单 2.0)
+	3.音频和视频(重点)
+	4.canvas绘图(重点重点;绘图;小游戏)
+	  4.1:echarts百度
+	  4.2:小游戏(休闲类)
+	5.svg绘图
+	6.地理定位
+	7.拖放API
+	8.Web Worker
+	9.Web Storage
+	10.Web Stokec
+  2.3:html5新特性--表单新特性
+    (1)新的input type
+	  h4:text;password;submit;button;checkbox;radio;file
+	  h5:email;url;number;search;range;color;date;month;week
+    (2)新的表单元素
+	  h4:input;textarea;select/option;label
+	  h5:datalist;progress;meter;output
+    (3)新的表单属性
+  2.4:html5 新特性--表单新特性-datalist(建议列表)
+  2.5:html5 新特性--表单新特性-progress(进度条)
+    <progress></progress>  左右晃动的进度条
+    <progress value="0.7"> 具有指定进度值的进度条
+
+  2.6:html5 新特性--表单新特性-meter(刻度尺)(绿黄红)
+    <meter min="最小值" max="最大值" optimum="最佳值" value="0" low="合理下限" high="合理上限"></meter>
+  2.7:html5 新特性--表单新特性--output
+    output:输出:没有任何外观样式的span
+	商品单价:¥3.5
+	购买数量:<input type="number" value="1">
+	合计: <output>¥3.5<output>
+  2.8:html5 新特性--新的表单属性
+    h4:id;name;value;class;style;ready;checked
+	h5:
+	  -placeholder:占位符
+	    <input type="text" placeholder="请输入用户名">
+	  -autofocus:自动获取输入焦点
+	    <input autofocus>
+	  -multiple:允许输入框中输入多个值(用逗号隔开)
+	  -form:用于输入域放置在表单外部
+	  <form id="f5"></form>
+	  <input type="number" form="f5">
+   与验证相关的
+   -required:必填项,内容不能为空
+   -minlength:最小字符串长度
+   -maxlength:最大字符串长度
+   -min:最小值(数值)
+   -max:最大值(数值)
+   -pattern:正则表达式
+
+3:HTML5的新特性--多媒体(视频和音频)(重点)
+	Flash被H5取代
+	Flash 绘图(AS/Flex)===>Canvas+SVG
+	Flash 动画(游戏)===>Canvas+定时器+第三方游戏平台
+	Flash 视频音频===>video/audio
+	Flash 客户端存储数据===>h5 WebStorage
+H5提供一个新的标签用于播放视频
+  <video src=""></video>
+      <video>
+		<source src="x.mp4">
+		<source src="x.avi">
+		<source src="x.ogg">
+	  </video>
+通过格式工厂软件将一个视频文件转换多种格式.它本身是一个300*150的inline-block元素
+
+3.1:html5新特性--视频
+
+  autoplay  false  是否自动播放<video autoplay>
+  controls  false  是否显示播放控件
+  loop      false  是否循环播放
+  muted     false  是否静音播放
+  poster     ""    在播放第一帧画面之前显示海报
+  preload          视频的预加载策略
+    auto:     预加载视频的数据以及缓冲一定时间的内容
+	metadata  预加载视频元数据(尺寸,市场,第一帧内容)
+	none      比预加载任何数据
+----js对象的属性
+  paused  true  当前的视频所处的暂停的状态
+  volum   1     当前的音量0~1
+  playbackRate  播放的倍数(速率) 大于1快放  小于1慢放
+  --成员方法
+    play() 播放视频
+	pause() 暂停视频
+  --成员事件
+    onplay   当视频开时播放时触发
+	onpause  当视频暂停播放时触发
+
+3.2:html5新特性--音频(和视频一样,属性通用)
+  h5提供一个新的标签用于播放音频
+	<audio src="x.mp3"></audio>
+  <audio>
+	<source src="x.mp3">
+	<source src="x.mp3">
+	<source src="x.mp3">
+  </audio>
+3.3 html5 新特性--绘图
+  网页中股票走势图,统计图,网页游戏,地图应用都要使用到绘图技术
+  (1)SVG    绘图:2D 矢量图技术2000出现(XML)后纳入H5标准
+  (2)Canvas 绘图:2D 位图:h5标准
+  (3)WebGL  绘图:3D 位图绘图技术,尚未纳入H5标准
+注意:难点(坐标系+单词多)
+3.4:html5新特性--绘图--矩形
+
+canvas 先创建画布
+<canvas width="500" height="400"></canvas>
+canvas 标签在画浏览器默认300*150的inline-block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

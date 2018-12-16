@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background:#ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>绘制矩形--左右移动</h1>
+    <canvas width="500" height="400" id="c3">您的浏览器版本太低,请升级!!!</canvas>            
+    <script>
+        //获取画布,获取画笔
+        var c3 = document.getElementById("c3");
+        var  ctx = c3.getContext("2d");
+        //创建变量保存x坐标
+        var y = 0;
+        var yDirection = 1;//方向(1向右)(-1向左)
+        //创建定时器
+        setInterval(function(){           
+            ctx.clearRect(0,0,500,400);
+            //修改y坐标
+            y += 1 * yDirection;
+            if(y>320){
+                yDirection = -1;//向shang 
+            }else if(y<0){
+                yDirection = 1;//向xia
+            }      
+            //绘制矩形     
+            ctx.strokeRect(200,y,100,80);
+        },10)
+    </script>
+</body>
+</html>

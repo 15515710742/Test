@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #parent{
+      border:1px solid red;
+    }
+    div.c{
+      width:200px;
+      height:200px;
+      border:1px solid blue;
+      float:left;
+    }
+    /*解决父元素的高度问题*/
+    #parent:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+    #d1{
+      width:200px;
+      height:200px;
+      background:blue;
+    }
+    #p1{
+      width:100px;
+      height:100px;
+      background:red;
+      margin-top:50px;
+      margin-left:50px;
+    }
+    
+    #p1:before{
+      content:table;
+      display:inline-block;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div class="c"></div>
+    <div class="c"></div>
+    <div class="c"></div>
+    <!-- <p style="clear:both;"></p> -->
+  </div>
+  <div id="d1">
+    <!-- <table></table> -->
+    <p id="p1"></p>
+  </div>
+</body>
+</html>

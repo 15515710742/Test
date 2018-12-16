@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="videobox" style="width:100%;height:300px;">
+        <video id="v3" src="img/x.mp4" controls webkit-playsinline="true" x5-video-player-type="h5" playsinline="true" x5-video-player-fullscreen="true" x5-video-orientation="portraint"></video>
+    </div>
+    <script>
+        var videobox = document.getElementById("videobox");
+        var v3 = document.getElementById("v3");
+        videobox.onclick = function(){
+            v3.play();
+        }
+        //处理Android
+        window.onresize = function(){
+            videobox.style.width = window.innerWidth+"px";
+            videobox.style.height = window.innerHigth+"px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+一AJAX发起post请求
+  1.注意两点
+    1.post请求数据要放在请求主体中
+      xhr.send(数据);
+    2.在发送请去之前,需要手动修改请求的消息头
+      xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+二.JSON数据格式
+  1.js对象的数据格式
+    1.语法:
+    var 对象名称={
+      属性:值,
+      属性:值,
+      属性:值
+    }
+    ex:
+    var tom={
+      name:'tom',
+      age:18,
+      height:175
+    }
+    获取tom的年龄: tom.age
+    练习:创键一个笔记本对象,包含以下属性
+      1.name 的值为MacBook Air
+      2.price的值为7800元
+      3.left 的值为200台
+      在控制台按以下格式打印
+      笔记本的名称:MacBook Air
+      笔记本的价格:7800元
+  2.JSON数据格式
+    1.什么是JSON
+      JSON:JavaScript Object Notation
+              js       对象  表现方式
+      以js对象表示法:即以js对象的数据格式表现出来的字符串
+    2.JSON语法
+      1.JSON中用一对{}来表示一个对象
+      2.对象中的属性名称,必须用""引起来(不要用单引号)值如果是字符串的话,也必须用""引起来
+      3.表现出来的是个字符串,所以在最外层一定要加引号(单引号)
+      ex:
+      普通字符串:var tom="汤姆";
+      JSON字符串:
+      var tom={
+        "name":"汤姆",
+	"age":20
+      }
+      普通数组:["tom","lilei","hanmeimei"]
+      JSON数组:[
+        {
+	"name":"tom",
+	"age":20
+	},
+	{
+	"name":"lilei",
+	"age":19
+	},
+	{
+	"name":"hanmeimei",
+	"age":18
+	}  
+      ]
+    3.将JSON字符串转成js对象/数据
+      使用JSON.parse();来将JSON字符串解析为js对象/js数组
+      ex:
+        var obj=JSON.parse("接收回来的JSON数据");
+三.XHL数据格式
+  1.什么是XHL
+    XML:eXtensible Markup Language
+         可扩展性    标记    语言
+    XHL的标记是没有被预定义过,需要自行定义
+    XHL的宗旨是做数据的传递,而非数据展示
+  2.语法规范
+    1.XHL在最顶端做声明
+      <?XHL version="1.0" encoding="utf-8"?>
+    2.XML标记的语法
+      1.XML标记必须成对出现
+        <name></name> 正确
+      2.XML严格区分大小写.开始标记和结束标记必须一致
+        <Name></name> 错误
+      3.XML的标记允许嵌套,注意嵌套顺序
+        <student>
+	  <name>tom</name>
+	  <age>20</age>
+	</student>
+      4.每个标记允许自定义属性,格式与HTML一致,但属性值必须用双引号括起来
+        <student num="20"></student>
+      5.每个XML文档,必须有一个根标记
+        练习:创建一个student.xml文件,在文件中声明xml类型
+  3.ajax请求xml
+    1.创建异步对象
+    2.监听事件
+    3.打开连接
+    4.发送请求
+  4.解析XML文档对象的内容
+    核心方法:getElementsByTagName("标签名称");
+    返回值:返回一个包含指定元素门的"类数组"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

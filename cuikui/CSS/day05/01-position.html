@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    div{
+      width:100px;
+      height:100px;
+      position:absolute;
+      left:0;
+      top:0;
+    }
+    
+    #d1{
+      background:blue;
+      z-index:2;
+    }
+    #d2{
+      background:yellow;
+      left:20px;
+      top:20px;
+      z-index:3;
+    }
+    #d3{
+      background:green;
+      left:40px;
+      top:40px;
+    }
+    
+    #parent{
+      background:red; 
+      width:200px;
+      height:200px;
+      position:absolute;
+      left:200px;
+      top:200px;
+      z-index:10;
+
+    }
+    #child{ 
+      background:green;
+      position:absolute;
+      left:50px;
+      top:50px;
+      z-index:5;
+    }
+  </style>
+</head>
+<body>
+  <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
+  
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+</body>
+</html>

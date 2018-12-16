@@ -1,0 +1,36 @@
+今天的学习内容
+1:复习昨天的重点
+2:今天的目标
+	2.1鞋子商城--商品列表-跳转下一个组件
+	  GoodsList.vue--->Goodsinfo.vue(商品详情)
+	  跳转原生页面也有类似的功能
+	  --标签
+	  解决方案一:标签<router-link>
+	  解决方案二:编程式导航
+	  --最简单
+	  this.$router.push("/home/goodsinfo"+id)
+	  --传递对象
+	  this.$router.push({path:"/home/goodsinfo"})
+	  --传递名路由
+	  this.$router.push({name:"/home/goodsinfo"})
+严格模式
+原因:脚手架中启用了严格模式,mui中有一些严格模式下不允许出现代码 arguments
+解决方案一:禁用严格模式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

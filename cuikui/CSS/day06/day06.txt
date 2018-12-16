@@ -1,0 +1,259 @@
+一.弹性布局
+  1.容器的属性
+    1.flex-direction
+    2.flex-wrap
+    3.flex-flow
+    4.justify-content
+    5.align-items
+      作用:项目在交叉轴上的对齐方式
+      取值:
+        1.flex-start 在交叉轴上靠起点对齐
+	2.flex-end   在交叉轴上靠终点对齐
+	3.center     在交叉轴上居中对齐
+	4.baseline   在交叉轴上基线对齐
+	5.stretch    如果未设置项目的尺寸,在交叉轴上占满所有空间
+  2.项目的属性
+    该组属性只能设置在某一个项目上,是不影响容器以及其他项目的效果
+    1.order
+      作用:定义项目的排列顺序,值越小越靠近起点,默认值为0
+      取值:整数数字,无单位
+    2.flex-grow
+      作用:定义项目的放大比例,如果容器有足够大的剩余空间,项目将按照比例放大
+      取值:整数数值,无单位
+           默认值为0.无放大
+	   取值越大,占剩余的空间越多
+    3.flex-shrink
+      作用:定义项目的缩小比例,即空间不足时,项目该如何缩小
+      取值:默认值为1.空间不足时,则等比缩小
+           取值为0,则不缩小
+	   取值越大,缩小的越快
+    4.align-self
+      定义当前项目在交叉轴上的对齐方式
+      取值:
+        1.flex-start
+	2.flex-end
+	3.center
+	4.baseline
+	5.stretch
+	6.auto 继承父元素的align-items的效果
+二.转换(重点)
+  1.什么是转换
+    改变元素在页面中的位置,大小,角度以及形状的一种方式
+    2D转换:只在x轴和y轴,发生转换的效果
+    3D转换:增加了z轴上的转换效果
+  2.转换属性
+    1.转换属性
+      属性:transform
+      取值: 
+        1.none 默认值,为任何转换效果
+        2.transform-function
+          表示1个或多个转换函数,如果是多个函数的话,用空格隔开
+    2.转换原点
+      属性:transform-origin
+      取值:数字/百分比/关键词
+        2个值:表示原点在x轴和y轴上的位置
+        3个值:表示原点在x轴,y轴和z轴上的位置
+        默认值:原点在元素的中心位置(center,center)
+  3.2D转换
+    1.位移(改变位置)
+      1.什么是位移?
+        改变元素在页面中的位置
+      2.语法:
+        属性:
+	  1.translate(x)
+	    指定元素在x轴上的位移距离
+	    取值为正,元素右移
+	    取值为负,元素左移
+	  2.translate(x,y)
+	    x:同上
+	    y:指定元素在y轴上的位移距离
+	    取值为正,元素下移
+	    取值为负,元素上移
+          3.translateX(x)只设置在x轴上的位移
+	  4.translateY(y)只设置在y轴上的位移
+    2.缩放
+      1.什么是缩放
+        改变元素在页面中的大小
+      2.语法:
+        属性:transform
+	取值:
+	  1.scale(value)
+	    value:横向和纵向的缩放比例
+	    value:默认值为1
+	      >1:放大
+	      <1:缩小
+	      <0:放大(水平方向和垂直方向都反转180度)
+          2.scale(x,y)
+	    x:横向缩放比例
+	    y:纵向缩放比例
+	  3.scaleX(x)单独设置水平缩放
+	  4.scaleY(y)单独设置垂直缩放
+    3.旋转效果
+      1.什么是旋转
+        改变元素在页面中的角度
+      2.语法:
+        属性:transform
+	取值:
+	  rotate(ndeg)
+	  n取值为正,顺时针
+	  n取值为负,逆时针
+      3.注意:
+        1.转换原点会影响最后的旋转效果
+	2.旋转是连同坐标轴一起旋转的,会影响旋转后的位移效果
+    4.倾斜
+      1.什么是倾斜
+        改变元素在页面中的形状
+      2.语法:
+        属性:transform
+	取值:
+	  1.skew(x)
+	  2.skew(x,y)
+	  3.skewX(x)
+	    让元素向着x轴发生倾斜效果,实际上是改变y轴的角度
+	    x取值为正,y轴逆时针倾斜
+	    x取值为负,y轴顺时针倾斜
+	  4.skewY(y)
+	    让元素向着y轴发生倾斜效果,实际上是改变x轴的角度
+	    y取值为正,x轴顺时针倾斜
+	    y取值为负,x轴逆时针倾斜
+  4.3D转换
+    1.透视距离
+      模拟人的眼睛到3D转换元素之间的距离
+      属性:perspective
+      注意:该属性要加在转换元素的父元素上
+    2.3D旋转
+      属性:transform
+      取值:
+        1.rotateX(xdeg)
+	  以x轴为中心轴.旋转元素的角度(老式爆米花机器,烤全羊)
+        2.rotateY(ydeg)
+	  以y轴为中心轴,旋转元素的角度(开关门,旋转木马)
+        3.rotateZ(zdeg)
+	  以z轴为中心轴,旋转元素的角度(风扇,摩天轮)
+        4.rotate3d(x,y,z,ndeg)
+	x,y,z取值为大于0的数字时表示该轴参与旋转,取值为0时则表示不参与旋转
+	ex:rotate3D(1,0,0,50deg)
+	   rotate3D(1,1,1,50deg)
+三.过过渡(重点)
+  1.什么是过渡
+    使得css属性值,在一段时间内平缓变化的效果
+  2.语法:
+    1.指定过渡属性
+      属性:transition-property
+      取值:
+        1.all 能使用过渡的属性,一律用过渡来体现
+	2.具体的属性名称
+	ex:
+	  transition-property:background;
+	  transition-property:border-radius;
+	能使用过渡效果的属性:
+	  1.颜色相关的属性
+	  2.取值为数字的属性
+	  3.转换效果
+	  4.阴影属性
+	  5.渐变属性
+	  6.visibility
+    2.指定过渡时长
+      作用:指定多长时间内完成过渡操作
+      属性:transition-duration
+      取值:以s或ms为单位的数字 1s=1000ms
+    3.指定过渡时间曲线的函数
+      属性:transition-timing-function
+      取值:
+        1.ease 默认值,慢速开始,快速变快,慢速结束
+	2.linear 匀速
+	3.ease-in 慢速开始,加速结束
+	4.ease-out快速开始,慢速结束
+	5.ease-in-out 慢速开始和结束,中间先加速在减速
+    4.指定过渡延迟时间
+      属性:transition-delay:
+      取值:以s或者ms为单位的数字
+    5.过渡属性的编写位置
+      1.将过渡放在元素声明的样式中
+        即管去,又管回
+      2.将过渡放在触发操作中
+        只管去,不管回
+    6.过渡的简写
+      属性:
+        transition:property duration timing-function delay;
+	ex
+	transition:all 2s;
+四.动画(重点)
+  1.什么是动画
+    使元素从一种样式逐渐变为另一种样式,即将多个过渡效果放在一起
+  2.动画通过"关键帧",来控制动画的每一步
+    关键帧
+      1.动画的时间点
+      2.在该时间点上的样式是什么
+   3.动画的使用步骤
+     1.声明动画
+       为动画起名字
+       定义关键帧
+       @keyframes 动画的名称{
+         定义关键帧
+         0%{
+	   动画开始时元素的样式
+	 }
+	 25%{
+	   动画执行到1/4时元素的样式
+	 }
+	 50%{
+	   动画执行到一半时元素的样式
+	 }
+         100%{
+	   动画执行结束时元素的样式
+	 }
+       }
+     2.调用动画
+       1.animation-name
+         作用:指定调用动画的名称
+       2.animation-duration
+         作用:指定动画的一个周期的时长
+	 取值:以s或ms为单位的数字
+       3.animation-timing-function
+         作用:指定动画的速度时间曲线函数
+	 取值:ease/linear/ease-in/ease-out/ease-in-out
+       4.animation-delay
+         作用:指定动画的延迟时间
+         取值:以s或ms为单位的数字
+       5.animation-iteration-count
+         作用:指定动画播放的次数
+	 取值:
+	   1.具体次数
+	   2.infinite:无限次数播放
+       6.animation-diection
+         作用:指定动画播放的方向
+	 取值:
+	   1.normal 默认值,正常播放0%~100%
+	   2.reverse 逆向播放100%~0%
+	   3.alternate 轮流播放,奇数次正向播放,偶数次逆向播放
+       7.简写方式
+         animation:name duration timing-function delay iteration-count direction;
+       8.animation-fill-mode
+         作用:规定动画在播放前或播放后的状态
+	 取值:
+	   1.none 默认值
+	   2.forwards动画播放完成后,将保留在最后一个动画的状态
+	   3.backwards动画播放前,延迟时间内,动画保持在第一帧的状态上.
+	   4.both 是forwards和backwards的结合体
+       9.animation-play-state
+         作用:指定动画是处于播放还是暂停状态上
+	 取值:
+	   1.paused  暂停
+	   2.running 播放
+
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

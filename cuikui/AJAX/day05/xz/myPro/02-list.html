@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body onload="loadUser()">
+  <table border="1px">
+    <thead>
+      <th>登录名称</th>
+      <th>电子邮箱</th>
+      <th>联系方式</th>
+      <th>用户姓名</th>
+      <th>用户性别</th>
+      <th>操作</th>    
+    </thead>
+    <tbody id="myBody"></tbody>
+  </table>
+  <script src="common.js"></script>
+  <script>
+    //一.获取后端数据以表格的形式展现出来
+    function loadUser(){
+      //1.创建异步对象xhr
+      var xhr=createXhr();
+      //2.绑定监听异步对象
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var res=xhr.responseText;
+          //将接收回来的json数据转换为js数组
+          var arr=JSON.parse(res);
+          var html="";
+          for(var i=0;i<arr.length;i++){ 
+            /*  
+            var uname=arr[i].uname;
+            var email=arr[i].email;
+            var user_name=arr[i].user_name;
+            var phone=arr[i].phone;
+            var gender=arr[i].gender;
+            $("myBody").innerHTML+="<tr><td>"+uname+"</td><td>"+email+"</td><td>"+phone+"</td><td>"+user_name+"</td><td>"+gender+"</td><td><a href=''>删除</a><a href=''>修改</a></td></tr>"; 
+            */         
+            var user=arr[i];  
+            html+="<tr>";
+              html+="<td>"+user.uname+"</td>";
+              html+="<td>"+user.email+"</td>";
+              html+="<td>"+user.phone+"</td>";
+              html+="<td>"+user.user_name+"</td>";
+              if(user.gender==1){
+                gender="男";
+              }else if(user.gender==0){
+                gender="女";
+              }else{
+                gender="不详";
+              }
+              html+="<td>"+gender+"</td>";
+              html+="<td>";
+                html+="<a href='javascript:deleteUser("+user.uid+")'>删除</a>";
+                html+="<a href='03-sel-update.html?uid="+user.uid+"'>修改</a>";
+              html+="</td>";
+            html+="</tr>"; 
+          }
+          $("myBody").innerHTML=html;
+        }
+      }
+      //3.打开连接
+      xhr.open("get","/myPro/list",true);
+      //4.发送请求
+      xhr.send(null);
+      }
+      //二.根据uid删除用户
+      //根据uid删除用户
+      function deleteUser(uid){
+        var xhr=createXhr();
+        xhr.onreadystatechange=function(){
+          if(xhr.readyState==4 && xhr.status==200){
+            var res=xhr.responseText;
+            if(res=="1"){
+              alert("删除成功");
+              loadUser();
+            }else{
+              alert("删除失败");
+            }
+          }
+        }
+        xhr.open("get","/myPro/deleteUser?uid="+uid,true);
+        xhr.send(null);
+      }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

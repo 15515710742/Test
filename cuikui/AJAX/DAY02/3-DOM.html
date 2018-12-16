@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <div id="d1">123</div>
+  <input type="text" id="1">
+<!--   <input type="button" value="获取输入框中的值" onclick="getVal()"> -->
+  <input type="button" value="将输入框中的值放在div中显示出来" onclick="getVal()">
+  <script src="common.js"></script>
+  <script>
+  /*  function get(){
+      var uname=document.getElementById("1");
+      console.log(uname.value);   
+    } */ 
+    function getVal(){
+      var uname=$("1");
+      var d=$("d1");
+      d.innerHTML=uname.value;  
+    }
+  </script>
+</body>
+</html>

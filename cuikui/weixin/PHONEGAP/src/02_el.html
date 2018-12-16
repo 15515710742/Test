@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="e.css">
+    <script src="v.js"></script>
+    <script src="e.js"></script>
+</head>
+<body>
+    <h1>01_el.html</h1>
+    <div id="app">
+       <el-progress type="circle" :percentage="50"></el-progress>
+       <el-progress type="line" :percentage="70" color="#8e71c3"></el-progress>
+       <el-progress type="circle" :percentage="50" status="success"></el-progress>
+       <el-progress type="circle" :percentage="80" status="exception"></el-progress>
+       <h1>分页条</h1>
+       <div class="block">
+           <span class="demonstration"></span>
+            <el-pagination layout="prev,pager,next" :total="50"></el-pagination>
+        </div>
+        <div class="block">
+            <span class="demonstration"></span>
+            <el-pagination layout="prev,pager,next" :total="100"></el-pagination>
+        </div>
+        <div class="block">
+                <span class="demonstration"></span>
+                <el-pagination layout="prev,pager,next" :total="1000" :page-size="20" :page-count="11"></el-pagination>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:function(){return{}}
+        })
+    </script>
+</body>
+</html>

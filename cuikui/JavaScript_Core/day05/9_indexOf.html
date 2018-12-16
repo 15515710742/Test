@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //让旧浏览器,也支持indexOf
+    Array.prototype.indexOf=function(elem,fromi=0){
+        console.log("调用我自己的indexOf");
+        //如果没有给fromi,则默认为fromi=0
+        /*
+        if(fromi===undefined)
+            fromi=0;
+        */
+            //从指定的fromi位置处,向后遍历当前数组中的每个元素
+        for(var i=fromi;i<this.length;i++){
+            //如果elem等于当前数组当前位置元素值,说明找到了
+            if(elem===this[i])
+            return i;//返回当前位置,并退出当前函数
+        }//如果循环能执行完,说明中途没有找到相等的
+        return -1;//才有资格返回-1,说明确实没有找到
+    }
+    var arr=[1,2,3,4,3,2,1];
+    console.log(arr.indexOf(3));//2
+    console.log(arr.indexOf(3,3));//4
+    console.log(arr.indexOf(3,5));//-1
+    console.log(arr.indexOf(6));//-1
+</script>    
+</body>
+</html>

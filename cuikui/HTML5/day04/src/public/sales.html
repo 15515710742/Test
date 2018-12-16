@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计图</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>药品销售量统计图</h1>
+    <canvas width="500" height="400" id="c3"></canvas>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        var c3 = document.getElementById("c3");
+        var ctx = c3.getContext("2d");
+        $.ajax({
+            type:"get",
+            url:"http://127.0.0.1:3000/salesmonth?id=1",
+            success:function(data){
+               for(var i=0;i<data.length;i++){
+                    var item = data[i];
+                    var w=500/(data.length*2+1);
+                    var h=item.sales/8;
+                    var y=380-h;
+                    var x=i*2*w+w;
+                    ctx.fillStyle=rc();
+                    ctx.fillRect(x,y,w,h);//柱子
+
+                    var total=item.sales;
+                    var txty=380-h;
+                    var txtx=x;
+                    ctx.fillStyle="#000";
+                    ctx.font="10px sans-serif";
+                    ctx.fillText(total,txtx,txty);//销售额
+
+                    var month = item.month;
+                    var monthTxty=400;
+                    var monthTxtx=x;
+                    ctx.font="12px sans-serif";
+                    ctx.textBaseline = "bottom";
+                    ctx.fillText(month+"月",monthTxtx,monthTxty);//月份
+
+               }
+            }
+        }) 
+        function rc(){
+            var r = Math.floor(Math.random()*256);
+            var g = Math.floor(Math.random()*256);
+            var b = Math.floor(Math.random()*256);
+            return `rgb(${r},${g},${b})`         
+        }         
+    </script>    
+</body>
+</html>

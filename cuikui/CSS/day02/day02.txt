@@ -1,0 +1,177 @@
+﻿一.尺寸与边框
+  1.尺寸属性
+  2.溢出处理
+    当内容多,元素区域小的时候,就会产生溢出的效果,默认都是纵向溢出.
+    属性:overflow,overflow-x,overflow-y
+    取值:
+      1.visible可见的,默认值,溢出可见
+      2.hidden 隐藏的,溢出的内容全部隐藏,不可见
+      3.scroll 显示出滚动条,溢出时滚动条可用
+      4.auto 自动,溢出时显示滚动条并可用
+  3.边框
+    1.边框属性-简写方式
+      border:width style color
+      width:边框的宽度
+      style:边框的样式
+        取值:solid 实线
+	     dotted:虚线(点)
+	     dashed:虚线(线)
+      color:边框的颜色,取值为合法的颜色值(transparent 透明色)
+      注意:border设置的是四条边框,如果取消边框border:none/0;
+    2.单边定义
+      只设置某一条边的三个属性
+      属性:
+      border-top/bottom/left/right:width style color
+    3.单属性定义
+      只设置四条边的某一个属性
+      属性:border-width/style/color:值
+      ex:
+      border-width:3px;
+      border-style:solid;
+      border-color:red;
+    4.单边单属性
+      只设置某一条边的某一个属性
+      属性:border-方向-属性:值;
+      ex:
+      border-left-color:red;
+      border-bottom-color:blue;
+  4.边框倒角
+    将直角倒成圆角
+    属性:border-radius
+    取值:
+      1.以px为单位的数字
+      2.以%为单位,设置圆形(50%)
+    单角设置:
+      border-top-left-radius:左上角
+      border-top-fight-radius:右上角
+      border-bottom-left-radius:左下角
+      border-bottom-right-radius:右下角
+  5.边框阴影
+    属性: box-shadow
+    取值:h-shadow  v-shadow   blur spread color inset
+    h-shadow:水平方向的阴影偏移,必须值;取值为正,阴影向右偏移;取值为负,阴影往左偏移
+    v-shadow:垂直方向阴影的偏移,必须值;取值为正,阴影向下偏移;取值为负,阴影往上偏移
+    blur:阴影的模糊距离,可选值,值越大模糊距离越明显.
+    spread:阴影的尺寸,指定要在基础阴影上扩出来的大小距离
+    color:阴影的颜色
+    inset:将默认的阴影改为内阴影
+  6.轮廓
+    轮廓指的是边框的边框,绘制于边框外的线条
+    属性:
+      outline:width style color
+      width:轮廓的宽度
+      style:轮廓线条的样式
+      color:轮廓的颜色
+    取消轮廓:outline:none/0;
+    练习:尝试设置一个乒乓球拍效果图
+二.框模型(重点)
+  1.什么是框模型
+    页面元素皆为框
+    框模型:box model 又称盒子模型.定义了元素框处理元素的内容,内外边距,外边距以及边框的一种计算方式
+    框模型的默认的计算方式
+      元素实际占地宽度=左右外边距+左右边框+左右内边距+width
+      元素实际占地高度=上下外边距+上下边框+上下内边距+height
+    内边距:元素边框与内容之间的空白间距
+    外边距:围绕在元素边框外的空白间距(元素与元素之间的空白距离)
+  2.外边距
+    1.语法:
+      属性:margin定义四个方向的外边距
+           margin-top/left/right/bottom定义某一个方向的外边距
+      取值:
+        1.以px为单位的数字
+	2.取值为%
+	3取值为负数:让元素向着相反的方向移动
+	  margin-left:取值为正,让元素向右移动
+	              取值为负,让元素向左移动
+	  margin-top: 取值为正,让元素向下移动
+	              取值为负,让元素向上移动
+	4.auto 自动计算块级元素的外边距,控制块级元素在水平方向居中对齐.
+    2.简写方式
+      margin:value四个方向的外边距
+      margin:v1 v2
+           v1:上下外边距
+	   v2:左右外边距
+      margin:v1 v2 v3
+           v1:上外边距
+	   v2:左右外边距
+	   v3:下外边距
+      margin:v1  v2 v3 v4
+             上  右 下 左(顺时针)
+    3.自带外边距的元素
+      h1~h6  p  body  ol  ul dl  pre
+      通常样式重写的方式,来重置具备外边距的元素
+      body,p,h1,h2,h3,h4,h5,h6,ol,ul,dl,pre{margin:0;}
+    4.外边距的特殊效果
+      1.外边距的合并
+        当两个垂直的外边距相遇时,他们将合并成一个,最终的距离取决于两个外边距中较大的值
+      2.行内元素以及行内块元素
+        行内元素垂直外边距无效(img除外),水平外边距相遇时两个值会相加
+	行内块设置垂直外边距,整行元素跟着发生变化
+      3.外边距溢出
+        在特殊条件下,为子元素设置上外边距时,会作用到父元素
+	  1.父元素没有上边框
+	  2.为第一个子元素设置上外边距时
+	  解决方案
+	  1.为父元素添加上边框
+	    弊端:影响父元素的高度
+	  2.为父元素添加上内边距
+	    弊端:影响父元素的高度
+	  3.在父元素的第一个子元素位置处,增加一个空的<table></table>标记
+  3.内边距
+    不会影响其他元素,但会改变元素自己的占地尺寸,会变大
+    1.语法:
+      属性padding;value 四个方向的内边距
+          padding-top/bottom/left/right定义某一边的内边距
+      取值:
+        以px为单位的数字
+	以%为单位的数字
+    2.简写方式
+      padding:value;四个方向的内边距
+      padding:v1 v2;上下 左右
+      padding:v1 v2 v3; 上 左右 下
+      padding:v1 v2 v3 v4; 上 右 下 左 
+  4.box-sizing属性
+    作用:指定框模型的计算方式
+    默认的计算方式:
+      元素实际占地宽度=左右外边距+左右边框+左右内边距+width
+      元素实际占地高度=上下外边距+上下边框+上下内边距+height
+      取值:
+        1.content-box 默认值,采用的默认计算方式
+	2.border-box 元素的尺寸,会包含border以及padding的值.
+三.背景
+  1.背景颜色
+    属性:background-color
+    取值:合法的颜色值 transparent(透明色)
+    背景颜色和背景图默认从边框位置处开始填充
+  2.背景图片
+    属性:background-image
+    取值:url(图片路径)
+    ex:
+    background-image:url(a.jpg);
+  3.背景图平铺
+    属性:background-repeat
+    取值:
+      1.repeat 默认值,背景图平铺
+      2.no-repeat 不平铺,背景图只显示一次
+      3.repeat-x 在水平方向平铺
+      4.repeat-y 在垂直方向平铺
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试</title>
+</head>
+<body>
+    <h1>单词测试</h1>
+    <ul id="list"></ul> 
+    <a href="03_result.html" id="btn2">提交试卷</a>
+    <script>
+        //1.根据客户端永久的存储key和value 生成试卷
+        var html = "";
+        for(var i=0;i<localStorage.length;i++){
+            var e = localStorage.key(i);//遍历每一个key英文
+            html += `<li><span>${e}</span><input></li>`;
+        }
+        var list = document.getElementById("list");
+        list.innerHTML = html;
+        //2.监听提交试卷的按钮获取用户输入与正确答案比较
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function(e){
+            e.preventDefault();
+            var total = localStorage.length;//总单词个数
+            var correct = 0;//正确数量
+            //获取用户输入答案 一组 input
+            var inputList = document.querySelectorAll("#list input");
+            for(var i=0;i<inputList.length;i++){
+                //用户答案
+                var uval = inputList[i].value;
+                var key = localStorage.key(i);
+                var v = localStorage.getItem(key);
+                if(uval==v){
+                    correct++;//用户输入正确得1分
+                }
+            }
+            sessionStorage.setItem("total",total);
+            sessionStorage.setItem("correct",correct);
+            location.href = "03_result.html";
+        }
+    </script>
+</body>
+</html>

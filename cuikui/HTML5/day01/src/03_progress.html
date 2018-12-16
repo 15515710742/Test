@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML5的进度条</h1>
+    <progress></progress><br>
+    <progress value="0.1" id="p3"></progress>
+    <!-- <script>
+    var el=document.getElementsByTagName("progress")[1];
+    settimer=setInterval(function(){       
+        el.value += 0.05;
+        if(el.value==1){
+            clearInterval(settimer)
+        }
+    },1000)     
+    </script> -->
+    <script>
+        //1.获取进度条在创建变量保存定时器
+        var p3 = document.getElementById("p3");
+        var t = null;
+        //2.保存进度条
+        var v = 0.1;
+        t = setInterval(function(){
+           v+=0.1;
+           p3.value = v;
+           if(v>0.9){
+               clearInterval(t);
+           }
+        },500)
+    
+    </script>
+</body>
+</html>

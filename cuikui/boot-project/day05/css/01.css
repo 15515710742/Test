@@ -1,0 +1,75 @@
+div {
+  font-size: 24px;
+  color: blue;
+  font-style: italic;
+  font-weight: bold; }
+
+p {
+  font-size: 30px;
+  color: blue;
+  font-style: normal;
+  font-weight: bold; }
+
+h1 {
+  font-size: 45px;
+  color: yellow;
+  font-style: italic;
+  font-weight: bold; }
+
+.my-rounded, .rounded-shadow {
+  border: 1px solid red;
+  border-radius: 5px; }
+
+.rounded-shadow {
+  box-shadow: 0 0 10px; }
+
+.my-border, .my-bottom-border {
+  border: 1px solid transparent;
+  width: 400px;
+  margin-left: 20px; }
+
+.my-bottom-border {
+  border-bottom-color: red; }
+  .my-bottom-border:hover {
+    border-bottom-color: blue; }
+
+#d1 {
+  width: 15%; }
+
+p {
+  width: 1.11111in; }
+
+p:before {
+  content: "Microsoftyahei";
+  font-family: Arial; }
+
+p {
+  font: 10px/5px;
+  width: 500px;
+  height: 250px;
+  margin-left: 9px; }
+
+div:after {
+  content: "I ate 8 pies"; }
+
+p {
+  color: #050709; }
+
+p {
+  width: 60px;
+  color: blue; }
+
+div {
+  width: 26px; }
+
+div {
+  width: 690px; }
+
+p {
+  border-radius: 5px; }
+
+h2 {
+  color: yellow; }
+
+p {
+  width: 200px; }

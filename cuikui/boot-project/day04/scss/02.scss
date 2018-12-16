@@ -1,0 +1,98 @@
+@import "color";
+
+$my_blue:#0aa1ed;
+$fontColor:#fff;
+$my_height:2.5rem;
+.my_btn{
+  display: block;
+  background:$my_blue;
+  color:$fontColor;
+  text-decoration: none;
+  width:8rem;
+  height:$my_height;
+  text-align:center;
+  line-height:$my_height;
+  border-radius:0.2rem;
+  font-size:0.8rem;
+  &:hover{color:$jd_red;}
+}
+
+#main{
+  width:200px;
+  height:200px;
+  background:$jd_red;
+  transition:{property:all;duration: 2s;timing-function: linear;}
+  &:hover{
+    background:yellow;
+    border-radius:50%;
+
+  }
+}
+
+@mixin my_shadow{
+  -moz-box-shadow:0 0 50px 10px gray;
+  -webkit-box-shadow:0 0 50px 10px gray;
+  -ms-box-shadow:0 0 50px 10px gray;
+  -o-box-shadow:0 0 50px 10px gray;
+}
+
+div{
+  @include my_shadow;
+}
+p{
+
+  @include my_shadow;
+}
+
+@mixin round-corner{
+  -webkit-border-radius:5px;
+  -o-border-radius:5px;
+  -ms-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
+
+ul{
+  list-style: none;
+  li{
+    padding:15px;
+    border:1px solid $jd_red;
+    @include round-corner;
+    a{
+      color:$gray;
+      text-decoration: none;
+      &:hover{
+        color:$jd_red;
+      }
+    }
+  }
+}
+
+@mixin link-colors($normal,$hover,$visited){
+  color:$normal;
+  &:hover{color:$hover}
+  &:visited{color:$visited}
+}
+
+
+ul li a{@include link-colors(#000,yellow,green)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

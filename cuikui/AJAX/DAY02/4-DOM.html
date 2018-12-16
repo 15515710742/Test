@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body onload="btn_focus()">
+  <p>用户名称:<input type="text" onfocus="" onblur="btn_blur()" id="uname">
+    <span id="showUname"></span>
+  </p>
+  <p>用户密码:<input type="password" id="upwd" onfocus="upwd_focus()" onblur="upwd_blur()">
+    <span id="showUpwd"></span>
+  </p>
+  <script src="common.js"></script>
+  <script>
+    //获取焦点
+    function btn_focus(){
+      $("showUname").innerHTML="请输入用户名称为6-12位"; 
+    }
+   //失去焦点
+    function btn_blur(){
+     //获取用户名输入框中的值,在判断值是否为空
+      var uname=$("uname").value;
+      if(uname==""){
+        $("showUname").innerHTML="用户名称不能为空";
+      }else{
+        $("showUname").innerHTML="通过";
+      }  
+    }
+    function upwd_focus(){
+      $("showUpwd").innerHTML="请输入6-18位数字"; 
+    } 
+    function upwd_blur(){     
+      var upwd=$("upwd").value;
+      if(upwd==""){     
+        $("showUpwd").innerHTML="密码不能为空";
+      }else{
+        $("showUpwd").innerHTML="通过";
+      }
+    }
+
+
+  </script>
+  
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖动图片删除</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>执行耗时js任务</h1>
+    <button>按钮一</button>   
+    <!-- <script src="js/07.js"></script> -->
+    <script>
+        //创建新线程执行js代码
+        var w = new Worker("js/07.js")
+        w.postMessage("天王盖地虎")
+        w.onmessage = function(e){
+            console.log(e.data);
+        }
+        //练习:在HTML中创建input(用户输入数值),创建button按钮"开始计算累加和",
+        //点击此按钮,创建worker线程来计算用户输入数值累加和,
+        //worker计算完成在button下方,创建div显示计算结果
+
+    </script>
+    <button>按钮二</button>  
+    <div id="msg"></div>         
+</body>
+</html>

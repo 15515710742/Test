@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <p>
+    用户名称: <input type="text" id="uname">
+  </p>
+  <p>
+    用户密码: <input type="password" id="upwd">
+  </p>
+  <input type="button" value="post登录" onclick="post_Msg()">
+  <script src="common.js"></script>
+  <script>
+    function post_Msg(){
+      //1.创建异步对象 
+      var xhr= createXhr();
+      //2.绑定监听对象
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var res=xhr.responseText;
+          console.log(res);
+        }
+      }
+      //3.创建请求
+      xhr.open("post","/demo/postlogin",true);
+      //4.发送请求
+      //增加:异步请求消息的头
+      xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+      var uname=$("uname").value;
+      var upwd=$("upwd").value;
+      var formdata="uname="+uname+"&upwd="+upwd;
+      xhr.send(formdata);
+    }
+  
+  
+  </script>  
+</body>
+</html>

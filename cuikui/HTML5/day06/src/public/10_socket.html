@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>html5新特性--web Socket</h1>
+    <button id="btn1">连接到ws服务器,并且立即开始接受消息</button>
+    <button id="btn2">向服务器发送一条消息</button>
+    <button id="btn3">断开连接</button>
+    <script>
+        //1.创建全局变量保存socket
+        var ws = null;
+        //2.获取三个按钮并且绑定点击事件
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        //3.点击第一个按钮 创建websocket 接收数据
+        btn1.onclick = function(){
+            ws = new WebSocket("ws://127.0.0.1:9001");
+            ws.onmessage = function(e){
+                var str = e.data;
+                //console.log(e.data)
+                console.log("接收到服务器的一个消息:"+str);
+            }
+        }
+        //4.点击第二个按钮 向服务器发消息
+        btn2.onclick = function(){
+            ws.send("I am Client - "+ new Date().getTime())
+        }
+        //5.点击第三个按钮 关闭
+        btn3.onclick = function(){
+            ws.close();
+        }
+        </script>
+<!--创建 save.html 不停地录入新单词-->
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <p>
+    用户姓名:<input type="text" id="uname">
+  </p>
+  <p>
+    用户密码:<input type="password" id="upwd">
+  </p>
+  <p>
+    <input type="submit" value="登录" onclick="postData()">
+  </p>
+  <script src="common.js"></script>
+  <script>
+    function postData(){
+      //1.创建异步对象
+      var xhr=createXhr();
+      //2.绑定监听对象
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var res=xhr.responseText;
+          alert(res);
+        }      
+      }
+     xhr.open("post","/myPro/login",true);
+     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+     var uname=$("uname").value;
+     var upwd=$("upwd").value;
+     var formdata="uname="+uname+"&upwd="+upwd;     
+     xhr.send(formdata);
+    } 
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

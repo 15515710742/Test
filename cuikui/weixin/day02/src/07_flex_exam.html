@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       *{padding: 0;margin: 0;}      
+       a{text-decoration: none;}         
+       /*广告图*/
+       .slider img{width:375px;}                  
+       /*8张产品图片*/
+       .index-nav ul{
+           display: flex;  /*给当前父元素社会组弹性布局*/
+           flex-wrap: wrap;/*设置子元素换行排列*/
+           list-style: none;
+       }
+       .index-nav ul li{
+           width:33.333%;
+           border:1px solid #dedede;
+           box-sizing: border-box;
+       }
+       .index-nav ul li a{
+           height:100px;
+           display:flex;
+           flex-direction: column;/*列对齐*/
+           justify-content: center;/*子元素水平居中*/
+           align-items: center; /*垂直居中*/
+       }
+       .index-nav ul li a img{width:40px;}
+       .index-nav ul li  a p{font-size: 14px;color:#ccc}
+       .index-enter{height:200px;background-color: aquamarine;}
+    </style>
+</head>
+<body>
+ <!-- 1:广告图 -->
+ <div class="slider">
+     <img src="assets/images/banner-01.png">
+ </div>
+ <!-- 2:8张产品图 -->
+ <div class="index-nav">
+     <ul>
+         <li>
+             <a href="#">
+                 <img src="assets/icons/grid-01.png">
+                 <p>美食</p>
+             </a>
+         </li>
+         <li>
+            <a href="#">
+                <img src="assets/icons/grid-02.png">
+                <p>美食</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-03.png">
+                <p>结婚啦</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-04.png">
+                <p>卡拉OK</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-05.png">
+                <p>找工作</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-06.png">
+                <p>辅导班</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-07.png">
+                <p>美食</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-08.png">
+                <p>租房子</p>
+            </a>
+        </li><li>
+            <a href="#">
+                <img src="assets/icons/grid-09.png">
+                <p>美食</p>
+            </a>
+        </li>
+     </ul>
+ </div>
+ <div class="index-enter">首页入口</div>
+</body>
+</html>

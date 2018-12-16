@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    div{
+      width:100px;
+      height:100px;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    #d1{
+      background:blue;       
+     /* transform:rotate(45deg) translate(50px);*/
+    }
+    #d2{
+      background:yellow;
+      /*opacity:0.5;*/
+     /* transform:translate(50px) rotate(45deg);*/
+    }
+    #d2:hover{
+      /*transform:scale(2.5,1.2);*/
+     /* transform:rotate(90deg);*/
+     /* transform-origin:bottom right;*/
+     transform:skewX(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div id="d1">转换元素</div>
+  <div id="d2">参考元素</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>h5的新特性---视频</h1>
+    <video id="v3" src="res/x.mp4" controls loop muted></video>        
+    <button id="play1"> 播放</button>
+    <button id="pause1">暂停</button>
+    <script>
+        var v3 = document.getElementById("v3");
+         //console.log(v3.paused)//没有播放视频处于暂停状态
+         //v3.volume = 0.3;
+         //console.log(v3.volume);
+         var play = document.getElementById("play1");
+         var pause = document.getElementById("pause1");
+         play.onclick = function(){
+             v3.play();
+         }
+         pause.onclick = function(){
+             v3.pause();
+         }
+    </script>
+</body>
+</html>

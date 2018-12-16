@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="videobox" style="width:100%;height:300px;">
+        <video id="v3" src="img/x.mp4" controls webkit-playsinline="true" x5-video-player-type="h5" playsinline="true" x5-video-player-fullscreen="true" x5-video-orientation="portraint"></video>
+    </div>
+    <script>
+        var videobox = document.getElementById("videobox");
+        var v3 = document.getElementById("v3");
+        videobox.onclick = function(){
+            v3.play();
+        }
+        //处理Android
+        window.onresize = function(){
+            videobox.style.width = window.innerWidth+"px";
+            videobox.style.height = window.innerHigth+"px";
+        }
+        v3.addEventListener("loadstart",function(){
+            console.log("1:客户端发送请求");
+        })
+        v3.addEventListener("canplaythrough",function(){
+            console.log("2:加载完成可以播放");
+        })
+        v3.addEventListener("ended",function(){
+            console.log("3:播放结束");
+        })
+        v3.addEventListener("timeupdate",function(){
+            var t = v3.currentTime;
+            console.log("当前播放的时间:"+t);
+            console.log("总时长:"+v3.duration);
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户管理子系统--学子商城后台</title>
+</head>
+<body>
+<h3>添加新用户</h3>
+<form>
+	用户名:<input type="text" name="uname"><br>
+	密码名:<input type="upwd" name="upwd"><br>	
+	邮箱名:<input type="text" name="email"><br>
+	手机号:<input type="text" name="phone"><br>
+	<input type="button" value="提交注册信息" id="btSubmit">
+</form>
+<br>
+<h3>用户列表</h3>
+<br>
+<table width="100%" border="1">
+<thead>
+	<tr>
+		<th>编号</th>
+		<th>用户名</th>
+		<th>邮箱</th>
+		<th>电话</th>
+		<th>操作</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>3</td>
+		<td>dangdang</td>
+		<td>dang@tedu.cn</td>
+		<td>1350123456</td>
+		<td>
+			<a href="#">删除</a>
+			<a href="#">详情</a>
+			<a href="#">修改</a>
+		</td>
+	</tr>
+</tbody>
+</table>
+<script src="js/jquery-3.2.1.js"></script>
+<script>
+//处理"提交注册信息"按钮的单击事件
+//serialize()表单序列化:把表单中所有带name属性的输入域或和值拼接为k=v&k=v形式的字符串,以用于后续的请求数据
+	$("#btSubmit").click(function(){
+		var data=$("form").serialize();
+		console.log(data);
+//向服务器端页面(user_add.php)发起异步请求xhr请求
+	  $.ajax({
+		type:"POST",
+		url:"user_add.php",
+		data:data,
+		success:function(res){
+		  console.log(res)
+		},
+		error:function(err){
+		  console.log("ERR:",err)
+		}
+	  })
+	})
+</script>
+</body>
+</html>

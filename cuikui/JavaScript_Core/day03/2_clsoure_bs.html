@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //鄙视:画简图 找两样东西
+    //1.受保护的变量:n=999
+    //2.外层函数向外抛出了几个内层函数
+    function fun(){
+        var n=999;
+        nAdd=function(){n++}//自动在全局创建
+        return function(){
+            return console.log(n);
+        }
+    }
+    var get=fun();
+    get();//999
+    nAdd();
+    get();
+</script>
+    
+</body>
+</html>

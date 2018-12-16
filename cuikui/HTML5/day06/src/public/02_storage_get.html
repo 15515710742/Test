@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取数据</title>
+</head>
+<body>
+    <h1>html5新特性---获取数据</h1>
+    <script>
+        var uname=sessionStorage.getItem("uname");
+        var age=sessionStorage.getItem("age");
+        console.log(uname+":"+age);
+        console.log(sessionStorage.length);
+        console.log(sessionStorage.key(0));
+        //1.创建index.html右上角提示"请登录"超链接
+        //2.创建login.html输入用户名和密码提交按钮
+        //用户点击提交按钮 提示"登陆成功后3s自动调回首页""
+        //3.返回index.html右上角""欢迎回来xx" 退出登录
+        //4.春昂见logout.html 提示您已退出登录 3s 后返回首页
+        //5.创建index.html 右上角""请登录"
+    </script>
+</body>
+</html>

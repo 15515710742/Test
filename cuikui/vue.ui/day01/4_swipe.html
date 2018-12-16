@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mint ui学习</title>
+     <!-- 加载mint ui的依赖组件 -->
+     <!--mintui css;js依赖vue.js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        #app{
+            /*mint-ui 图片的轮播父组件高度默认为0*/
+            height:150px;  
+        }
+        img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片轮播的组件</h1>
+    <div id="app">
+        <mt-swipe :auto="2000">
+            <mt-swipe-item v-for="item in list">
+                <img :src="item">
+            </mt-swipe-item>
+        </mt-swipe>
+    </div>
+    <script>
+        // 1:创建vue对象选择挂载点
+        //2.添加数据与方法
+        new Vue({
+           el:"#app",
+           data:function(){
+                return {
+                    list:["img/banner1.png","img/banner2.png","img/banner3.png","img/banner4.png"]
+                }
+           }
+        })    
+    </script>
+     
+</body>
+</html>

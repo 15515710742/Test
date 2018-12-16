@@ -1,0 +1,13 @@
+<!--pages/home/home.wxml-->
+<!-- 数据的绑定 -->
+
+<view wx:for="{{products}}" wx:key="lid">
+    <text>{{item.lid}}</text>
+    <text>{{item.title}}</text>
+    <image src="http://www.codeboy.com/{{item.pic}}" mode="aspectFill" lazy-load width="230" height="120"></image>
+</view>
+
+<text>跳转不同的组件</text>
+<navigator url="/pages/news/news?id=9">
+    跳转到新闻组件
+</navigator>

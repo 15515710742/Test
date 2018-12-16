@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">赞+0</button>
+  <!-- btn=>button -->
+  <script>
+      var i=0;
+      //当单机时执行一次函数
+      btn.onclick=function(){//不能改为箭头函数
+          this.innerHTML=`赞+${++i}`;
+      }
+
+    setInterval(()=>console.log("心跳数"),1000);
+      
+    var arr=[12,3,123,1,23,2];
+    arr.sort((a,b)=>a-b);
+    console.log(arr);
+
+    var str="you can you up!"
+    str=str.replace(/\b[a-z]/g,kw=>kw.toUpperCase());   
+    console.log(str);
+
+    var nums=[1,2,3,4,5];
+    nums.forEach((val,i,arr)=>arr[i]=val*2);      
+    console.log(nums);
+
+
+    var arr2=[1,2,3,4,5];
+    var evens=arr2.map(val=>val*2); 
+    console.log(arr2);
+    console.log(evens);
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   
+    function Enemy(fname,speed){
+        this.fname=fname;
+        this.speed=speed;
+    }
+    Enemy.prototype.fly=function(){}
+     /*
+    function Plane(fname,speed,score){
+        Enemy.call(this,fname,speed);
+        this.score=score;
+    }
+    Object.setPrototypeOf( Plane.prototype,Enemy.prototype);
+    Plane.prototype.getScore=function(){
+        console.log(`以${this.speed}速度飞行,击落${this.fname},得${this.score}分`);
+    }   
+    var f=new Plane("f16",100,10);
+    f.getScore();
+    */
+    function Bee(fname,speed,award){
+        Enemy.call(this,fname,speed);
+        this.award=award;
+    }
+    Object.setPrototypeOf(Bee.prototype,Enemy.prototype);
+    Bee.prototype.getAward=function(){
+        console.log(`以${this.speed}速度飞行,击落${this.fname},获得${this.award}奖励`);
+    }
+    var b=new Bee("小蜜蜂",50,"1 life");
+    b.fly();
+    b.getAward();
+    console.log(b);
+
+
+
+   
+</script>    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .container{
+            position: relative;
+        }
+        .container .ctrl{
+            display: none;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+        .container .ctrl img{
+            width: 100px;
+            height:100px;
+        }
+        .container .ad{
+            position: absolute;
+            width:200px;
+            height:200px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <h2>h5新特性--视频</h2>
+    <div class="container">
+        <!-- 视频 -->
+        <video src="res/x.mp4" id="v3" autoplay loop></video>
+        <!-- 广告按钮 -->
+        <img src="res/actor.jpg" class="ad">
+        <a href="#" class="ctrl">
+            <img src="res/play.png">
+        </a>
+    </div>
+    <script>
+        var div = document.getElementsByClassName("container")[0];
+        var a = document.getElementsByClassName("ctrl")[0];
+        var img = document.querySelector(".ctrl img");
+        var v3 = document.getElementById("v3");
+        div.onmouseenter=function(){
+             a.style.display="block";
+        }
+        div.onmouseleave=function(){           
+            a.style.display="none";
+        }
+        a.onclick=function(e){
+            e.preventDefault();//阻止元素的默认行为 a button submit image
+            //判断当前视频状态,暂停or播放
+            if(v3.paused){
+                img.src="res/pause.png";
+                v3.play();
+            }else{
+                img.src="res/play.png";
+                v3.pause();
+            }
+        } 
+        var ad = document.querySelector(".ad");
+        v3.onplay = function(){
+            ad.style.display = "none";
+        }
+        v3.onpause = function(){
+            ad.style.display = "block";
+        }
+    </script>
+</body>
+</html>

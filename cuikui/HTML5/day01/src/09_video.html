@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音频</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h2>h5新特性--音频</h2>
+     <audio id="v3" src="res/bg.mp3" controls></audio>
+     <input type="checkbox">是否播放背景音乐
+    <script>
+        //练习:使用复选框控制网页背景音乐
+        var v3 = document.getElementById("v3");
+        var cb = document.getElementsByTagName("input")[0];
+        cb.onchange = function(){
+            if(this.checked){
+                // 音频文件在播放时有个淡入的效果
+                v3.volume = 0;
+                v3.play();               
+                settimer=setInterval(function(){
+                    v3.volume += 0.01;
+                },500)               
+                if(v3.volume>0.9){
+                    clearInterval(settimer);
+                }
+            }else{
+                v3.pause();
+            }
+        }
+    </script>
+</body>
+</html>

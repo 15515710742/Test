@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>事件处理</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+ 	<form>
+		姓名:<input name="username"/><br>
+		密码:<input type="password" name="pwd"/><br>
+    爱好:<input type="checkbox" name="favs" value="running"/>跑步
+        <input type="checkbox" name="favs" value="swimming"/>游泳
+        <input type="checkbox" name="favs" value="basketball"/>篮球
+        <br>
+		<input type="submit"/>
+	</form>
+  <script>
+      //将查询字符串转为对象
+    function search2Obj(){
+      var obj={};
+      if(location.search!==""){
+        var strs=location.search.slice(1).split("&");
+        //arr1=[username=zhangdong,pwd=123456,favs=running,favs=swimming]
+        for(var str of strs){
+           var [key,value]=str.split("=");          
+           if(obj[key]===undefined){
+               obj[key]=value;
+           }else{
+             obj[key]=[].concat(obj[key],value);//concat数组拼接
+           }            
+        }
+      }
+      return obj;
+    }  
+    var obj=search2Obj();
+    console.log(obj);
+    console.log(obj.username, obj.pwd, obj.favs);
+  
+  </script>
+</body>
+</html>

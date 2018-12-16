@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <input type="button" value="异步获取数据" onclick="getMsg()">
+  <div id="no1">123</div>
+  <script src="common.js"></script>
+  <script>
+    function getMsg(){
+      //1.创建异步函数
+      var xhr=createXhr();
+      //2.监听事件
+      xhr.onreadystatechange =function(){
+        if(xhr.readyState==4 && xhr.status==200){
+          var result=xhr.responseText;       
+        //将取回的结果显示在div中
+         $("no1").innerHTML=result;       
+        }
+      }      
+       //3.打开连接
+      xhr.open("get","/demo/myAjax",true);
+       //4.发送请求
+      xhr.send(null);     
+     }   
+  </script>  
+</body>
+</html>

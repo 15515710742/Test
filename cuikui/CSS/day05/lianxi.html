@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    #banner{
+      margin:0 auto;
+      width:1000px;
+      height:400px;
+      overflow:hidden;
+      /*目的为了让元素的绝对定位*/
+      position:relative;
+    }
+    #banner ul.banner-img li{
+      float:left;
+    }
+    /*左右箭头的样式*/
+    #banner a.ck-side{
+      position:absolute;
+      width:35px;
+      height:70px;
+      border-radius:5px;
+      top:165px;
+    }
+    #banner a.ck-left{
+      background:#ddd url(index/arrow-left.png) no-repeat center center;
+      left:5px;
+    }
+    #banner a.ck-right{
+      background:#ddd url(index/arrow-right.png) no-repeat center center;
+      right:5px;
+    }
+    #banner ul.ind{
+      position:absolute;
+      bottom:20px;
+      left:473px;
+    }
+    #banner ul.ind li{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#fff;
+      margin-right:8px;
+      float:left;
+    }
+    #banner ul.ind li.active{
+      background:#0aa1ed;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="banner">
+    <!-- 1.四张大图 -->
+    <ul class="banner-img">
+      <li>
+        <a href="#">
+          <img src="index/banner1.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="index/banner2.png" alt="">
+        </a>  
+      </li>
+      <li>
+        <a href="#">
+          <img src="index/banner3.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="index/banner4.png" alt="">
+        </a>
+      </li>
+    </ul>
+    <!-- 2.左右箭头按钮 -->
+    <a href="#" class="ck-left ck-side"></a>
+    <a href="#" class="ck-right ck-side"></a>
+    <!-- 3.四个圆点,导航指示器 -->
+    <ul class="ind">
+      <li></li>
+      <li></li>
+      <li class="active"></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>
